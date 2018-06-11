@@ -1,0 +1,281 @@
+/* base inputs style */
+.form-row{
+    margin:10px 0;
+    &.read{
+        label{
+            display:block;
+            font-size:0.75rem;
+            font-weight:400;
+            margin:3px;
+        }
+    }
+}
+.form-col{
+    display:inline-block;
+    margin-right:5px;
+}
+
+
+label{
+    &.hide{
+        text-indent:-9999px;
+    }
+}
+.ipt-box{
+    &.ico{
+        position:relative;
+        &.id{
+            label{
+                background:url('../images/icon/user.svg');
+            }
+        }
+        &.password{
+            input{
+                letter-spacing:3px;
+            }
+
+            label{
+                background:url('../images/icon/lock.svg');
+            }
+        }
+        label{
+            opacity:0.2;
+            display:inline-block;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:5px;
+            margin:auto;
+            width:32px;
+            height:32px;
+            text-indent:-9999px;
+
+        }
+        input{
+            padding-left:50px;
+            width:100%;
+        }
+    }
+
+
+}
+.ui-global-search{
+    width:100%;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    height: 80px;
+    line-height:80px;
+    border: solid 1px $lineColor;
+    padding: 0 60px;
+    color:#333;
+    font-weight:400;
+    &:focus{
+        &+label+.search-log{
+            display:block;
+        }
+    }
+}
+.ipt-model-check{
+    display:inline-block;
+    input[type="radio"]:focus + label{
+          outline: 1px solid $lineColor; /* focus style */
+    }
+    input[type="radio"]+label:before{
+        border-radius:50%;
+    }
+    input[type="radio"]+label:before{
+        content: '';
+        background: #fff;
+        border: 4px solid $lineColor;
+        display: inline-block;
+        vertical-align: middle;
+        width: 14px;
+        height: 14px;
+        padding: 2px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    input[type="radio"]:checked+label:after{
+        display:inline-block;
+        position:absolute;
+        left:8px;
+        bottom:0;
+        top:0;
+        margin:auto;
+        content: "";
+        background:$pointColor;
+        width:10px;
+        height:10px;
+        border-radius:50%;
+
+    }
+    input[type="radio"]{
+        opacity: 0;
+        position: absolute;
+    }
+    label{
+        position: relative;
+    }
+    input[type="radio"],label{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+        cursor: pointer;
+    }
+}
+
+.shadow-ui{
+    box-shadow: 0 1px 5px 0 rgba(45,62,80,.12);
+}
+.label-guide{
+    color: #516f90;
+    font-size:12px;
+    font-weight:400;
+    margin:10px 0;
+    &:before{
+        content:'※';
+        color:#516f90;
+        padding-right:4px;
+    }
+    a{
+        color:$pointColor;
+    }
+}
+label{
+    &.required{
+        &:after{
+            content:'*';
+            color:#ff8f59;
+            padding-left:4px;
+            font-size:16px;
+        }
+    }
+}
+textarea{
+    background:$subColor;
+    border:1px solid #cbd6e2;
+    font-size:14px;
+    padding:10px;
+    border-radius:3px;
+    &:focus{
+        border-color: rgba(48,63,79,.4);
+        box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
+        outline: 0;
+    }
+}
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select{
+    padding:0 10px;
+    height:40px;
+    min-height:40px;
+    line-height:40px;
+    font-size:14px;
+    background:$subColor;
+    border:1px solid #cbd6e2;
+    border-radius:3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &.tiny{
+        max-width:32px;
+    }
+    &.small{
+        max-width:32px;
+    }
+    &.medium{
+        max-width:100px;
+    }
+    &.large{
+        max-width:300px
+    }
+    &.auto{
+        width:100%;
+    }
+    &.right{
+        text-align: right;
+    }
+    &.center{
+        text-align: center;
+    }
+    &:focus{
+        // border-color: rgba(0,208,228,.5);
+        // box-shadow: 0 0 4px 1px rgba(0,208,228,.3), 0 0 0 1px #00d0e4;
+        border-color: rgba(48,63,79,.4);
+        box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
+        outline: 0;
+    }
+}
+
+textarea{
+    resize:none;
+}
+
+input[disabled],
+select[disabled],
+option[disabled],
+textarea[disabled],
+button[disabled]{
+    background: $subColor;
+    border-color: $subColor;
+    color: #b0c1d4;
+    pointer-events:none;
+}
+
+
+
+
+/* images custom radio/check */
+
+// input[type="radio"],
+// input[type="checkbox"]{
+//     display:none
+// }
+// input[type="radio"] + label,
+// input[type="checkbox"] + label{
+//     color: #333;
+//     cursor:pointer;
+// }
+// input[type="radio"] + label:before,
+// input[type="checkbox"] + label:before{
+//     content:'';
+//     display:inline-block;
+//     margin:0 4px 1px 4px;
+//     vertical-align: middle;
+//     background:url('../images/global_spr_icon.png') no-repeat;
+//     cursor:pointer;
+// }
+// input[type="radio"] + label:before{
+//     width: 12px;
+//     height: 12px;
+//     background-position:-105px -102px;
+// }
+// input[type="radio"]:checked + label:before{
+//     background-position: -84px -102px;
+// }
+// input[type="radio"][disabled] + label:before{
+//     background-position: -126px -101px;
+// }
+//
+// input[type="checkbox"] + label:before{
+//     width:13px;
+//     height:13px;
+//     background-position: -40px -102px;
+// }
+// input[type="checkbox"]:checked + label:before{
+//     background-position: -18px -102px;
+// }
+// input[type="checkbox"][disabled] + label:before{
+//     background-position: -61px -102px;
+// }

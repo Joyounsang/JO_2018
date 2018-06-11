@@ -1,0 +1,175 @@
+    @@@include('./include/header.html')
+
+    <div class="container layout-table">
+        <section class="contents layout-table-cell">
+            <div class="content-page">
+                <div class="title-box">
+
+                    <h2>Create 창조하기</h2>
+                    <p>you create new idea</p>
+
+                </div>
+
+                <div class="tbl-filter">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col class="">
+                            <col class="">
+                            <col class="">
+                            <col class="">
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <label for="">Title</label>
+                                </th>
+                                <td colspan="3">
+                                     <input class="title" type="text">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label class="required" for="">Space</label>
+                                </th>
+                                <td>
+                                     <select class="" name="category">
+                                         <option value="daily">daily</option>
+                                         <option value="discuss">discuss</option>
+                                         <option value="work">work</option>
+                                     </select>
+                                </td>
+                                <td colspan="2" rowspan="6"  style="vertical-align:top;">
+                                    <textarea style="height:600px;" name="name" rows="8" cols="80"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="">Human</label>
+                                </th>
+                                <td>
+                                     <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="">Time</label>
+                                </th>
+                                <td>
+                                     <input type="text">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">
+                                    <label for="">Lock</label>
+                                </th>
+                                <td>
+                                    <div class="form-row">
+                                        <div class="ipt-box">
+                                            <label class="" for="rdo1">
+                                                <input id="rdo1" class="rdo" type="radio" name="lock">
+                                                <span class="rdo-status"></span>
+                                                <span class="rdo-label">public</span>
+                                            </label>
+
+                                            <label class="" for="rdo2">
+                                                <input id="rdo2" class="rdo" type="radio" name="lock">
+                                                <span class="rdo-status"></span>
+                                                <span class="rdo-label">public</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="">Tag</label>
+                                </th>
+                                <td>
+                                     <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">file</th>
+
+                                <td>
+                                    <p class="label-guide">
+                                        need only only only for you
+                                    </p>
+
+
+                                     <form method="post" action="/upload">
+                                            <label class="file">
+                                                    <input type="file" multiple>
+                                            </label>
+
+                                            <ul class="file-list">
+                                                <li>
+                                                    <span>1234.png</span>
+                                                    <span class="btnico close"></span>
+                                                </li>
+                                                <li>
+                                                    <span>1234.png</span>
+                                                    <span class="btnico close"></span>
+                                                </li>
+                                                <li>
+                                                    <span>1234.png</span>
+                                                    <span class="btnico close"></span>
+                                                </li>
+                                                <li>
+                                                    <span>1234.png</span>
+                                                    <span class="btnico close"></span>
+                                                </li>
+                                            </ul>
+                                     </form>
+
+                                     <script type="text/javascript">
+                                     $(document).ready(function() {
+                                         $('input[type=file]').change(function() {
+                                                 //console.log(this.files);
+                                                 var f = this.files;
+                                                 var el = $(this).parent();
+                                                 if (f.length > 1) {
+                                                         console.log(this.files, 1);
+                                                         el.text('Sorry, multiple files are not allowed');
+                                                         return;
+                                                 }
+                                                 // el.removeClass('focus');
+                                                 el.html(f[0].name + '<br>' +
+                                                         '<span class="sml">' +
+                                                         'type: ' + f[0].type + ', ' +
+                                                         Math.round(f[0].size / 1024) + ' KB</span>');
+                                         });
+
+                                         $('input[type=file]').on('focus', function() {
+                                                 $(this).parent().addClass('focus');
+                                         });
+
+                                         $('input[type=file]').on('blur', function() {
+                                                 $(this).parent().removeClass('focus');
+                                         });
+
+                                     });
+                                     </script>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="box-align right">
+                    <button class="btn">Create</button>
+                    <a href="timeline.html" class="btn not">Cancel</a>
+                </div>
+
+            </div>
+            <!-- @@@include('./include/footer.html') -->
+        </section>
+    </div>
+        @@@include('./include/footer.html')

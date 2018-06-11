@@ -1,0 +1,91 @@
+
+
+<div class="admin-today off">
+    <div class="today-page">
+        <aside class="">
+            <form id="form1" runat="server">
+        <div>
+            <!-- <button type="button" id="btnGetData">날씨 조회</button> -->
+
+        </div>
+        <div id="results"></div>
+    </form>
+
+            <div class="calendar"></div>
+
+            <!-- <input type="text"
+       class="datepicker-here"
+       data-language='en'
+       data-multiple-dates="3"
+       data-multiple-dates-separator=", "
+       data-position='bottom left'/> -->
+        </aside>
+        <aside class="">
+            news asidenews asidenews asidenews asidenews asidenews asidenews asidenews asidenews asidenews asidenews asidenews asidenews aside
+        </aside>
+    </div>
+    <button class="today-toggle">
+        open/close
+    </button>
+    <script>
+        $('.today-toggle').on('click',function(){
+            $('.admin-today').toggleClass('off');
+            $('.content-page').toggleClass('wide');
+        });
+        $('.calendar').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+            dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+            monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            showMonthAfterYear: true,
+            changeMonth: false,
+            changeYear: false,
+            yearSuffix: '년'
+        });
+
+
+        $(document).ready(function () {
+
+                $.ajax({
+                    url: "http://api.wunderground.com/api/9400484a81217f6c/geolookup/conditions/q/KR/Seoul.json",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#results').empty();
+                        $('#results').append("<div><img src=\"" + response['current_observation']['icon_url'] + "\"></div>");
+                        $('#results').append("<div>weather          : " + response['current_observation']['weather'] + "</div>");
+                        $('#results').append("<div>temperature(℃)  : " + response['current_observation']['temp_c'] + "</div>");
+                        $('#results').append("<div>humidity(%)          : " + response['current_observation']['relative_humidity'] + "</div>");
+                        $('#results').append("<div>location         : " + response['location']['country_name'] + ", " + response['location']['city'] + "</div>");
+                        $('#results').append("<div>observation time : " + response['current_observation']['observation_time_rfc822'] + "</div>");
+                    },
+                    error: function (request, status, error) {
+                        alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                    }
+                });
+
+            // $('#btnGetData').on('click', function () {
+            //     $.ajax({
+            //         url: "http://api.wunderground.com/api/9400484a81217f6c/geolookup/conditions/q/KR/Seoul.json",
+            //         dataType: "json",
+            //         success: function (response) {
+            //             $('#results').empty();
+            //             $('#results').append("<div><img src=\"" + response['current_observation']['icon_url'] + "\"></div>");
+            //             $('#results').append("<div>weather          : " + response['current_observation']['weather'] + "</div>");
+            //             $('#results').append("<div>temperature(℃)  : " + response['current_observation']['temp_c'] + "</div>");
+            //             $('#results').append("<div>humidity(%)          : " + response['current_observation']['relative_humidity'] + "</div>");
+            //             $('#results').append("<div>location         : " + response['location']['country_name'] + ", " + response['location']['city'] + "</div>");
+            //             $('#results').append("<div>observation time : " + response['current_observation']['observation_time_rfc822'] + "</div>");
+            //         },
+            //         error: function (request, status, error) {
+            //             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            //         }
+            //     });
+            // });
+        });
+
+    </script>
+</div>

@@ -1,0 +1,35 @@
+.crud{
+
+    &-view{
+        margin-bottom:10%;
+        &.category-work{
+
+        }
+        &.category-develop{
+
+        }
+        &.category-daily{
+
+        }
+    }
+
+    &-editting{
+        &-filter{
+
+
+        }
+        input[type="text"], input[type="password"], input[type="email"], select{
+            border-bottom:0;
+        }
+        .title{
+            width:100%;
+        }
+        textarea{
+            height:180px;
+            width:100%;
+            resize: none;
+            border:1px solid $lineColor;
+        }
+    }
+
+}

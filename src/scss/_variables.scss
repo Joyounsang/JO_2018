@@ -1,0 +1,21 @@
+
+$baseColor: #303f4f;
+$pointColor: #FF3D7F;
+
+$fontColor: #222;
+
+$subColor: #fafafa;
+$lineColor: #e7e7e7;
+
+@mixin clearfix {
+  content:'';
+  clear:both;
+  display:block;
+}
+
+@mixin hide {
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
