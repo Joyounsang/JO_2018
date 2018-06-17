@@ -1,121 +1,76 @@
 
 @@@include('./include/header.html')
 
-    <main role="main" class="main">
-        <section class="contents layout-table movie-frame noise">
-            <div class="content-page layout-table-cell">
-                <div class="row main-article">
-                    <div class="main-grapics">
-                        <ul class="">
-                            <li class="svg-rel">
-                                <img src="../assets/images/logo_w.svg" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="main-text-wrap">
-                        <div class="main-text">
-                        “We'll find a way, we always have.”
-                        <!-- <h1>Another Universe <br>Growth Hacker <br>Sexy World wide space</h1>
-                       It is so sexy thing that
-                       millions of people on the Earth can see the
-                       designs and ideas which I made.🤖❤️ -->
+    <main role="main" class="main-component">
+        <section>
+            <div class="main-article">
+                <h1>
+                    <img class="main-img" src="../assets/images/logo_w.svg" alt="">
+                </h1>
 
-                       </div>
-
-                        <!-- <span class="main-date"></span> -->
-                    </div>
-
-                </div>
-                <div class="main-video">
-                    <video poster="" id="" playsinline autoplay muted loop>
-                        <source src="../assets/video/main.mp4" type="video/mp4">
-                    </video>
+                <div class="main-text">
+                    “We'll find a way, we always have.”
                 </div>
             </div>
-        </section>
-        <section class="main-heading layout-table">
-            <p class="layout-table-cell">
-                <!-- Jo, OK,  -->
-                discussion for hacking the user experience.
-
-
-                <a class="btnico bottom down-scroll" href="#">view</a>
-            </p>
-            <!-- <img src="../assets/images/logo.svg" alt=""> -->
-
-           <!-- It is so sexy thing that
-           millions of people on the Earth can see the
-           designs and ideas which I made.🤖❤️ -->
+            <div class="main-video noise">
+                <video poster="" id="" playsinline autoplay muted loop>
+                    <source src="../assets/video/main.mp4" type="video/mp4">
+                </video>
+            </div>
         </section>
     </main>
 
 
+    <section class="layout-table timeline-title">
+        <div class="layout-table-cell">
+            <p>
+                discussion for hacking the user experience.
+                <a class="btnico bottom scrollDown" href="#">scroll down</a>
+            </p>
+        </div>
+    </section>
 
     <section class="contents">
+        <div class="content-page timeline-top">
 
-        <!-- <div class="content-page">
-            <div class="title-box">
-                <h2>Time — ㄴㅇㄹㅇㄴ럳재ㅑ럳재ㅑ렂대ㅑ러ㅐ</h2>
-                <p>scheduler — daily, discuss, blur blur...</p>
-                <p>
-                    Exact times, locations, speakers, and a livestream filter will be added closer to I/O,<br> as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only).
+            <div class="ipt-global-search">
 
-                </p>
+                <select id="globalCat" name="">
+                    <option value="">all categories</option>
+                    <option value="">A categories</option>
+                </select>
+
+                <input id="globalSearch" class="ui-global-search" type="search" placeholder="global search...">
+
+                <label for="globalSearch" class="btnico search">Search</label>
+
             </div>
-        </div> -->
-
-        <div class="timeline-top topstick content-page">
-            <div class="ipt-box">
-                <div class="ipt-model-ico">
-                    <label for="globalCat" class="btnico search">검색</label>
-                    <select id="globalCat" name="">
-                        <option value="">all categories</option>
-                        <option value="">A categories</option>
-                    </select>
-
-                    <input id="globalSearch" class="ui-global-search" type="search" placeholder="global search...">
-                    <label for="globalSearch" class="btnico search">검색</label>
-                    <div class="search-log">
-                        <ul>
-                            <li><a href="#">dafsafsdaf</a></li>
-                            <li><a href="#">dafsafsdaf</a></li>
-                            <li><a href="#">dafsafsdaf</a></li>
-                            <li><a href="#">dafsafsdaf</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <ul class="schedule-guide">
+            <ul class="schedule-side">
                 <li><span>24</span>all </li>
                 <li><span>4</span>work</li>
                 <li> <span>20</span>discuss</li>
                 <li><span>8</span>picture</li>
                 <li><span>1</span>today</li>
-                <li class="crud-control">
+                <li class="schedule-control">
                     <ul>
                         <li>
-                            <a href="#" class="btn btn-calendar calendar">calendar view</a>
+                            <a href="#" class="btnico calendarOpen calendar">calendar view</a>
                         </li>
                         <li>
-                            <a href="#" class="btn board-toggle view">simple view</a>
+                            <a href="#" class="btnico viewToggle view">simple view</a>
                         </li>
                         <li>
-                            <a href="boardWrite.html" class="btn write">write</a>
+                            <a href="boardWrite.html" class="btnico add">write</a>
                         </li>
-
                     </ul>
                 </li>
-
             </ul>
-
             <div class="calendar-box">
                 calendar
             </div>
         </div>
 
-
-        <div class="crue-list">
-            <div class="schedule-box">
+        <div class="schedule-box">
 
                 <div class="row clearfix">
                     <div class="columm time">
@@ -249,12 +204,6 @@
                 </div>
 
             </div>
-        </div>
-
-
-
-
-
     </section>
 
 @@@include('./include/footer.html')

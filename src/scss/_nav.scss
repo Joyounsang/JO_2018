@@ -1,301 +1,263 @@
-header aside{
-
+header{
     position:fixed;
     top:0;
     left:0;
     height:74px;
     width:100%;
     z-index:10000;
-    // border-bottom:1px solid $lineColor;
-    .mobile-nav{
-
-    }
-}
-
-
-.mobile-nav{
-    display:none;
-}
-
-.logo{
-       position:fixed;
-       top:10px;
-       left:20px;
-       margin:auto;
-       z-index:9999;
-       display:block;
-       width:70px;
-       height:50px;
-
-       a{
-           display:block;
-           width:100%;
-           height:100%;
-           text-indent:-999em;
-           background:url('../images/logo.svg') center no-repeat;
-           background-size:80%;
-           transition:opacity .4s;
-           &:hover{
-               opacity: 0.5;
-           }
-       }
-   }
-.gnb{
-       height:0;
-
-       li{
-           display: inline-table;
-           position: fixed;
+    .logo{
+           position:fixed;
+           top:10px;
+           left:20px;
            margin:auto;
            z-index:9999;
-           a{
-               color:#333;
-                font-weight:400;
-               letter-spacing:3px;
-               font-size:0.5rem;
+           display:block;
+           width:70px;
+           height:50px;
 
+           a{
+               display:block;
+               width:100%;
+               height:100%;
+               text-indent:-999em;
+               background:url('../images/logo.svg') center no-repeat;
+               background-size:80%;
+               transition:opacity .4s;
+               &:hover{
+                   opacity: 0.5;
+               }
            }
-           &:hover{
+       }
+    .gnb{
+           height:0;
+           li{
+               display: inline-table;
+               position: fixed;
+               margin:auto;
+               z-index:9999;
                a{
-                   color:$pointColor;
-               }
-           }
+                   color:#333;
+                    font-weight:400;
+                   letter-spacing:3px;
+                   font-size:0.5rem;
 
-           &:after{
-               display:none!important;
-               content: attr(aria-label);
-               letter-spacing:3px;
-               font-size:0.5rem;
-           }
-           &.on{
-               display:none;
+               }
+               &:hover{
+                   a{
+                       color:$pointColor;
+                   }
+               }
+
                &:after{
+                   display:none!important;
+                   content: attr(aria-label);
+                   letter-spacing:3px;
+                   font-size:0.5rem;
+               }
+               &.on{
+                   display:none;
+                   &:after{
+
+                   }
+               }
+               &.on.human{
+
+                   right:-86px;
+               }
+               &.on.space{
+                   left:-71px;
+               }
+
+           }
+
+
+
+
+           .human{
+               top:0;
+               bottom:0;
+               right:20px;
+               transform: rotate(90deg);
+               a{
+
 
                }
-           }
-           &.on.human{
-
-               right:-86px;
-           }
-           &.on.space{
-               left:-71px;
-           }
-
-       }
-
-
-
-
-       .human{
-           top:0;
-           bottom:0;
-           right:20px;
-           transform: rotate(90deg);
-           a{
-
 
            }
+           .space{
+               top:0;
+               bottom:0;
+               left:20px;
+               transform: rotate(-90deg);
 
-       }
-       .space{
-           top:0;
-           bottom:0;
-           left:20px;
-           transform: rotate(-90deg);
-
-       }
-       .time{
-           bottom:0;
-           left: 0;
-           right:0;
-           padding: 30px 0;
-           display:inline-block;
-           width:100%;
+           }
+           .time{
+               bottom:0;
+               left: 0;
+               right:0;
+               padding: 30px 0;
+               display:inline-block;
+               width:100%;
 
 
-           text-align:center;
-           a{
+               text-align:center;
+               a{
 
+
+
+               }
 
 
            }
-
-
+           .and{
+               display:none;
+           }
        }
-       .and{
-           display:none;
-       }
-   }
-.snb{
-       position:fixed;
-       top:20px;
-       right:20px;
-       span,a{
-           color:#fff;
-           font-size:0.75rem;
-       }
-       li{
-           display:inline-block;
-       }
-   }
-.fnb{
-    ul{
-        float:left;
-        border-right-width:1px;
-        border-right-style: solid;
-        border-right-color: $lineColor;
-        margin-right:20px;
-        padding-right:20px;
-        // &:last-child{
-        //     border-right-width:0;
-        //     margin-right:0;
-        //     padding-right:0;
-        // }
-    }
-    div{
-        float:left;
-        p{
-            width:200px;
-            display:inline-block;
-            line-height:1.8;
-            margin-left:30px;
-             ;
-            vertical-align:middle;
-            a{
-                 font-weight:400;
-                color:#222;
-            }
-        }
-    }
-    &:hover{
-        background:$subColor;
-        right:0;
-        box-shadow: 0 1px 5px 0 rgba(45,62,80,.12);
-    }
-    transition:all .4s;
-
-    padding:30px 60px 30px 30px;
-    position:fixed;
-    bottom:20px;
-    right:-386px;
-    z-index:9999;
-    li{
-        line-height:34px;
-        vertical-align:middle;
-
-        a{
-            color:#222;
-            &.btn-top{
-
-                &:before{
-                    content: '';
-                    display:inline-block;
-                    width:30px;
-                    height:30px;
-                    vertical-align:middle;
-                    background:url(../images/icon/top.svg);
-                }
-
-            }
-
-        }
-        em{
-            color:#d9d9d9;
-            font-style: normal;
-        }
-        small{
-            color:#999;
-            margin-right:60px;
-        }
-    }
-}
-
-// hasClass main gnb color
-html.work{
-    .gnb{
-        li{
-            &.time{
-                width:100px;
-                background:transparent;
-            }
-        }
-    }
-}
-html.black{
-    .gnb{
-        li{
-
-            &.time{
-
-                a{
-                    color:#fff!important;
-
-                }
-            }
-        }
-    }
-    .fnb{
-        ul{
-            border-right-color: #333;
-        }
-        &:hover{
-            background:#222;
-            right:0;
-        }
-        a,li,span{
+    .snb{
+        position:fixed;
+        top:20px;
+        right:20px;
+        span,a{
             color:#fff;
+            font-size:0.75rem;
         }
-    }
-}
-html.main, html.black{
-    header aside{
-        background:transparent;
-    }
-    .logo{
-
-        a{
-            background:url('../images/logo_w.svg') center no-repeat;
-            background-size:80%;
-        }
-    }
-    .gnb{
         li{
+            display:inline-block;
+        }
+    }
 
+    &.black{
+        .logo{
             a{
-                color:#fff;
+                background:url('../images/logo_w.svg') center no-repeat;
+                background-size:80%;
             }
-            &.time{
-                background:transparent;
+        }
+        .gnb{
+            li{
 
                 a{
-                    color:#333;
+                    color:#fafafa;
+                }
+                &.time{
                     background:transparent;
+
+                    a{
+                        color:#333;
+                        background:transparent;
+                    }
+                }
+            }
+        }
+        .btnico{
+            &.login{
+                &:before{
+                    background:url(../images/icon/lock_w.svg);
                 }
             }
         }
     }
-
 }
 
 footer{
-    button{
-        background:none;
-        border:none;
+    .fnb{
+        ul{
+            float:left;
+            border-right-width:1px;
+            border-right-style: solid;
+            border-right-color: $lineColor;
+            margin-right:20px;
+            padding-right:20px;
+        }
+        div{
+            float:left;
+            p{
+
+                width:200px;
+                display:inline-block;
+                line-height:1.8;
+                margin-left:30px;
+                font-weight:300;
+                vertical-align:middle;
+                a{
+                    font-weight:600;
+
+                }
+            }
+        }
+        &:hover{
+            background:$subColor;
+            right:0;
+            box-shadow: 0 1px 5px 0 rgba(45,62,80,.12);
+        }
+        transition:all .4s;
+
+        padding:30px 60px 30px 30px;
+        position:fixed;
+        bottom:20px;
+        right:-386px;
+        z-index:9999;
+        li{
+            line-height:34px;
+            vertical-align:middle;
+
+            a{
+                color:#222;
+                &.btn-top{
+
+                    &:before{
+                        content: '';
+                        display:inline-block;
+                        width:30px;
+                        height:30px;
+                        vertical-align:middle;
+                        background:url(../images/icon/top.svg);
+                    }
+
+                }
+
+            }
+            em{
+                color:#d9d9d9;
+                font-style: normal;
+            }
+            small{
+                color:#999;
+                margin-right:60px;
+            }
+        }
     }
-    font-size:0.5rem;
-    letter-spacing:2px;
-     font-weight:400;
+    &.black{
+        .fnb{
+            ul{
+                border-right-color: #333;
+            }
+            &:hover{
+                background:#222;
+                right:0;
+            }
+            p,a,li,span{
+                color:#fff;
+            }
+        }
+        .btnico{
+            &.instagram{
+                &:before{
+                    background:url(../images/icon/instagram_w.svg);
+                }
+
+            }
+            &.github{
+                &:before{
+                    background:url(../images/icon/github_w.svg);
+                }
+
+            }
+            &.setting{
+                &:before{
+                    background:url(../images/icon/admin_w.svg);
+                }
+            }
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-/* This class is added on scroll */
-// .topstick{transition:all .4s;}
-
-/* Navigation Settings */

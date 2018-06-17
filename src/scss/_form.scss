@@ -1,148 +1,81 @@
-/* base inputs style */
-.form-row{
-    margin:10px 0;
-    &.read{
-        label{
-            display:block;
-            font-size:0.75rem;
-            font-weight:400;
-            margin:3px;
+// inputs align & margin
+.ipt-column{
+    display:inline-block;
+    margin-bottom:10px;
+    input{
+
+    }
+    label,.likelabel{
+        margin-right:10px;
+        font-size:11px;
+        font-weight:600;
+        &.btnico{
+            margin-right:0;
         }
     }
-}
-.form-col{
-    display:inline-block;
-    margin-right:5px;
-}
-
-
-label{
-    &.hide{
-        text-indent:-9999px;
+    +.ipt-column{
+        margin-left:20px;
     }
-}
-.ipt-box{
-    &.ico{
+    &.fixres{
         position:relative;
-        &.id{
-            label{
-                background:url('../images/icon/user.svg');
-            }
-        }
-        &.password{
-            input{
-                letter-spacing:3px;
-            }
 
-            label{
-                background:url('../images/icon/lock.svg');
-            }
-        }
-        label{
-            opacity:0.2;
-            display:inline-block;
-            position:absolute;
-            top:0;
-            bottom:0;
-            left:5px;
-            margin:auto;
-            width:32px;
-            height:32px;
-            text-indent:-9999px;
-
-        }
-        input{
-            padding-left:50px;
-            width:100%;
-        }
-    }
-
-
-}
-.ui-global-search{
-    width:100%;
-    border-radius: 40px;
-    font-size: 1.5rem;
-    height: 80px;
-    line-height:80px;
-    border: solid 1px $lineColor;
-    padding: 0 60px;
-    color:#333;
-    font-weight:400;
-    &:focus{
-        &+label+.search-log{
+        .responsive{
             display:block;
+            padding-right:70px;
+            input{
+                width:100%;
+            }
+        }
+        .btn{
+            position: absolute;
+            right:0;
+            top:0;
         }
     }
 }
-.ipt-model-check{
+.ipt-gui{
     display:inline-block;
-    input[type="radio"]:focus + label{
-          outline: 1px solid $lineColor; /* focus style */
+    font-size:0;
+    input{
+        border-radius:3px 0 0 3px!important;
     }
-    input[type="radio"]+label:before{
-        border-radius:50%;
+    .btnico{
+        border:1px solid #cbd6e2;
+        border-radius:0 3px 3px 0;
+        border-left:0;
+        width:30px;
+        height:30px;
     }
-    input[type="radio"]+label:before{
-        content: '';
-        background: #fff;
-        border: 4px solid $lineColor;
-        display: inline-block;
-        vertical-align: middle;
-        width: 14px;
-        height: 14px;
-        padding: 2px;
-        margin-right: 10px;
-        text-align: center;
-    }
-    input[type="radio"]:checked+label:after{
-        display:inline-block;
-        position:absolute;
-        left:8px;
-        bottom:0;
-        top:0;
-        margin:auto;
-        content: "";
-        background:$pointColor;
-        width:10px;
-        height:10px;
-        border-radius:50%;
-
-    }
-    input[type="radio"]{
-        opacity: 0;
-        position: absolute;
-    }
-    label{
-        position: relative;
-    }
-    input[type="radio"],label{
-        display: inline-block;
-        vertical-align: middle;
-        margin: 5px;
-        cursor: pointer;
+    &.inner{
+        position:relative;
+        .btnico{
+            position:absolute;
+            border:none;
+            right:0;
+        }
     }
 }
 
-.shadow-ui{
-    box-shadow: 0 1px 5px 0 rgba(45,62,80,.12);
-}
-.label-guide{
-    color: #516f90;
-    font-size:12px;
-    font-weight:400;
-    margin:10px 0;
-    &:before{
-        content:'※';
-        color:#516f90;
-        padding-right:4px;
+// label
+.label{
+    &like{
+
     }
-    a{
-        color:$pointColor;
+    &guide{
+        color: #516f90;
+        font-size:12px;
+        font-weight:400;
+        margin:10px 0;
+        &:before{
+            content:'※';
+            color:#516f90;
+            padding-right:4px;
+        }
+        a{
+            color:$pointColor;
+        }
     }
-}
-label{
-    &.required{
+    &reqed{
         &:after{
             content:'*';
             color:#ff8f59;
@@ -151,18 +84,8 @@ label{
         }
     }
 }
-textarea{
-    background:$subColor;
-    border:1px solid #cbd6e2;
-    font-size:14px;
-    padding:10px;
-    border-radius:3px;
-    &:focus{
-        border-color: rgba(48,63,79,.4);
-        box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
-        outline: 0;
-    }
-}
+
+// input
 input[type=color],
 input[type=date],
 input[type=datetime-local],
@@ -178,27 +101,31 @@ input[type=time],
 input[type=url],
 input[type=week],
 select{
+    font-size:11px;
     padding:0 10px;
-    height:40px;
-    min-height:40px;
-    line-height:40px;
-    font-size:14px;
-    background:$subColor;
+    height:30px;
+    min-height:30px;
+    line-height:30px;
+    background:#fafafa;
     border:1px solid #cbd6e2;
     border-radius:3px;
     -webkit-appearance: none;
     -moz-appearance: none;
     &.tiny{
-        max-width:32px;
+        width:32px;
+        max-width:100%;
     }
     &.small{
-        max-width:32px;
+        width:50px;
+        max-width:100%;
     }
     &.medium{
-        max-width:100px;
+        width:100px;
+        max-width:100%;
     }
     &.large{
-        max-width:300px
+        width:200px;
+        max-width:100%;
     }
     &.auto{
         width:100%;
@@ -210,16 +137,8 @@ select{
         text-align: center;
     }
     &:focus{
-        // border-color: rgba(0,208,228,.5);
-        // box-shadow: 0 0 4px 1px rgba(0,208,228,.3), 0 0 0 1px #00d0e4;
-        border-color: rgba(48,63,79,.4);
-        box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
-        outline: 0;
+        @include focus;
     }
-}
-
-textarea{
-    resize:none;
 }
 
 input[disabled],
@@ -227,55 +146,193 @@ select[disabled],
 option[disabled],
 textarea[disabled],
 button[disabled]{
-    background: $subColor;
-    border-color: $subColor;
+    background: #fafafa;
+    border-color: #fafafa;
     color: #b0c1d4;
     pointer-events:none;
 }
 
 
+.chk,.rdo{
+   position: absolute !important;
+   width: 1px !important;
+   height: 1px !important;
+   margin: -1px !important;
+   padding: 0 !important;
+   overflow: hidden !important;
+   clip: rect(0, 0, 0, 0) !important;
+   border: 0 !important;
+
+   &+label{
+       font-size:0;
+       margin-right:0;
+       cursor: pointer;
+       &+label{
+           font-size:0.75rem;
+             font-weight:400;
+             cursor: pointer;
+       }
+
+   }
+   &:focus{
+       &+label{
+           @include focus;
+       }
+   }
+
+}
+.chk{
+    &+label{
+        display:inline-block;
+        width:20px;
+        height:20px;
+        border:2px solid rgba(48, 63, 79, 0.4);
+        vertical-align: middle;
+        border-radius:3px;
+        position:relative;
+    }
+    &:checked{
+        &+label{
+            border-color:$pointColor;
+            &:before{
+                content: '';
+                display:block;
+                position:absolute;
+                width:10px;
+                height:10px;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                margin:auto;
+                background:url('../images/check.svg');
+            }
+        }
+    }
+    &:disabled{
+        &+label{
+            border-color:$lineColor;
+        }
+    }
+}
+.rdo{
+    &+label{
+        display:inline-block;
+        width:20px;
+        height:20px;
+        border:2px solid rgba(48, 63, 79, 0.4);
+        vertical-align: middle;
+        border-radius:50px;
+        position:relative;
+    }
+    &:checked{
+        &+label{
+            border-color:$pointColor;
+            &:before{
+                content: '';
+                display:block;
+                position:absolute;
+                width:6px;
+                height:6px;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                margin:auto;
+                border-radius:50px;
+                background:$pointColor;
+            }
+        }
+    }
+    &:disabled{
+        &+label{
+            border-color:$lineColor;
+        }
+    }
+}
 
 
-/* images custom radio/check */
+textarea{
+    width:100%;
+    background:#fafafa;
+    border:1px solid #cbd6e2;
+    font-size:14px;
+    padding:10px;
+    border-radius:3px;
+    resize:none;
+    &:focus{
+        @include focus;
+    }
+}
 
-// input[type="radio"],
-// input[type="checkbox"]{
-//     display:none
-// }
-// input[type="radio"] + label,
-// input[type="checkbox"] + label{
-//     color: #333;
-//     cursor:pointer;
-// }
-// input[type="radio"] + label:before,
-// input[type="checkbox"] + label:before{
-//     content:'';
-//     display:inline-block;
-//     margin:0 4px 1px 4px;
-//     vertical-align: middle;
-//     background:url('../images/global_spr_icon.png') no-repeat;
-//     cursor:pointer;
-// }
-// input[type="radio"] + label:before{
-//     width: 12px;
-//     height: 12px;
-//     background-position:-105px -102px;
-// }
-// input[type="radio"]:checked + label:before{
-//     background-position: -84px -102px;
-// }
-// input[type="radio"][disabled] + label:before{
-//     background-position: -126px -101px;
-// }
-//
-// input[type="checkbox"] + label:before{
-//     width:13px;
-//     height:13px;
-//     background-position: -40px -102px;
-// }
-// input[type="checkbox"]:checked + label:before{
-//     background-position: -18px -102px;
-// }
-// input[type="checkbox"][disabled] + label:before{
-//     background-position: -61px -102px;
-// }
+
+input[type=file] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	outline: 0;
+}
+
+label.file {
+	position: relative;
+	display: block;
+	width: 100%;
+	font-size: 80%;
+	text-align: center;
+	text-transform: uppercase;
+	border: 1px dashed $lineColor;
+	margin: 20px 0;
+	padding: 3rem;
+    &:hover {
+    	background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:active,&:focus{
+        @include focus;
+    }
+}
+
+
+.file-list{
+    max-height:150px;
+    overflow:auto;
+    li{
+        position:relative;
+        padding:10px 20px;
+        border-bottom:1px solid $lineColor;
+        &:last-child{
+            border-bottom:0;
+        }
+        &:before{
+            content:'';
+            display:inline-block;
+            width:30px;
+            height:30px;
+            background:url('../images/icon/document.svg');
+            vertical-align:middle;
+            opacity:0.3;
+            margin-right:10px;
+        }
+        .btnico{
+            position:absolute;
+            top:0;
+            bottom:0;
+            right:20px;
+            margin:auto;
+        }
+    }
+}
+
+// datepicker
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{ /* next/prev button */
+display:inline-block;width:20px;height:20px;background:url('../images/global_spr_icon.png') no-repeat;}
+.ui-datepicker .ui-datepicker-prev span{background-position: -11px -33px;}
+.ui-datepicker .ui-datepicker-next span{background-position: -49px -33px}
+.ui-datepicker .ui-datepicker-prev:hover span{background-position:-91px -33px}
+.ui-datepicker .ui-datepicker-next:hover span{background-position:-129px -33px;}
+.ui-datepicker th span{/* 월화수목금 */ }
+.ui-datepicker-week-end span{/* 토일 */ color:#ff5a4c}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{/* 현재 */ background:$lineColor}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{ /* 선택날자 */ background:#ff5a4c;color:#fff}

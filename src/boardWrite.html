@@ -68,21 +68,27 @@
                                     <label for="">Lock</label>
                                 </th>
                                 <td>
-                                    <div class="form-row">
-                                        <div class="ipt-box">
-                                            <label class="" for="rdo1">
-                                                <input id="rdo1" class="rdo" type="radio" name="lock">
-                                                <span class="rdo-status"></span>
-                                                <span class="rdo-label">public</span>
-                                            </label>
+                                    <span class="ipt-column">
 
-                                            <label class="" for="rdo2">
-                                                <input id="rdo2" class="rdo" type="radio" name="lock">
-                                                <span class="rdo-status"></span>
-                                                <span class="rdo-label">public</span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                        <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
+                                        <label for="radio1">radiobox</label>
+
+
+
+                                        <input class="rdo" id="radio2" type="radio" name="radio_set">
+                                        <label for="radio2">radiobox</label>
+
+                                    </span>
+                                    <script>
+
+
+                                        $('.rdo, .chk').after('<label class="cutomiptico">icon</label>');
+
+                                        $('.cutomiptico').on('click', function(){
+                                            var rdoId = $(this).prev().attr('id');
+                                            $(this).attr('for', rdoId);
+                                        });
+                                    </script>
                                 </td>
                             </tr>
                             <tr>

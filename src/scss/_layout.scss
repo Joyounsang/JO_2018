@@ -1,10 +1,34 @@
-html.login{
-    // background:$baseColor;
-    header,footer{display:none;}
-
+html{
+    &.main{
+        .contents{
+            background:#fff;
+        }
+    }
+    &.black{
+        background:#24292e;
+        .title-box{
+            h2,p{
+                color:#fff;
+            }
+        }
+        .seets{
+            a{
+                color:#fff;
+                font-weight:400;
+            }
+        }
+    }
+    &.login{
+        header,footer{
+            display:none;
+        }
+    }
+    &.ov-hidden{
+        overflow: hidden;
+    }
 }
 .loginForm{
-    .form-row{
+    .ipt-column{
         margin:30px 0;
     }
     img{
@@ -36,29 +60,6 @@ html.login{
 
 }
 
-.accordion {margin:0 auto;border-top: 1px solid $lineColor;}
-.accordion > li {border-bottom: 1px solid $lineColor;position: relative;padding:20px 0}
-.accordion .accordion-item{display:none;}
-.accordion > li > a {position:relative;display: block;width: 100%;height: 100%;font-weight: 600;user-select: none;cursor: pointer}
-.accordion > li > a:after {content:'';position:absolute;display:inline-block;width: 8px;height: 8px;background:#333;border-radius:50%;top: 0;bottom:0;right: 0;margin:auto;transition: all 0.2s ease-in-out;}
-.accordion > li > a.active:after {transform: scale(2);}
-
-.login-visual{
-    .login-cover{
-        display:block;
-        position: fixed;
-        left:0;
-        top:0;
-        width:50%;
-        height:100%;
-        background: url(../images/discuss-cover.png) #fafafa;
-        background-size:contain;
-        opacity:0.5;
-        z-index:-1;
-    }
-
-
-}
 
 
 
@@ -109,7 +110,8 @@ html.login{
 
 // base frame
 html,body,#contents{
-    height:100vh;
+    height:100%;
+
 }
 
 .container{
@@ -127,6 +129,8 @@ html,body,#contents{
     }
 }
 .contents{
+
+    -webkit-font-smoothing: antialiased;
     &.padding{
         padding:5%;
     }
@@ -138,7 +142,6 @@ html,body,#contents{
     padding-left: 16%;
     padding-right: 16%;
     max-width: 2120px;
-    -webkit-font-smoothing: antialiased;
     &.wide{
         padding-left:10%;
         padding-right:10%;
@@ -148,9 +151,6 @@ html,body,#contents{
 // horizontal Vertical center layout
 .layout-table {
     padding:0!important;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     width:100%;
     height:100%;
     display:table;
@@ -267,32 +267,32 @@ html,body,#contents{
 
 }
 
-.crud-control{
-    text-align:right;
+.schedule-side{
+    margin-top:60px;
+    clear:both;
+    overflow:hidden;
+    margin-bottom:10px;
 
-    li{
-        display:inline-block;
+    &>li{
+         font-weight:400;
+        font-size:0.75rem;
+        width:16.666%;
+        float:left;
+        color:#999;
+        span{
+            color:#333;
+
+            display:block;
+            font-size:1rem;
+
+        }
+        &.schedule-control{
+            text-align:right;
+            li{
+                display:inline-block;
+            }
+        }
     }
-    .btn{
-        width:38px;
-        height:38px;
-        background:none;
-        text-indent:-9999px;
-        border:none;
-        padding:0;
-        &.view{
-            background:url('../images/icon/image.svg') no-repeat;
-
-        }
-        &.write{
-            background:url('../images/icon/add.svg') no-repeat;
-        }
-
-        &.calendar{
-            background:url('../images/icon/date.svg') no-repeat;
-        }
-    }
-
 }
 .schedule-box{
     padding-bottom: 168px;
@@ -448,8 +448,8 @@ html,body,#contents{
                         display:block;
                         margin-top:4px;
                         color:#999;
-
                         font-size:1rem;
+
                     }
                     &:before{
                         display:none!important;
@@ -461,6 +461,9 @@ html,body,#contents{
                         top:0;
                         height:100%;
                     }
+                    &:focus{
+                        @include focus;
+                    }
                 }
 
             }
@@ -470,29 +473,17 @@ html,body,#contents{
         display:none;
     }
 }
-.schedule-guide{
-    margin-top:60px;
-    clear:both;
+.calendar-box{
+    max-height:0;
     overflow:hidden;
-    margin-bottom:10px;
-
-    &>li{
-         font-weight:400;
-        font-size:0.75rem;
-        width:16.666%;
-        float:left;
-        color:#999;
-        span{
-            color:#333;
-
-            display:block;
-            font-size:1rem;
-
-        }
+    background:$subColor;
+    transition: max-height 1s;
+    &.on{
+        max-height:300px;
     }
 }
 
-// layout boxmodel
+
 .scroll-box{
     height:400px;
     overflow:auto;
@@ -556,8 +547,7 @@ html,body,#contents{
 
     }
 }
-
-    .sill-list{
+.sill-list{
         display:flex;
         flex-wrap: wrap;
         .sill-item{
@@ -625,53 +615,17 @@ html,body,#contents{
             }
         }
     }
-
-
-
 .inner-padding{
     padding:140px 80px 80px;
 }
-.discuss-main{
-    height:calc(100vh - 300px);
-    padding:16% 0 0;
-    background: url('../images/422059.jpg') #1d272b top no-repeat;
-    background-size:cover;
-    &.universe{
-        background: url('../images/test2.jpg') #1d272b top no-repeat;
-        background-size:cover;
+
+
+footer{
+    button{
+        background:none;
+        border:none;
     }
-    .title-box{
-        h2{
-            color:#fff;
-        }
-    }
-
-}
-
-
-
-
-
-
-
-
-
-.timeline-top{
-
-    // position:absolute;
-    width:100%;
-    background:#fff;
-    border-bottom: 1px solid $lineColor;
-
-    &.topstick{
-        z-index:2;
-        transition: padding .5s;
-        &.fixed{
-            position:fixed;
-            top:0;
-            padding-top:5%;
-            z-index:2;
-        }
-    }
-
+    font-size:0.5rem;
+    letter-spacing:2px;
+     font-weight:400;
 }
