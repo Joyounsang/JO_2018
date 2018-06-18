@@ -5,173 +5,149 @@
             <div class="content-page">
                 <div class="title-box">
 
-                    <h2>Create 창조하기</h2>
+                    <h2>Create</h2>
                     <p>you create new idea</p>
 
                 </div>
 
                 <div class="tbl-filter">
-                    <table>
-                        <caption></caption>
-                        <colgroup>
-                            <col class="">
-                            <col class="">
-                            <col class="">
-                            <col class="">
-                        </colgroup>
-
-                        <tbody>
-                            <tr>
-                                <th scope="row">
-                                    <label for="">Title</label>
-                                </th>
-                                <td colspan="3">
-                                     <input class="title" type="text">
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label class="required" for="">Space</label>
-                                </th>
-                                <td>
-                                     <select class="" name="category">
-                                         <option value="daily">daily</option>
-                                         <option value="discuss">discuss</option>
-                                         <option value="work">work</option>
-                                     </select>
-                                </td>
-                                <td colspan="2" rowspan="6"  style="vertical-align:top;">
-                                    <textarea style="height:600px;" name="name" rows="8" cols="80"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="">Human</label>
-                                </th>
-                                <td>
-                                     <input type="text">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="">Time</label>
-                                </th>
-                                <td>
-                                     <input type="text">
-                                </td>
-                            </tr>
+                    <div class="filter-box">
+                        <input class="title auto" type="text">
+                        <p class="labelguide">
+                            need only only only for you
+                        </p>
+                    </div>
 
 
-                            <tr>
-                                <th scope="row">
-                                    <label for="">Lock</label>
-                                </th>
-                                <td>
-                                    <span class="ipt-column">
+                    <div class="row col-3div1">
+                        <div class="columm">
+                            <table>
+                                <caption></caption>
+                                <colgroup>
+                                    <col class="">
+                                    <col class="">
+                                </colgroup>
 
-                                        <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
-                                        <label for="radio1">radiobox</label>
+                                <tbody>
+
+                                    <tr>
+                                        <th scope="row">
+                                            <label class="required" for="">Space</label>
+                                        </th>
+                                        <td>
+                                             <select class="" name="category">
+                                                 <option value="daily">daily</option>
+                                                 <option value="discuss">discuss</option>
+                                                 <option value="work">work</option>
+                                             </select>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <label for="">Human</label>
+                                        </th>
+                                        <td>
+                                             <input type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <label for="">Time</label>
+                                        </th>
+                                        <td>
+                                             <input type="text">
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <th scope="row">
+                                            <label for="">Lock</label>
+                                        </th>
+                                        <td>
+                                            <span class="ipt-column">
+
+                                                <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
+                                                <label for="radio1">radiobox</label>
 
 
 
-                                        <input class="rdo" id="radio2" type="radio" name="radio_set">
-                                        <label for="radio2">radiobox</label>
+                                                <input class="rdo" id="radio2" type="radio" name="radio_set">
+                                                <label for="radio2">radiobox</label>
 
-                                    </span>
-                                    <script>
-
-
-                                        $('.rdo, .chk').after('<label class="cutomiptico">icon</label>');
-
-                                        $('.cutomiptico').on('click', function(){
-                                            var rdoId = $(this).prev().attr('id');
-                                            $(this).attr('for', rdoId);
-                                        });
-                                    </script>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <label for="">Tag</label>
-                                </th>
-                                <td>
-                                     <input type="text">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">file</th>
-
-                                <td>
-                                    <p class="label-guide">
-                                        need only only only for you
-                                    </p>
+                                            </span>
+                                            <script>
 
 
-                                     <form method="post" action="/upload">
-                                            <label class="file">
-                                                    <input type="file" multiple>
-                                            </label>
+                                                $('.rdo, .chk').after('<label class="cutomiptico">icon</label>');
 
-                                            <ul class="file-list">
-                                                <li>
-                                                    <span>1234.png</span>
-                                                    <span class="btnico close"></span>
-                                                </li>
-                                                <li>
-                                                    <span>1234.png</span>
-                                                    <span class="btnico close"></span>
-                                                </li>
-                                                <li>
-                                                    <span>1234.png</span>
-                                                    <span class="btnico close"></span>
-                                                </li>
-                                                <li>
-                                                    <span>1234.png</span>
-                                                    <span class="btnico close"></span>
-                                                </li>
-                                            </ul>
-                                     </form>
+                                                $('.cutomiptico').on('click', function(){
+                                                    var rdoId = $(this).prev().attr('id');
+                                                    $(this).attr('for', rdoId);
+                                                });
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <label for="">Tag</label>
+                                        </th>
+                                        <td>
+                                             <input type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">file</th>
 
-                                     <script type="text/javascript">
-                                     $(document).ready(function() {
-                                         $('input[type=file]').change(function() {
-                                                 //console.log(this.files);
-                                                 var f = this.files;
-                                                 var el = $(this).parent();
-                                                 if (f.length > 1) {
-                                                         console.log(this.files, 1);
-                                                         el.text('Sorry, multiple files are not allowed');
-                                                         return;
-                                                 }
-                                                 // el.removeClass('focus');
-                                                 el.html(f[0].name + '<br>' +
-                                                         '<span class="sml">' +
-                                                         'type: ' + f[0].type + ', ' +
-                                                         Math.round(f[0].size / 1024) + ' KB</span>');
-                                         });
+                                        <td>
 
-                                         $('input[type=file]').on('focus', function() {
-                                                 $(this).parent().addClass('focus');
-                                         });
 
-                                         $('input[type=file]').on('blur', function() {
-                                                 $(this).parent().removeClass('focus');
-                                         });
 
-                                     });
-                                     </script>
-                                </td>
-                            </tr>
+                                             <form method="post" action="/upload">
+                                                    <label class="file">
+                                                            <input type="file" multiple>
+                                                    </label>
 
-                        </tbody>
-                    </table>
+                                                    <ul class="file-list">
+                                                        <li>
+                                                            <span>1234.png</span>
+                                                            <span class="btnico close"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span>1234.png</span>
+                                                            <span class="btnico close"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span>1234.png</span>
+                                                            <span class="btnico close"></span>
+                                                        </li>
+                                                        <li>
+                                                            <span>1234.png</span>
+                                                            <span class="btnico close"></span>
+                                                        </li>
+                                                    </ul>
+                                             </form>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="columm">
+                            <div class="filter-box">
+                                <textarea style="height:600px;" name="name" rows="8" cols="80"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
 
 
                 <div class="box-align right">
                     <button class="btn">Create</button>
-                    <a href="timeline.html" class="btn not">Cancel</a>
+                    <a href="index.html" class="btn not">Cancel</a>
                 </div>
 
             </div>

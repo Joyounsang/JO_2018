@@ -128,9 +128,15 @@ $(document).ready(function(){
         $('header, .gnb').addClass('black');
     }
 
-if($('html').hasClass('main')){
-    mainUi();
-}
+    if($('html').hasClass('main')){
+        mainUi();
+    }
+
+    if($('.container.work').length > 0){
+        $('.gnb li.space').addClass('on');
+    } else if($('.container.about').length > 0){
+        $('.gnb li.human').addClass('on');
+    }
     loading();
 
     tabUi();
@@ -186,6 +192,15 @@ function loading(){
 
 
     $('.loader').delay(500).animate({height:0},800);
+    // $('.loader').delay(500).animate({width:0},800);
+    // $(window).on('resize',function(){
+    //     if($(window).width() <= 600){
+    //         $('.loader').animate({height:100+'%'},800);
+    //     } else {
+    //         $('.loader').animate({height:0},800);
+    //     }
+    // }).resize();
+
 
 
     $('html').addClass('ov-hidden');
@@ -287,4 +302,27 @@ function autoTypingUi(elementClass, typingSpeed){
       })(i+1,text[i]);
     }
   },30);
+}
+
+
+
+
+
+
+
+$(window).on('scroll', function(){
+    scrollNav();
+}).scroll();
+
+
+
+
+function scrollNav(){
+var windowScrollTop = $(window).scrollTop();
+var $barProgress = $('.progress');
+if ( windowScrollTop > 0) {
+    var scrollPercent = 100 * windowScrollTop / ($(document).height() - $(window).height());
+    $barProgress.css('display','block');
+    $barProgress.height(parseInt(scrollPercent, 10) + "%");
+}
 }

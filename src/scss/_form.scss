@@ -1,14 +1,19 @@
 // inputs align & margin
+.likelabel{
+    margin: 0 6px;
+    vertical-align:middle;
+    font-size:11px;
+    font-weight:600;
+}
 .ipt-column{
     display:inline-block;
     margin-bottom:10px;
-    input{
 
-    }
     label,.likelabel{
         margin-right:10px;
         font-size:11px;
         font-weight:600;
+        vertical-align: middle;
         &.btnico{
             margin-right:0;
         }
@@ -32,29 +37,32 @@
             top:0;
         }
     }
-}
-.ipt-gui{
-    display:inline-block;
-    font-size:0;
-    input{
-        border-radius:3px 0 0 3px!important;
-    }
-    .btnico{
-        border:1px solid #cbd6e2;
-        border-radius:0 3px 3px 0;
-        border-left:0;
-        width:30px;
-        height:30px;
-    }
-    &.inner{
-        position:relative;
+
+    &.gui{
+        display:inline-block;
+        font-size:0;
+        input{
+            border-radius:3px 0 0 3px!important;
+        }
         .btnico{
-            position:absolute;
-            border:none;
-            right:0;
+            border:1px solid #cbd6e2;
+            border-radius:0 3px 3px 0;
+            border-left:0;
+            width:30px;
+            height:30px;
+        }
+        &.inner{
+            position:relative;
+            .btnico{
+                position:absolute;
+                border:none;
+                right:0;
+                top:0;
+            }
         }
     }
 }
+
 
 // label
 .label{

@@ -28,9 +28,10 @@ html{
     }
 }
 .loginForm{
-    .ipt-column{
-        margin:30px 0;
+    h1{
+        margin-bottom:20px;
     }
+    text-align:center;
     img{
         width:120px;
         margin-bottom:40px;
@@ -38,23 +39,18 @@ html{
     .btn{
         width:100%;
     }
-
-    text-align:center;
     .row{
-
         width: 300px;
         margin: auto;
-        .columm{
-
-
-            .login-cover{
-                width:100%;
-
-                z-index:-1;
-                background:url('../images/1234.JPG') center;
-                background-size:cover;
-                filter: grayscale(100%);
-            }
+    }
+    .ipt-column{
+        width:100%;
+        margin-left:0;
+        input{
+            width:100%;
+        }
+        .btnico{
+            opacity:0.3;
         }
     }
 
@@ -119,14 +115,6 @@ html,body,#contents{
         padding-top:16%;
         padding-bottom:16%;
     }
-
-    &.work{
-        .title-box{
-            h2,p{
-                color:#fff;
-            }
-        }
-    }
 }
 .contents{
 
@@ -161,6 +149,9 @@ html,body,#contents{
     width: 100%;
 }
 
+.filter-box{
+    padding:10px;
+}
 // columm layout
 .row{
     overflow:hidden;

@@ -284,11 +284,18 @@
             background:url('../images/icon/image.svg');
         }
     }
+    &.user{
+        &:before{
+            background:url('../images/icon/user.svg');
+        }
+    }
+
     &:hover{
         opacity:0.5;
         transform: scale(1.1);
 
     }
+
     &:focus{
         @include focus;
         border-radius:50%;
@@ -321,18 +328,34 @@
         background:$pointColor;
     }
     &.develop:before{
-        background:$baseColor;
+        background:#3dc2dc;
     }
     &.etc:before{
-        background:yellow;
+        background:$baseColor;
     }
 }
-.loader{
-    width:100%;
-    height:100%;
-    // background:#fff;
-    z-index:9999;
+.data-load{
+    text-align:center;
+    font-size:12px;
+    padding-bottom:100px;
+    text-indent:5px;
+
 }
+
+.progress{
+     background:#333;
+     width:1px;
+     &-position{
+         position:fixed;
+         left:44px;
+         bottom:60px;
+         width:1px;
+         height:100px;
+         background:#e7e7e7;
+
+     }
+}
+
 
 .grain {
     position: fixed;
@@ -462,4 +485,75 @@
 			stroke-width: 5;
 		}
 	}
+}
+
+
+
+
+
+@media (max-width:600px){
+    .loader{
+
+        .svg-human{
+            &:after{
+                display:block;
+                content: attr(aria-label);
+                font-size:12px;
+            }
+        }
+        &.on{
+            height:100%;
+        }
+
+    }
+}
+
+.loader{
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    position:relative;
+    .load-ico {
+      -webkit-animation: rotate-infinite 1s linear infinite;
+      border: 4px solid $pointColor;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      margin:auto;
+    }
+    .svg-human{
+        &:after{
+            display:none;
+            content: attr(aria-label);
+            font-size:12px;
+        }
+    }
+    // .load-ico{
+    //     position: absolute;
+    //     top:0;
+    //     left:0;
+    //     right:0;
+    //     bottom:0;
+    //     width:50px;
+    //     height:50px;
+    //     margin:auto;
+    //     background:url('../images/icon/admin.svg');
+    //     animation: rotate 1s infinite linear;
+    // }
+}
+@-webkit-keyframes rotate-infinite {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100%  {
+    -webkit-transform: rotate(360deg);
+  }
 }

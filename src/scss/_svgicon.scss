@@ -1,19 +1,5 @@
 
 
-html.work{
-    .play{
-        width:100px;
-    }
-}
-
-.paly{
-    svg{
-        path{
-
-        }
-    }
-}
-
 .play svg path {
     stroke:#fff;
     stroke-width:3;
@@ -23,158 +9,22 @@ html.work{
     transition: d 0.4s, fill 0.6s;
 
 }
-.play svg{
-    transition:all .4s;
-}
 
 
-@keyframes svgMove {
-    to{
-        transform: translate(11px, -11px);
+
+    .svg-human{
+        position:absolute;
+        right:20px;
+        bottom:20px;
+        width:100px;
     }
-    from{
+.loader .svg-human{width:50px;height:50px;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;}
+.loader .svg-human .svg-ico  .st1{fill:none;stroke:#999;stroke-width:2;stroke-miterlimit:10;}
+.loader .svg-human .svg-ico  .st2{fill:none;stroke:#999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
 
-    }
-}
-.rotate{
-    // animation: lineRotate 1s infinite linear;
-    transition:all 1s;
-}
-@keyframes lineRotate {
-  to {
-    transform:rotate(360deg);
-  }
-  from{
-transform:rotate(-360deg);
-  }
-}
-
-
-    @keyframes svgScale {
-      to {
-        transform: scale(.8) translate(-6px, -10px);
-        stroke-width:1;
-      }
-      from{
-
-      }
-    }
-
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-  from{
-
-  }
-}
-
-@keyframes opacityNone {
-  to {
-    opacity:0;
-  }
-  from{
-
-  }
-}
-
-@keyframes opacityOn {
-  to {
-    opacity:0.2;
-  }
-  from{
-
-  }
-}
-
-@keyframes opacityOnOff {
-  to {
-    opacity:0.2;
-  }
-  from{
-    opacity:0;
-  }
-}
-
-@keyframes opacityOn100 {
-  to {
-    opacity:1;
-  }
-  from{
-
-  }
-}
-
-
-.img-box .svg-human{
-    position:absolute;
-    right:20px;
-    bottom:20px;
-    width:100px;
-}
-html.work .svg-human{
-    position:absolute;
-    left:14%;
-    bottom:20%;
-    width:460px!important;
-    svg{
-        width: 100%;
-
-        .line{
-            fill:none;
-            stroke:#fff;
-            stroke-width:0.2!important;
-            opacity:.2;
-        }
-    }
-    canvas{
-        width:100%
-    }
-
-
-}
-
-html.main .svg-human{
-    transition:all 5s linear;
-    position:absolute;
-    width:200px;
-    height:200px;
-    top:0;
-    right:0;
-}
-html.main .svg-human.add{
-    bottom:0;
-    top:auto;
-    left:0;
-    right:auto;
-}
-
-@keyframes meteo {
-    to{
-
-        // transform: rotate(-360deg);
-    }
-}
-.svg-time .svg-ico .line{
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 15s 3s linear forwards;
-}
-
-
-
-.svg-human .svg-ico .line{
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 15s 4s linear forwards;
-}
-
-      .svg-time .svg-ico .st0{fill:none;}
-      .svg-time .svg-ico .st1{fill:none;stroke:#fff;stroke-width:0.5;stroke-miterlimit:10;opacity:0.3}
-      .svg-time .svg-ico .st2{fill:$pointColor;}
-      .svg-time .svg-ico .st3{fill:none;stroke:#d9d9d9;stroke-miterlimit:10;stroke-width:1;}
-
+.data-load .svg-human{width:50px;height:50px;position: static;margin:auto;}
+.data-load .svg-human .svg-ico  .st1{fill:none;stroke:#999;stroke-width:2;stroke-miterlimit:10;}
+.data-load .svg-human .svg-ico  .st2{fill:none;stroke:#999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
 
 
      .svg-human .svg-ico .st0{fill:none;}
@@ -182,23 +32,13 @@ html.main .svg-human.add{
      .svg-human .svg-ico  .st2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
      .svg-human .svg-ico .st3{fill:$pointColor;}
 
-   .svg-human .svg-ico .dash{
-       animation: dash 3s infinite linear;
-   }
+       .svg-human .svg-ico .dash{
+           animation: dash 3s infinite linear;
+       }
 
 
 
 
 /* animation */
-   @keyframes dashback {from {stroke-dashoffset: 0;}to {stroke-dashoffset: 1000;}}
+
 @keyframes dash {from {stroke-dashoffset: 1000;}to {stroke-dashoffset: 0;}}
-
-@keyframes btnMotion {0%{transform:translateY(-20px);}100%{transform:translateY(0px);}}
-@keyframes scale {
-    0%{transform:scale(1.05);}
-    100%{transform:scale(1);}
-}
-
-@keyframes lineNone {
-
-}

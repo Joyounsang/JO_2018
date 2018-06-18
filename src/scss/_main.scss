@@ -1,6 +1,7 @@
 .main-component{
     width: 100%;
     height:80%;
+    min-height:600px;
     display:table;
     >section{
         display: table-cell;
@@ -8,6 +9,7 @@
         width: 100%;
     }
     .main-article{
+
         text-align:center;
         .main-img{
             width: 200px;

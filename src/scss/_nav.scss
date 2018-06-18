@@ -22,9 +22,10 @@ header{
                text-indent:-999em;
                background:url('../images/logo.svg') center no-repeat;
                background-size:80%;
-               transition:opacity .4s;
+               transition:all .4s;
                &:hover{
-                   opacity: 0.5;
+                   transform:rotate(10deg);
+                   opacity:0.8;
                }
            }
        }
@@ -44,7 +45,7 @@ header{
                }
                &:hover{
                    a{
-                       color:$pointColor;
+                       color:$pointColor!important;
                    }
                }
 
