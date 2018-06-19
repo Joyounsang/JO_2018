@@ -17,6 +17,16 @@ html{
                 font-weight:400;
             }
         }
+        .btnico{
+            &.back{
+
+                &:before{
+                    background: url(../images/icon/back_w.svg);
+                    opacity:1;
+                }
+
+            }
+        }
     }
     &.login{
         header,footer{
