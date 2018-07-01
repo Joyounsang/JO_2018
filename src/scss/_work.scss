@@ -1,5 +1,8 @@
 
     .work{
+        .video-box{
+            margin-bottom:40px;
+        }
         &Archive{
             .workList{
                 width:100%;
@@ -29,15 +32,6 @@
 
                 }
             }
-            // position: fixed;
-            // width:100%;
-            // height:100vh;
-            // padding:16%;
-            // left:0;
-            // top:0!important;
-            // margin-left:0!important;
-            // margin-top:0!important;
-            // background:rgb(36, 41, 46);
             .scroll-box{
                 margin-top:40px;
                 max-height:100%;

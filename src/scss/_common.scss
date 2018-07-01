@@ -7,14 +7,57 @@
 ::-moz-placeholder {color: #b6b6b6; }
 
 html {
-    color: #222;
+    color: $fontColor;
+    font-family:'geomanistregular', sans-serif;
     font-size: 16px;
+    font-weight:300;
     line-height: 1.4;
 	letter-spacing:1px;
-    font-family:'geomanistregular', sans-serif;
-    font-weight:300;
+    -webkit-font-smoothing: antialiased;
 }
 
+// event
+html{
+    &.main{
+        .contents{
+            background:#fff;
+        }
+    }
+
+    &.ov-hidden{
+        overflow: hidden;
+    }
+
+    &.black{
+        background:#24292e;
+        .title-box{
+            h2,p{
+                color:#fff;
+            }
+        }
+        .seets{
+            a{
+                color:#fff;
+                font-weight:400;
+            }
+        }
+        .btnico{
+            &.back{
+                &:before{
+                    background: url(../images/icon/back_w.svg);
+                    opacity:1;
+                }
+            }
+            &.left{
+
+                &:before{
+                    background: url(../images/icon/left_w.svg);
+                    opacity:1;
+                }
+            }
+        }
+    }
+}
 
 /* ==========================================================================
    Browser Upgrade Prompt

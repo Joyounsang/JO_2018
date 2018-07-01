@@ -1,6 +1,6 @@
 
 $baseColor: #303f4f;
-$pointColor: #FF3D7F;
+$pointColor: #da4d73;
 
 $fontColor: #222;
 
@@ -35,4 +35,18 @@ $lineColor: #e7e7e7;
     border-color: rgba(48,63,79,.4);
     box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
     outline: 0;
+}
+
+
+@mixin labelFont{
+    font-size: 11px;
+    font-weight:600;
+    vertical-align:middle;
+    color:#222;
+    line-height:30px;
+}
+
+@mixin systemFont{
+    font-size: 11px;
+    color:#999;
 }

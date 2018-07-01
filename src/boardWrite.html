@@ -19,7 +19,7 @@
                     </div>
 
 
-                    <div class="row col-3div1">
+                    <div class="row col-3div1 crud-editor">
                         <div class="columm">
                             <table>
                                 <caption></caption>
@@ -71,22 +71,11 @@
                                                 <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
                                                 <label for="radio1">radiobox</label>
 
-
-
                                                 <input class="rdo" id="radio2" type="radio" name="radio_set">
                                                 <label for="radio2">radiobox</label>
 
                                             </span>
-                                            <script>
 
-
-                                                $('.rdo, .chk').after('<label class="cutomiptico">icon</label>');
-
-                                                $('.cutomiptico').on('click', function(){
-                                                    var rdoId = $(this).prev().attr('id');
-                                                    $(this).attr('for', rdoId);
-                                                });
-                                            </script>
                                         </td>
                                     </tr>
                                     <tr>
@@ -97,47 +86,13 @@
                                              <input type="text">
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">file</th>
-
-                                        <td>
-
-
-
-                                             <form method="post" action="/upload">
-                                                    <label class="file">
-                                                            <input type="file" multiple>
-                                                    </label>
-
-                                                    <ul class="file-list">
-                                                        <li>
-                                                            <span>1234.png</span>
-                                                            <span class="btnico close"></span>
-                                                        </li>
-                                                        <li>
-                                                            <span>1234.png</span>
-                                                            <span class="btnico close"></span>
-                                                        </li>
-                                                        <li>
-                                                            <span>1234.png</span>
-                                                            <span class="btnico close"></span>
-                                                        </li>
-                                                        <li>
-                                                            <span>1234.png</span>
-                                                            <span class="btnico close"></span>
-                                                        </li>
-                                                    </ul>
-                                             </form>
-
-                                        </td>
-                                    </tr>
 
                                 </tbody>
                             </table>
                         </div>
                         <div class="columm">
                             <div class="filter-box">
-                                <textarea style="height:600px;" name="name" rows="8" cols="80"></textarea>
+                                <textarea style="height:500px;" name="name" rows="8" cols="80"></textarea>
                             </div>
                         </div>
                     </div>

@@ -1,19 +1,15 @@
 // inputs align & margin
 .likelabel{
+    @include labelFont;
     margin: 0 6px;
-    vertical-align:middle;
-    font-size:11px;
-    font-weight:600;
 }
 .ipt-column{
     display:inline-block;
     margin-bottom:10px;
 
     label,.likelabel{
+        @include labelFont;
         margin-right:10px;
-        font-size:11px;
-        font-weight:600;
-        vertical-align: middle;
         &.btnico{
             margin-right:0;
         }
@@ -26,7 +22,7 @@
 
         .responsive{
             display:block;
-            padding-right:70px;
+            padding-right: 80px;
             input{
                 width:100%;
             }
@@ -41,15 +37,15 @@
     &.gui{
         display:inline-block;
         font-size:0;
+
         input{
-            border-radius:3px 0 0 3px!important;
+
         }
         .btnico{
             border:1px solid #cbd6e2;
-            border-radius:0 3px 3px 0;
             border-left:0;
-            width:30px;
-            height:30px;
+            width:36px;
+            height:36px;
         }
         &.inner{
             position:relative;
@@ -63,13 +59,21 @@
     }
 }
 
-
 // label
+
 .label{
     &like{
 
     }
     &guide{
+        p{
+            padding-left:14px;
+        }
+        display:inline-block;
+        position:relative;
+        padding-left:10px;
+        line-height:20px;
+        vertical-align:top;
         color: #516f90;
         font-size:12px;
         font-weight:400;
@@ -78,6 +82,15 @@
             content:'※';
             color:#516f90;
             padding-right:4px;
+            float: left;
+            display:block;
+            overflow:hidden;
+        }
+        &:after {
+            float: left;
+            display:block;
+            overflow:hidden;
+            content: '';
         }
         a{
             color:$pointColor;
@@ -111,11 +124,11 @@ input[type=week],
 select{
     font-size:11px;
     padding:0 10px;
-    height:30px;
-    min-height:30px;
-    line-height:30px;
+    height:36px;
+    min-height:36px;
+    line-height:36px;
     background:#fafafa;
-    border:1px solid #cbd6e2;
+    border:1px solid #e7e7e7;
     border-radius:3px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -333,14 +346,42 @@ label.file {
     }
 }
 
-// datepicker
-.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{ /* next/prev button */
-display:inline-block;width:20px;height:20px;background:url('../images/global_spr_icon.png') no-repeat;}
-.ui-datepicker .ui-datepicker-prev span{background-position: -11px -33px;}
-.ui-datepicker .ui-datepicker-next span{background-position: -49px -33px}
-.ui-datepicker .ui-datepicker-prev:hover span{background-position:-91px -33px}
-.ui-datepicker .ui-datepicker-next:hover span{background-position:-129px -33px;}
-.ui-datepicker th span{/* 월화수목금 */ }
-.ui-datepicker-week-end span{/* 토일 */ color:#ff5a4c}
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{/* 현재 */ background:$lineColor}
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{ /* 선택날자 */ background:#ff5a4c;color:#fff}
+
+// dataTables
+.dtbl{
+    &-side{
+        .btn{
+            margin-right:4px;
+        }
+    }
+    &-header{
+        margin:10px 0;
+        &:after{
+            @include clearfix;
+        }
+
+        .dataTables_info, .dataTables_filter label{
+            @include labelFont;
+            margin-left:10px;
+        }
+        .dataTables_filter{
+            input{
+                margin-left:10px;
+            }
+        }
+
+        &>div{
+            float:left;
+        }
+        .dtbl-search{
+            float:right;
+        }
+    }
+    &-footer{
+        margin-top:10px;
+        .pagination{
+            display:table;
+            margin:auto;
+        }
+    }
+}

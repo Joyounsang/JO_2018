@@ -67,124 +67,54 @@ if (Project == undefined || Project == null) {
             }
             return other;
         }, // browser test...
-        isCheck = check(),
-
-        // Modal event
-        showModal = function (target) {
-            if ($(target).length) {
-                setLayerSize(target);
-                if (!$('.modal-bg').length) {
-                    $('html').append('<div class="modal-bg"></div>');
-                }
-
-                if (isCheck > 8) {
-                    $(target + ', .modal-bg').fadeIn(250);
-                } else {
-                    $(target + ', .modal-bg').show();
-                }
-            }
-        },
-
-
-
-        setLayerSize = function (target) {
-            var layerHeight, scrollHeight, layerWidth;
-
-            layerHeight = ($window.height() - $(target).height()) / 2;
-            scrollHeight = ($window.scrollTop() + layerHeight);
-            layerWidth = $(target).outerWidth();
-
-            $(target).css('top', scrollHeight);
-            $(target).css('margin-left', -layerWidth/2);
-        },
-
-        closeModal = function (target) {
-            var isVisible = $(target).is(':visible');
-            var modalLength = $('.modal:visible').length;
-
-            if (isVisible) {
-              if (modalLength > 1) {
-                $(target).fadeOut(250);
-              } else {
-                $(target + ', .modal-bg').fadeOut(250);
-              }
-            }
-        };
+        isCheck = check()
 
         return {
-            check: check, // check browser
-            showModal: showModal, // modal open
-            closeModal: closeModal, // modal close
+            check: check
         }
 
     })(); // Project Module END
   }
 
+
+
 $(document).ready(function(){
-    if($('.black').length > 0){
-        $('html, header, footer, .gnb').addClass('black');
-    } else if($('main').length > 0){
-        $('html').addClass('main');
-        $('header, .gnb').addClass('black');
-    }
-
-    if($('html').hasClass('main')){
-        mainUi();
-    }
-
-    if($('.container.work').length > 0){
-        $('.gnb li.space').addClass('on');
-    } else if($('.container.about').length > 0){
-        $('.gnb li.human').addClass('on');
-    }
-    loading();
-
-    tabUi();
-
-
-
-    $('.calendarOpen').on('click', function(e){
-        e.preventDefault();
-        $('.calendar-box').toggleClass('on');
-    });
+    loadingUi();
+    backgroundChangeUi();
+    scheduleUi();
+    modalUi();
+    signInUpUi();
+    topBannerUi();
+    videoBoxUi();
+    inputsDesignPattern();
+    gridSystemStatic();
+    accessiblity();
 
     $('.scrollUp').on('click', function(){
         scrollUpUi();
     });
+
     $('.back').on('click', function(){
         window.history.back();
     });
-    $('.viewToggle').on('click',function(e){
-        e.preventDefault();
-        $('.schedule-box').toggleClass('active');
-    });
-
-    // open modal
-    var $btn_modal = $('.btn-modal');
-    $btn_modal.on('click', function (e) {
-      e.preventDefault();
-      var $this = $(this),
-          target = $this.attr('href');
-      Project.showModal(target);
-    });
-
-    // close modal
-    $('.modal .close').on('click', function (e) {
-        e.preventDefault();
-        var target = '#' + $(this).parents('.modal').attr('id');
-        Project.closeModal(target);
-    });
-
-
-
-
 
 
 
 });
 
+$(window).on('resize',function() {
+    gridSystemStatic();
+}).resize();
 
-function loading(){
+$(window).on('scroll', function(){
+    scrollNav();
+}).scroll();
+
+
+
+
+
+function loadingUi(){
     $('.main-video video').delay(2000).animate({opacity:1},2000);
     setTimeout(function() {
         autoTypingUi(".main-article",100);
@@ -192,16 +122,6 @@ function loading(){
 
 
     $('.loader').delay(500).animate({height:0},800);
-    // $('.loader').delay(500).animate({width:0},800);
-    // $(window).on('resize',function(){
-    //     if($(window).width() <= 600){
-    //         $('.loader').animate({height:100+'%'},800);
-    //     } else {
-    //         $('.loader').animate({height:0},800);
-    //     }
-    // }).resize();
-
-
 
     $('html').addClass('ov-hidden');
     setTimeout(function() {
@@ -224,6 +144,33 @@ function loading(){
     });
 
 }
+function backgroundChangeUi(){
+    if($('.black').length > 0){
+        $('html, header, footer, .gnb').addClass('black');
+    } else if($('main').length > 0){
+        $('html').addClass('main');
+        $('header, .gnb').addClass('black');
+    }
+
+    if($('html').hasClass('main')){
+        mainUi();
+    }
+
+    if($('.container.work').length > 0){
+        $('.gnb li.space').addClass('on');
+    } else if($('.container.about').length > 0){
+        $('.gnb li.human').addClass('on');
+    }
+}
+function scrollNav(){
+    var windowScrollTop = $(window).scrollTop();
+    var $barProgress = $('.progress');
+    if ( windowScrollTop > 0) {
+        var scrollPercent = 100 * windowScrollTop / ($(document).height() - $(window).height());
+        $barProgress.css('display','block');
+        $barProgress.height(parseInt(scrollPercent, 10) + "%");
+    }
+}
 function mainUi(){
     var changeOffsetTop = $('.timeline-top').offset().top;
     var topstickH =$('.timeline-top').height();
@@ -245,35 +192,64 @@ function mainUi(){
           },1000);
       });
 }
-function tabUi(){
-    var idx = $('.tab_cont').index();
-    $('.tab_cont').not(':eq('+idx+')').hide(); // tab_cont :: all hide
-
-    $('.tab_lst').each(function(){ // tab_lst li first :: on
-        var $this = $(this);
-        var $first_lst = $(this).children('li').eq(0);
-        $first_lst.addClass('on');
-    });
-
-    $('.tab_container').each(function () { // tab_cont first :: on
-        var $this = $(this);
-        var $first_tab = $(this).children('.tab_cont').eq(0);
-        $first_tab.show();
-    });
-
-    var $btn_tab = $('.tab_lst').find('li');
-    $btn_tab.on('click', function(e){
+function modalUi(){
+    $('.modalLoad').on('click',function(e){
         e.preventDefault();
+        var $self = $(this);
+        var $target = $($(this).attr('href'));
 
-        var $this = $(this),
-            $thisrel = $this.attr('rel'); // tab_lst li :: rel
-            $thisClass = $('.'+ $thisrel); // tab_cont :: class
-            target = $thisClass.parent('.tab_container').attr('id'); // tab_container :: id
+        // open and focusin
+        $target.attr('tabindex', '0').fadeIn(250).focus();
 
-            $('#' + target).find('.tab_cont').hide();
-            $('#' + target + ' .' + $thisrel).fadeIn();
+        // create sizing
+        var layerHeight = $target.outerHeight();
+        var layerWidth = $target.outerWidth();
+        $target.css({
+            marginLeft : -layerWidth/2,
+            marginTop : -layerHeight/2
+        });
 
-            $this.addClass('on').siblings().removeClass('on'); // tab_lst li :: on
+        // create background
+        if (!$('.dim').length) {
+            $('html').append('<div class="dim"></div>');
+        }
+        $('.dim').fadeIn(250);
+
+        // keydown focus repeat
+        $target.find(".close").on('keydown', function(e){
+            if(e.which=='9'){
+                $target.attr('tabindex', '0').focus();
+            }
+        });
+
+        // close and focusout
+        $target.find(".close").on('click',function(e){
+            e.preventDefault();
+
+            $target.fadeOut(250);
+            $self.focus();
+            $(this).off('click');
+            var isVisible = $target.is(':visible');
+            var modalLength = $('.modal:visible').length;
+
+            if (isVisible) {
+              if (modalLength > 1) {
+                $target.fadeOut(250);
+              } else {
+                $('.dim').fadeOut(250);
+              }
+            }
+        });
+
+        $(document).on("keyup", function(e){
+            if(e.which=='27'){
+                $target.fadeOut(250);
+                $('.dim').fadeOut(250);
+                $self.focus();
+            }
+        });
+
+
     });
 }
 function scrollUpUi(){
@@ -303,26 +279,206 @@ function autoTypingUi(elementClass, typingSpeed){
     }
   },30);
 }
+function scheduleUi(){
+    var newdate = new Date();
+    var scAllCont = $('.schedule-box .event-item').length;
+    console.log(newdate);
+    $('.scheduleAllCont').text(scAllCont);
 
 
-
-
-
-
-
-$(window).on('scroll', function(){
-    scrollNav();
-}).scroll();
-
-
-
-
-function scrollNav(){
-var windowScrollTop = $(window).scrollTop();
-var $barProgress = $('.progress');
-if ( windowScrollTop > 0) {
-    var scrollPercent = 100 * windowScrollTop / ($(document).height() - $(window).height());
-    $barProgress.css('display','block');
-    $barProgress.height(parseInt(scrollPercent, 10) + "%");
+    $('.viewToggle').on('click',function(e){
+        e.preventDefault();
+        $(this).toggleClass('board');
+        $('.schedule-box').toggleClass('active');
+    });
 }
+function topBannerUi(){
+    $('.top-banner-control').on('click',function(){
+        $('.top-banner').toggleClass('on');
+    });
 }
+function videoBoxUi(){
+    $('.video-box').each(function(){
+        var $this = $(this);
+        var video = $this.find('video');
+
+        var controlStr ='';
+            controlStr ='<div class="video-controls"><button class="togglePaly btnico play" type="button">재생/일시정지</button></div><div class="custom-controller"><div class="progressTime"><span class="current">0</span><span class="duration"></span></div><div class="progressBar"><div class="timeBar"></div><div class="bufferBar"></div></div><div class="progressBtn"><!-- <button class="ctl-play" type="button">재생</button><button class="ctl-pause" type="button">일시정지</button> --><button class="ctl-replay btnico reflash" type="button">다시보기</button></div></div>';
+            $(this).append(controlStr);
+
+
+
+        $this.find('.togglePaly').on('click', function() {
+
+
+            if(video[0].paused) {
+                video[0].play();
+            }
+            else {
+                video[0].pause();
+            }
+
+            return false;
+        });
+
+        // video status
+        video.on('play', function(){
+            $this.find('.togglePaly').addClass('active');
+            $(this).parents('.video-box').removeClass('grayscale');
+        });
+        video.on('pause', function(){
+            $this.find('.togglePaly').removeClass('active');
+            $(this).parents('.video-box').addClass('grayscale');
+        });
+        video.on('ended', function(){
+            $this.find('.togglePaly').removeClass('active');
+            $(this).parents('.video-box').addClass('grayscale');
+        });
+
+
+
+        $this.find('.ctl-play').on('click', function() {
+          video[0].play();
+        });
+
+        $this.find('.ctl-pause').on('click', function() {
+          video[0].pause();
+        });
+
+        $this.find('.ctl-replay').on('click', function() {
+          video[0].load()
+          video[0].play();
+        });
+
+        //update HTML5 video current play time
+        video.on('timeupdate', function() {
+            var currentPos = video[0].currentTime; //Get currenttime
+            var maxduration = video[0].duration; //Get video duration
+            var percentage = 100 * currentPos / maxduration; //in %
+
+            $this.find('.current').text(Math.floor(currentPos)); // currentTime math
+            $this.find('.duration').text(Math.floor(maxduration));  // currentTime max math
+            $this.find('.timeBar').css('width', percentage+'%'); // progress bar ui
+        });
+
+        //get HTML5 video time duration
+        // video.on('loadedmetadata', function() {
+        //     $this.find('.duration').text(video[0].duration);
+        // });
+
+
+        var timeDrag = false;   /* progress bar Drag status */
+        $this.find('.progressBar').mousedown(function(e) {
+            timeDrag = true;
+            updatebar(e.pageX);
+        });
+        $(document).mouseup(function(e) {
+            if(timeDrag) {
+                timeDrag = false;
+                updatebar(e.pageX);
+            }
+        });
+        $(document).mousemove(function(e) {
+            if(timeDrag) {
+                updatebar(e.pageX);
+            }
+        });
+
+        //update Progress Bar control
+        var updatebar = function(x) {
+            var progress = $('.progressBar');
+            var maxduration = video[0].duration; //Video duraiton
+            var position = x - progress.offset().left; //Click pos
+            var percentage = 100 * position / progress.width();
+
+            //Check within range
+            if(percentage > 100) {
+                percentage = 100;
+            }
+            if(percentage < 0) {
+                percentage = 0;
+            }
+
+            //Update progress bar and video currenttime
+            $this.find('.timeBar').css('width', percentage+'%');
+            video[0].currentTime = maxduration * percentage / 100;
+        };
+
+
+        // berffer progressbar style
+        var startBuffer = function() {
+            var maxduration = video[0].duration;
+            var currentBuffer = video[0].buffered.end(0);
+            var percentage = 100 * currentBuffer / maxduration;
+            $this.find('.bufferBar').css('width', percentage+'%');
+
+            if(currentBuffer < maxduration) {
+                setTimeout(startBuffer, 500);
+            }
+        };
+        setTimeout(startBuffer, 500);
+
+    });
+}videoBoxUi();
+function signInUpUi(){
+    $('.btn-signup').on('click',function(e){
+        e.preventDefault();
+        $('.signin').hide();
+        $('.signup').fadeIn();
+    });
+    $('.btn-signin').on('click',function(e){
+        e.preventDefault();
+        $('.signin').fadeIn();
+        $('.signup').hide();
+    });
+}
+function inputsDesignPattern(){
+    $('.rdo, .chk').after('<label class="cutomiptico">icon</label>');
+
+    $('.cutomiptico').on('click', function(){
+        var rdoId = $(this).prev().attr('id');
+        $(this).attr('for', rdoId);
+    });
+}
+function gridSystemStatic() {
+    $(".row > .column").css("height", "auto");
+    var cNum = $(".row").length;
+
+    for (var i = 0; i < cNum; i++) {
+        var ccnum = "col-" + $(".row").eq(i).children(".column").length;
+        $(".row").eq(i).addClass(ccnum);
+    }
+}
+function accessiblity(){
+    $('.fnb').on('focusin', function(){
+        $(this).addClass('on');
+    });
+    $('.fnb').on('focusout', function(){
+        $(this).removeClass('on');
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    // var timeClone = new Array();
+    // $('.schedule-box .row .column.time').each(function(){
+    //     timeClone.push($(this).text());
+    // });
+    //
+    // for (i = 0; i < timeClone.length; i++) {
+    //     $('.time-clone').append('<li><a class="time-clone-link" href="#'+ '' +'">'+timeClone[i]+'</a></li>');
+    // }
+    //
+    // $('.time-clone-link').on('click',function(e){
+    //     e.preventDefault();
+    //     // $(this).parent('li').
+    // });
