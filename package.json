@@ -1,24 +1,36 @@
 {
-  "name": "project",
+  "name": "airport",
   "version": "1.0.0",
-  "description": "project description",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "url"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "url"
+  },
+  "homepage": "url",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-file-include": "^2.0.1",
-    "gulp-header": "^2.0.5",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-include": "^2.3.1",
+    "gulp-index": "^0.1.0",
     "gulp-jshint": "^2.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.1",
-    "gulp-uglify": "^3.0.0",
-    "jshint": "^2.9.5"
+    "gulp-minify": "^1.0.0",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.6",
+    "purify": "^3.3.1"
   }
 }

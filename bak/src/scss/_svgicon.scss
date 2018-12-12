@@ -1,0 +1,44 @@
+
+
+.play svg path {
+    stroke:#fff;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    transition: d 0.4s, fill 0.6s;
+
+}
+
+
+
+    .svg-human{
+        position:absolute;
+        right:20px;
+        bottom:20px;
+        width:100px;
+    }
+.loader .svg-human{width:50px;height:50px;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;}
+.loader .svg-human .svg-ico  .st1{fill:none;stroke:#999;stroke-width:2;stroke-miterlimit:10;}
+.loader .svg-human .svg-ico  .st2{fill:none;stroke:#999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
+
+.data-load .svg-human{width:50px;height:50px;position: static;margin:auto;}
+.data-load .svg-human .svg-ico  .st1{fill:none;stroke:#999;stroke-width:2;stroke-miterlimit:10;}
+.data-load .svg-human .svg-ico  .st2{fill:none;stroke:#999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
+
+
+     .svg-human .svg-ico .st0{fill:none;}
+     .svg-human .svg-ico  .st1{fill:none;stroke:#fff;stroke-width:2;stroke-miterlimit:10;}
+     .svg-human .svg-ico  .st2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2;stroke-dasharray:0.5,6,0,0}
+     .svg-human .svg-ico .st3{fill:$pointColor;}
+
+       .svg-human .svg-ico .dash{
+           animation: dash 3s infinite linear;
+       }
+
+
+
+
+/* animation */
+
+@keyframes dash {from {stroke-dashoffset: 1000;}to {stroke-dashoffset: 0;}}

@@ -1,0 +1,36 @@
+.ie{
+    &.ie9{
+
+    }
+    &.ie10{
+
+    }
+    &.ie11{
+
+    }
+}
+
+.firefox{
+
+}
+
+.chrome{
+
+}
+
+.safari{
+
+}
+
+// mobile reset
+.mobile{
+    *{
+        -webkit-tap-highlight-color: transparent;
+    }
+    body{
+        -webkit-text-size-adjust: 100%;
+    }
+    textarea{
+        -webkit-appearance: none;
+    }
+}

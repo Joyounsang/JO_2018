@@ -1,0 +1,318 @@
+    @@@include('./include/header.html')
+
+            <div class="container normal admin">
+
+
+                <section class="contents">
+
+
+                <div class="content-page">
+                    <div class="admin ">
+                        @@@include('./include/adminLnb.html')
+                        <div class="admin-filter">
+                            <a href="#" class="btnico back">back</a>
+                            <h1>Console / </h1><h2>Main</h2>
+                            <input type="text">
+                        </div>
+                        @@@include('./include/adminToday.html')
+
+
+
+
+
+
+                        <div class="admin-content">
+
+
+                        <div class="components default">
+                            <div class="component">
+                                <div class="title-box">
+                                    <h3>UI Graph <span class="guide-info">i</span></h3>
+                                    <p>Structure | UIelements.optionClass</p>
+                                </div>
+
+                                <div class="graph-box">
+                                    <canvas class="chartjs-render-monitor" id="myChart"></canvas>
+                                    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.js'></script>
+                                </div>
+                            </div>
+
+                            <div class="component">
+                                <div class="title-box" style="margin-top:40px;">
+                                    <h3>UI COmopnonofewi <span class="guide-info">i</span></h3>
+                                    <p>Structure | UIelements.optionClass</p>
+                                </div>
+
+                                <div class="tbl scope-col board">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col class="">
+                                            <col class="">
+                                            <col class="">
+                                            <col class="">
+                                            <col class="">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ON / OFF</th>
+                                                <th scope="col">address</th>
+                                                <th scope="col">menu</th>
+                                                <th scope="col">write</th>
+                                                <th scope="col">%</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ON</td>
+                                                <td>http://localhost:3000/views/adminMain.html</td>
+                                                <td>Human</td>
+                                                <td>25</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ON</td>
+                                                <td>http://localhost:3000/views/adminMain.html</td>
+                                                <td>Space</td>
+                                                <td>33</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ON</td>
+                                                <td>http://localhost:3000/views/adminMain.html</td>
+                                                <td>Time</td>
+                                                <td>12</td>
+                                                <td>0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ON</td>
+                                                <td>http://localhost:3000/views/adminMain.html</td>
+                                                <td>Time</td>
+                                                <td>12</td>
+                                                <td>0.00</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </section>
+
+            </div>
+            <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+            <script>
+            //
+            // var series = ["2016", "2017"];
+            //
+            // var dataset = [ {'A': 9, 'B':19, 'C':29, 'D':39, 'E':29, 'F':19, 'G':9},
+            //                 {'A':17, 'B':27, 'C':37, 'D':27, 'E':17, 'F':7,  'G':0} ];
+            //
+            // var keys = d3.keys(dataset[0]);
+            // var data = [];
+            //
+            // dataset.forEach(function(d, i) {
+            //     data[i] = keys.map(function(key) { return {x: key, y: d[key]}; })
+            // });
+            //
+            // var margin = {left: 20, top: 10, right: 10, bottom: 20};
+            // var svg = d3.select("svg");
+            // var width  = parseInt(svg.style("width"), 10) - margin.left - margin.right;
+            // var height = parseInt(svg.style("height"), 10)- margin.top  - margin.bottom;
+            //
+            // var svgG = svg.append("g")
+            //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            //
+            // var xScale = d3.scalePoint()//scaleBand() scaleOrdinal
+            //     .domain(keys)
+            //     .rangeRound([0, width]);
+            //
+            // var yScale = d3.scaleLinear()
+            //     .domain([0, d3.max(dataset, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice()
+            //     .range([height, 0]);
+            //
+            // var colors = d3.scaleOrdinal(d3.schemeCategory20);
+            //
+            // svgG.append("g")
+            //     .attr("class", "grid")
+            //     .attr("transform", "translate(0," + height + ")")
+            //     .call(d3.axisBottom(xScale)
+            //         .tickSize(-height)
+            //     );
+            //
+            // svgG.append("g")
+            //     .attr("class", "grid")
+            //     .call(d3.axisLeft(yScale)
+            //         .ticks(5)
+            //         .tickSize(-width)
+            //     );
+            //
+            // var line = d3.line()
+            //     //.curve(d3.curveBasis)
+            //     .x(function(d) { return xScale(d.x); })
+            //     .y(function(d) { return yScale(d.y); });
+            //
+            // var lineG = svgG.append("g")
+            //     .selectAll("g")
+            //     .data(data)
+            //     .enter().append("g");
+            //
+            // lineG.append("path")
+            //     .attr("class", "lineChart")
+            //     .style("stroke", function(d, i) { return colors( series[i]); })
+            //     .attr("d", function(d, i) {return line(d); });
+            //
+            // lineG.selectAll("dot")
+            //     .data(function(d) {return d })
+            //     .enter().append("circle")
+            //         .attr("r", 3)
+            //         .attr("cx", function(d) { return xScale(d.x) })
+            //         .attr("cy", function(d) { return yScale(d.y);})
+            //         .on("mouseover", function() { tooltip.style("display", null); })
+            //         .on("mouseout",  function() { tooltip.style("display", "none"); })
+            //         .on("mousemove", function(d) {
+            //             tooltip.style("left", (d3.event.pageX+10)+"px");
+            //             tooltip.style("top",  (d3.event.pageY-10)+"px");
+            //             tooltip.html(d.x + "<br/>" + d.y);
+            //         });
+            //
+            // var tooltip = d3.select("body").append("div").attr("class", "toolTip").style("display", "none");
+            //
+            // var legend = svgG.append("g")
+            //     .attr("text-anchor", "end")
+            //     .selectAll("g")
+            //     .data(series)
+            //     .enter().append("g")
+            //     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+            //
+            //   legend.append("rect")
+            //       .attr("x", width - 20)
+            //       .attr("width", 19)
+            //       .attr("height", 19)
+            //       .attr("fill", colors);
+            //
+            //   legend.append("text")
+            //       .attr("x", width - 30)
+            //       .attr("y", 9.5)
+            //       .attr("dy", "0.32em")
+            //       .text(function(d) { return d; });
+            //
+            //
+            //
+            //
+
+                var ctx = document.getElementById("myChart").getContext("2d");
+                ctx.canvas.height = 80;
+
+                var colors = {
+                  green: {
+                    fill: 'rgba(0,0,0,0)',
+                    stroke: '#d9d9d9'
+                  },
+                  lightBlue: {
+                      fill: 'rgba(0,0,0,0)',
+                    stroke: '#FF3D7F'
+
+                  }
+                };
+
+                var availableForExisting = [47, 9, 10, 9, 18, 19, 12];
+                var unavailable = [5, 9, 10, 9, 18, 29, 11];
+                var xData = [13, 14, 15, 16, 17, 18, 19];
+
+                var myChart = new Chart(ctx, {
+                  type: 'scatter',
+                  data: {
+                    labels: xData,
+                    datasets: [{
+                      label: "Unavailable",
+                      fill: true,
+                      backgroundColor: colors.lightBlue.fill,
+                      pointBackgroundColor: colors.lightBlue.stroke,
+                      borderColor: colors.lightBlue.stroke,
+                      pointHighlightStroke: colors.lightBlue.stroke,
+                      borderCapStyle: 'butt',
+                      data: unavailable,
+                       lineTension:0,
+                       borderWidth:1
+
+                    }, {
+                      label: "Available for Existing",
+                      fill: true,
+                      backgroundColor: colors.green.fill,
+                      pointBackgroundColor: colors.green.stroke,
+                      borderColor: colors.green.stroke,
+                      pointHighlightStroke: colors.green.stroke,
+                      borderCapStyle: 'butt',
+                      data: availableForExisting,
+                      lineTension:0,
+                      borderWidth:1
+                    }]
+                  },
+                  options: {
+                    responsive: true,
+                    // Can't just just `stacked: true` like the docs say
+                    scales: {
+                      yAxes: [{
+                        stacked: true,
+                        ticks: {
+                            min: 0,
+                            max: 50,
+                            stepSize: 10
+                        },
+                        gridLines: {
+                            drawTicks:false
+                        }
+                      }],
+                      xAxes: [{
+                          ticks: {
+                              min: 0,
+                              max: 50,
+                              stepSize: 10
+                          },
+                          gridLines: {
+                              drawOnChartArea: false,
+                              drawTicks:false
+                          }
+                      }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    animation: {
+                      duration: 3750
+                    }
+                  }
+                });
+            </script>
+    @@@include('./include/footer.html')

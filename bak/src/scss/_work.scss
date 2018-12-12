@@ -1,0 +1,160 @@
+
+    .work{
+        .video-box{
+            margin-bottom:40px;
+        }
+        &Archive{
+            .workList{
+                width:100%;
+                display:grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(100px, auto);
+                grid-column-gap: 20px;
+                grid-row-gap: 60px;
+
+                li{
+                    a{
+                        &:focus{
+                            box-shadow:none;
+                            img{
+                                @include focus;
+                            }
+                        }
+                    }
+
+                    margin-bottom:0;
+                    h4{
+                        color:#fff;
+                        font-size:1rem;
+                        padding-left:0;
+                        margin-top:20px;
+                        &:before{
+                            display:none;
+
+                        }
+                    }
+
+                }
+                img{
+                    display:block;
+
+                }
+            }
+            .scroll-box{
+                margin-top:40px;
+                max-height:100%;
+                height:100%;
+            }
+
+            .btnico.close{
+
+            }
+            &.simple{
+                .workArchiveList{
+                    display:block;
+                    margin-bottom:20px;
+                    img{
+                        display:none;
+                    }
+                }
+
+            }
+
+
+
+        }
+        &List{
+            img{
+                display:none;
+            }
+            li{
+                margin-bottom:4%;
+                a{
+                    display: block;
+                    font-size:1.5rem;
+                    line-height:1.4;
+                    color:#fff;
+
+                    &:hover,&.on{
+                        color:$pointColor;
+                    }
+                    h4{
+                        position:relative;
+                        font-weight:400;
+                        &:before{
+
+                            content: '';
+                            width: 20px;
+                            vertical-align: middle;
+                            display: inline-block;
+                            background: #fff;
+                            height: 1px;
+                            font-weight: 300;
+                            margin-right:10px;
+                            color: #999;
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+        &Count{
+            color:#fff;
+           font-size:5rem;
+             font-weight:400;
+        }
+        &Seq{
+            color:#fff;
+            display:inline-block;
+           font-size:8rem;
+             ;
+           margin-top: -5%;
+
+        }
+        &Info{
+            color:#fff;
+            width:240px;
+           font-size:1.125rem;
+             font-weight:400;
+           margin-bottom:1%;
+        }
+        &Date{
+           font-size:1rem;
+             font-weight:400;
+           color:#fff;
+        }
+        &Cover{
+           width: 100%;
+           height: 100%;
+           position: fixed;
+           left:0;
+           top: 0;
+           z-index: -1;
+           transition:all 1s;
+           background-size:cover!important;
+           background-position:center;
+           background-repeat:no-repeat;
+
+           &:before{
+               content:'';
+               display:block;
+
+               width:100%;
+               height:100%;
+               position:absolute;
+               top:0;
+               left:0;
+               background: linear-gradient(to right, rgba(36,41,46,0.5), rgba(36,41,46,0.7), rgba(36,41,46,0.9), rgba(36,41,46,1));
+           }
+        }
+        &Caption{
+           font-size:0.825rem;
+           width:300px;
+           margin-bottom:4%;
+        }
+        &Description{
+           margin-bottom:8%;
+        }
+    }

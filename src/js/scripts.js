@@ -104,6 +104,7 @@ $(document).ready(function(){
 
 $(window).on('resize',function() {
     gridSystemStatic();
+    modalUi();
 }).resize();
 
 $(window).on('scroll', function(){
@@ -197,64 +198,114 @@ function mainUi(){
       });
 }
 function modalUi(){
+    // sizing and position
+    modalSizing();
+
+    function modalSizing(){
+        $('.modal').each(function(){
+            var layerResize = $(window).height();
+            var layerHeight = $(this).outerHeight();
+            var layerWidth = $(this).outerWidth();
+            $(this).css({
+                marginLeft : -layerWidth/2,
+                marginTop : -layerHeight/2
+            });
+
+            $(this).find('.modal-body').css({
+                maxHeight : layerResize/2
+            });
+        });
+    }
+
     $('.modalLoad').on('click',function(e){
         e.preventDefault();
         var $self = $(this);
         var $target = $($(this).attr('href'));
+        var $targetId = $target.attr('id');
 
-        // open and focusin
-        $target.attr('tabindex', '0').fadeIn(250).focus();
+        modalSizing();
+        createDim();
+        $('.dim').addClass($targetId);
 
-        // create sizing
-        var layerHeight = $target.outerHeight();
-        var layerWidth = $target.outerWidth();
-        $target.css({
-            marginLeft : -layerWidth/2,
-            marginTop : -layerHeight/2
+        $target.insertAfter($self);
+        $target.fadeIn(250).find('.modal-header a').focus();
+
+        $target.find('.modal-header a').on('focusout', function(){
+            $(this).parent().next('.modal-body').find('.ancher').focus();
         });
-
-        // create background
-        if (!$('.dim').length) {
-            $('html').append('<div class="dim"></div>');
-        }
-        $('.dim').fadeIn(250);
 
         // keydown focus repeat
         $target.find(".close").on('keydown', function(e){
-            if(e.which=='9'){
-                $target.attr('tabindex', '0').focus();
+            if(e.which === 9){
+                setTimeout(function(){
+                    $target.find('.modal-header a').focus();
+                }, 1);
+            }
+        });
+
+        $target.on('keydown', function(e){
+            if( (e.shiftKey && e.keyCode === 9) ) {
+              setTimeout(function(){
+                $target.find('.modal-header a').focus();
+              }, 1);
             }
         });
 
         // close and focusout
+        var isVisible = $target.is(':visible');
+        var modalLength = $('.modal:visible').length;
+
         $target.find(".close").on('click',function(e){
             e.preventDefault();
-
             $target.fadeOut(250);
             $self.focus();
             $(this).off('click');
-            var isVisible = $target.is(':visible');
-            var modalLength = $('.modal:visible').length;
-
             if (isVisible) {
-              if (modalLength > 1) {
-                $target.fadeOut(250);
-              } else {
-                $('.dim').fadeOut(250);
-              }
+                if (modalLength > 1) {
+                    $target.fadeOut(250);
+                } else {
+                    removeDim();
+                }
             }
         });
-
-        $(document).on("keyup", function(e){
+        // keyboard interaction
+        $target.on("keyup", function(e){
             if(e.which=='27'){
                 $target.fadeOut(250);
-                $('.dim').fadeOut(250);
                 $self.focus();
+                $(this).off('click');
+                if (isVisible) {
+                    if (modalLength > 1) {
+                        $target.fadeOut(250);
+                    } else {
+                        removeDim();
+                    }
+                }
+
             }
         });
 
 
     });
+}
+
+function createDim(){
+    if (!$('.dim').length) {
+        $('body').append('<div class="dim"></div>');
+    }
+    $('.dim').fadeIn(250);
+    // $('body').addClass('scrollFix');
+    //$('.dim').on('touchmove scroll mousewheel', function(e) {
+    //    e.preventDefault();
+    //    e.stopPropagation();
+    //    return false;
+    //});
+}
+
+function removeDim(){
+    $('.dim').fadeOut(250);
+    // $('body').removeClass('scrollFix');
+    //$('body').removeClass('scrollFix').off('touchmove scroll mousewheel');
 }
 function scrollUpUi(){
     $('html,body').animate({

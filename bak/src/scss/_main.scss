@@ -1,0 +1,94 @@
+.main-component{
+    width: 100%;
+    height:80%;
+    min-height:600px;
+    display:table;
+    position: relative;
+    .scrollDown{
+        position: absolute;
+        bottom:80px;
+        background:#fff;
+        border-radius: 50%;
+        width:50px;
+        height:50px;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+    >section{
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+    .main-article{
+
+        text-align:center;
+        .main-img{
+            width: 200px;
+        }
+        .main-text{
+            width:38%;
+            margin:auto;
+            font-size: 3.5rem;
+            font-weight: 400;
+            transition: all .4s;
+            line-height:1.3;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-top: 1%;
+        }
+    }
+    .main-video{
+        background: #24292e;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        video{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            opacity:.1;
+        }
+        &:before{
+            content: '';
+            display: block;
+            // background: #24292e;
+            background:radial-gradient(#303f4f, #24292e);
+            opacity: .85;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}
+
+
+.timeline-title{
+    text-align:center;
+    font-size: 1.5rem;
+    height:20%;
+    background:#fafafa;
+    .btnico{
+        display:block;
+        margin: 20px auto auto;
+    }
+}
+.timeline-top{
+    padding-top:60px;
+    width:100%;
+    background:#fff;
+    border-bottom: 1px solid $lineColor;
+    &.fixed{
+        position:fixed;
+        top:0;
+        padding-top:5%;
+        z-index:2;
+    }
+}

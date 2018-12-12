@@ -1,0 +1,94 @@
+::selection {color:$pointColor}
+:-ms-selection {color: $pointColor;}
+::-moz-selection {color: $pointColor;}
+
+::-webkit-input-placeholder {color: #b6b6b6; }
+:-ms-input-placeholder {color: #b6b6b6; }
+::-moz-placeholder {color: #b6b6b6; }
+
+html {
+    color: $fontColor;
+    font-family:'geomanistregular', sans-serif;
+    font-size: 16px;
+    font-weight:300;
+    line-height: 1.4;
+	letter-spacing:1px;
+    -webkit-font-smoothing: antialiased;
+}
+.wrapper{
+    height: 100%;
+}
+// event
+html{
+    &.main{
+        .contents{
+            background:#fff;
+        }
+    }
+
+    &.ov-hidden{
+        overflow: hidden;
+    }
+
+    &.black{
+        background:#24292e;
+        .title-box{
+            h2,p{
+                color:#fff;
+            }
+        }
+        .seets{
+            a{
+                color:#fff;
+                font-weight:400;
+            }
+        }
+        .btnico{
+            &.back{
+                &:before{
+                    background: url(../images/icon/back_w.svg);
+                    opacity:1;
+                }
+            }
+            &.left{
+
+                &:before{
+                    background: url(../images/icon/left_w.svg);
+                    opacity:1;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}

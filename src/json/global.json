@@ -1,0 +1,191 @@
+[
+    {
+      "seq" : 16,
+      "field" : "Commercial",
+      "project" : "LGcns smart contact center Ai service contactbot",
+      "date" : "Jan. 18, 2018",
+      "dateslash" : "20/04/2014",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/asiana",
+      "description" : "Incheon Airport."
+    },
+
+    {
+      "seq" : 15,
+      "field" : "Commercial",
+      "project" : "drone-works mobile",
+      "date" : "Jan. 18, 2018",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/tcd",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 14,
+      "field" : "Commercial",
+      "project" : "ecommerce team website",
+      "date" : "Jan. 18, 2018",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 13,
+      "field" : "Commercial",
+      "project" : "Incheon Airport",
+      "date" : "Jan. 18, 2018",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 12,
+      "field" : "Commercial",
+      "project" : "National Theater of Korea Website renual",
+      "date" : "Jan. 18, 2017",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 11,
+      "field" : "Commercial",
+      "project" : "Mdpark heartin website",
+      "date" : "Jan. 18, 2017",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 10,
+      "field" : "Commercial",
+      "project" : "KITECH quality analysis system",
+      "date" : "Jan. 18, 2017",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+    {
+      "seq" : 9,
+      "field" : "Public",
+      "project" : "Seminar. DvPvD",
+      "date" : "Jan. 18, 2017",
+      "dateslash" : "18/01/2018",
+      "responsibility" : "Design, Development",
+      "url" : "work_koica",
+      "images" : "assets/images/works/airport",
+      "description" : "Incheon Airport."
+    },
+  {
+    "seq" : 8,
+    "field" : "Commercial",
+    "project" : "T Cell Development Laboratory in POSTECH",
+    "date" : "Sep. 1, 2017",
+    "dateslash" : "28/02/2014",
+    "responsibility" : "Planning, Design, Development",
+    "url" : "work_tcd",
+    "images" : "assets/images/works/tcd",
+    "description" : "TCD (T Cell Development Laboratory) 연구소는 연구목적과 논문, 학생들을 소개하는 웹사이트이다. 대표적인 T cell의 세포 컬러의 활용으로 일관성을 유지시켰으며, 아이콘의 사용을 최소화하고 실험 인포그래픽을 활용하여 사용자가 보다 연구 목적에 집중할 수 있도록 UX를 설계했다."
+  },
+  {
+    "seq" : 7,
+    "field" : "Public",
+    "project" : "Suggestion for UI/UX improvement in Asiana site",
+    "date" : "Sep. 23, 2016",
+    "dateslash" : "20/04/2014",
+    "responsibility" : "Planning, Design, Development",
+    "url" : "work_asiana",
+    "images" : "assets/images/works/asiana",
+    "description" : "아시아나 항공 (Asiana airlines) 웹사이트의 온라인 예약 서비스의 불편함을 개선하는 데 목적을 두고 시작한 프로젝트성 작업으로 방대한 양의 정보를 보다 효율적으로 전달하고자 했다. 아시아나 항공 메인 컬러의 활용으로 기업 고유 아이덴티티를 부각시켰으며, 또한 국적과 관계 없이 고객이 보다 쉽게 예약 시스템에 접근할 수 있도록 Step By Step 형식 UX를 설계했다."
+  },
+  {
+    "seq" : 6,
+    "field" : "Art",
+    "project" : "Human, Time and Planet",
+    "date" : "Continuously",
+    "dateslash" : "20/05/2014",
+    "responsibility" : "Free(mm), Digital, Drawing",
+    "url" : "work_drawing",
+    "images" : "assets/images/works/drawing",
+    "description" : "우리가 사는 시간속에 인간은 우주와 매우 밀접한 관계에 있다. 창조의 어머니, 나, 생각, 사랑, 꿈을 시각화합니다. In the time we are living, humans are very closely related to the universe.I expressed the mother of creation, me, thoughts, love, and dreams in painting."
+  },
+  {
+    "seq" : 5,
+    "field" : "Public",
+    "project" : "Lost Faces of Wild",
+    "date" : "Oct. 1, 2016",
+    "dateslash" : "09/07/2014",
+    "responsibility" : "150(w)*100(h)mm, Planning, Design, Illustration",
+    "url" : "work_lfow",
+    "images" : "assets/images/works/lfow",
+    "description" : "자연에서 멸종위기에 처했거나, 혹은 사라졌거나. < 사라진 야생의 얼굴들 > 은 동물들의 얼굴 형태를 선을 이용하여 시각적 착각을 다룬 옵아트로 사라져가는 야생의 초상화 엽서를 제작했다. 검은코뿔소, 설표, 톰슨가젤, 큰뿔양, 자이언트판다, 북극곰 총 6종으로 본 일러스트는 엽서 SNS 를 통해 야생을 사랑하는 사람들에게 판매되었다."
+  },
+  {
+    "seq" : 4,
+    "field" : "Commercial",
+    "project" : "DSME Exhibition : Gastech",
+    "date" : "Oct. 27, 2015",
+    "dateslash" : "08/01/2014",
+    "responsibility" : "Planning, Design, Image-editing",
+    "url" : "work_gastech",
+    "images" : "assets/images/works/gastech",
+    "description" : "가스텍은 세계가스총회 (WGC), LNG (액화천연가스) 콘퍼런스와 함께 세계 3대 국제가스행사로, 대우조선해양 (Daewoo Shipbuilding & Marine Engineering Co., Ltd., ,) 은 자사의 강점인 액화천연가스 (LNG) 선의 신기술을 선보이며 '2015 가스텍 (GASTECH)' 전시를 개최했다. 기술력과 정보전달에 기반하여 절제된 프레임에 쇠판 느낌의 타이포그래피를 활용하여 디자인 되었으며, 최종 그래픽 작업물은 싱가포르에서 전시되었다."
+  },
+  {
+    "seq" : 3,
+    "field" : "Public",
+    "field" : "Commercial",
+    "project" : "DOOSAN DICC Wheel Excavator Poster",
+    "date" : "Nov. 2015",
+    "dateslash" : "01/04/2015",
+    "responsibility" : "420(w)*841(h)mm, Planning, Design, Image-editing",
+    "url" : "work_diccposter",
+    "images" : "assets/images/works/diccposter",
+    "description" : "두산공정 기계중국 유한공사 (Doosan Infracore China Co.) 는 휠 굴착기 마케팅으로 광고 포스터를 의뢰했다. 공사현장으로의 기동성 활용성이 강한 휠 굴삭기의 장점에 초점을 맞춰 굴착기와 공사 현장, 그리고 휠의 형태를 대소비례 반전하여 시각화했다. 수익성을 상징하기 위해 활용된 금화 그래픽은 추후 클라이언트 요구에 따라 추가되었다."
+  },
+  {
+    "seq" : 2,
+    "field" : "Commercial",
+    "project" : "DSC Global Engineering & Construction Company Brochure",
+    "date" : "Jul. 2015",
+    "dateslash" : "12/06/2017",
+    "responsibility" : "221(w)*290(h)mm, Lettering, Image-editing",
+    "url" : "work_dscbrochure",
+    "images" : "assets/images/works/dscbrochure",
+    "description" : "대우조선해양건설 (DSME Construction Co.) 은 국내외에서 조선소와 항만 건설 등의 사업을 영위하는 해양과 항만 전문 종합건설사로, 고품격 라이프 스타일을 위해 론칭한 주택 브랜드 엘크루로 아파트 브랜드로서의 입지를 다져나가고있다. 브로슈어는 경영 비전의 신뢰 에 초점을 맞춘 컬러선택과 함께 전반적인 company information 과 Business areas 를 소개하며, 영문과 국문이 함께 제작되었다."
+  },
+  {
+    "seq" : 1,
+    "field" : "Art",
+    "project" : "Apple changed the world",
+    "date" : "Oct. 10, 2014",
+    "dateslash" : "03/07/2017",
+    "responsibility" : "297(w)*420(h)mm, Planning, Design, Illustration, Lettering",
+    "url" : "work_actw",
+    "images" : "assets/images/works/actw",
+    "description" : "'세상을 바꿔놓은 사과' 이야기를 주제로하여 제작된 2015년 캘린더로 < 창세기(Bible - Genesis)의 선악과 > , < 그리스 로마 신화(Classic Myths)의 황금사과 > , < 뉴턴(Isaac Newtion)의 중력의 사과 > , < 조아키노 로시니(Gioachino Rossini) 의 윌리엄텔 > , < 백설공주(Snow White)의 독사과 > , < 엘런튜링(Alan Turing)의 청산가리 사과 > 총 6가지 일러스트로 구성되어있으며, 수채화 스케치 후 디지털 그래픽을 활용한 일러스트가 완성되었다. 컬렉션으로 엽서와 함께 제작 되어 지인에게 배부되었다. 월력은 한국천문연구원 (Korea Astronomy and Space Science Institute) 자료를 참조했으며, 작품은 서일대학교 전시회 공명 (RESONATE) 에서 전시되었다."
+  },
+  {
+    "seq" : 0,
+    "field" : "Public",
+    "project" : "19th Seoil University Visual Design Graduate Exhibition : Resonance",
+    "date" : "Oct. 10, 2014",
+    "dateslash" : "16/01/2014",
+    "responsibility" : "210(w)*275(h)mm, Planning, Layout, Color, Lettering",
+    "url" : "work_resonance",
+    "images" : "assets/images/works/resonance",
+    "description" : "자신의 경험과 생각을 바탕으로 <순간의 울림>을 작품 속에 담다. 같은 주파수가 만날 때 진동한다는 의미의 <공명>처럼. 서로 아이디어를 공유하며 피드백을 얻는 과정에서의 시너지를 의미한다. 서일대학교 전시회 공명은 선을 이용하여 울림을 시각화했으며, 그래픽은 전시 중앙 부스 Display 에도 활용되었다. 본 도록은 2015년 서일대학교 졸업전시회 공명 (Resonate) 에서 판매되었다."
+  }
+]
