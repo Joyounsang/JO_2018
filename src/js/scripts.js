@@ -201,22 +201,6 @@ function modalUi(){
     // sizing and position
     modalSizing();
 
-    function modalSizing(){
-        $('.modal').each(function(){
-            var layerResize = $(window).height();
-            var layerHeight = $(this).outerHeight();
-            var layerWidth = $(this).outerWidth();
-            $(this).css({
-                marginLeft : -layerWidth/2,
-                marginTop : -layerHeight/2
-            });
-
-            $(this).find('.modal-body').css({
-                maxHeight : layerResize/2
-            });
-        });
-    }
-
     $('.modalLoad').on('click',function(e){
         e.preventDefault();
         var $self = $(this);
@@ -288,7 +272,21 @@ function modalUi(){
 
     });
 }
+function modalSizing(){
+    $('.modal').each(function(){
+        var layerResize = $(window).height();
+        var layerHeight = $(this).outerHeight();
+        var layerWidth = $(this).outerWidth();
+        $(this).css({
+            marginLeft : -layerWidth/2,
+            marginTop : -layerHeight/2
+        });
 
+        $(this).find('.modal-body').css({
+            maxHeight : layerResize/2
+        });
+    });
+}
 function createDim(){
     if (!$('.dim').length) {
         $('body').append('<div class="dim"></div>');
@@ -480,11 +478,13 @@ function signInUpUi(){
         e.preventDefault();
         $('.signin').hide();
         $('.signup').fadeIn();
+        modalSizing();
     });
     $('.btn-signin').on('click',function(e){
         e.preventDefault();
         $('.signin').fadeIn();
         $('.signup').hide();
+        modalSizing();
     });
 }
 function inputsDesignPattern(){
