@@ -21,6 +21,15 @@
     border-radius:5px;
     border:none;
     transition:all .4s;
+
+    &.big{
+        height:72px;
+        line-height: 72px;
+        padding:0 50px;
+        font-size:0.925rem;
+        font-weight:600;
+    }
+
     &.signin-btn{
         width:80px;
         height:80px;
@@ -46,6 +55,8 @@
 
     &:hover{
         background:$pointColor;
+        position: relative;
+        top:-4px;
     }
     &-crud{
         display: inline-block;

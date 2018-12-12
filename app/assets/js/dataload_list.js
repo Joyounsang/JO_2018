@@ -76,7 +76,7 @@ function globalWorkLstData(){ // main work infomation ajax :: data
             var firstDate = firstItem.attr('data-date');
             var firstDateReplace = firstDate.replace(/\//g,'');
 
-            $('.workSeq').text(firstSeq);
+            //$('.workSeq').text(firstSeq);
             $('.workInfo').text(firstInfo) + '<br>';
             $('.workDate').text(firstDate);
             $('.workCover').css({

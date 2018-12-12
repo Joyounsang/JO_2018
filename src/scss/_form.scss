@@ -1,3 +1,9 @@
+.row{
+    .ipt-column{
+        width:100%;
+        margin-left:0;
+    }
+}
 // inputs align & margin
 .likelabel{
     @include labelFont;
@@ -122,7 +128,7 @@ input[type=time],
 input[type=url],
 input[type=week],
 select{
-    font-size:11px;
+    font-size:0.825rem;
     padding:0 10px;
     height:36px;
     min-height:36px;
@@ -205,9 +211,9 @@ button[disabled]{
 .chk{
     &+label{
         display:inline-block;
-        width:20px;
-        height:20px;
-        border:2px solid rgba(48, 63, 79, 0.4);
+        width:16px;
+        height:16px;
+        border:2px solid #e7e7e7;
         vertical-align: middle;
         border-radius:3px;
         position:relative;
@@ -239,9 +245,9 @@ button[disabled]{
 .rdo{
     &+label{
         display:inline-block;
-        width:20px;
-        height:20px;
-        border:2px solid rgba(48, 63, 79, 0.4);
+        width:16px;
+        height:16px;
+        border:2px solid #e7e7e7;
         vertical-align: middle;
         border-radius:50px;
         position:relative;
@@ -276,11 +282,13 @@ button[disabled]{
 textarea{
     width:100%;
     background:#fafafa;
-    border:1px solid #cbd6e2;
-    font-size:14px;
+    border:1px solid #e7e7e7;
+    font-size:0.825rem;
     padding:10px;
     border-radius:3px;
     resize:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     &:focus{
         @include focus;
     }

@@ -47,6 +47,12 @@ html,body,#contents{
     .column{
         grid-auto-rows: minmax(100px, auto);
     }
+    &.forms{
+        .column{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
 
     &.col-2{
         grid-template-columns: repeat(2, 1fr);
@@ -113,11 +119,10 @@ html,body,#contents{
     margin: 0 0 30px 0;
     padding:12px;
     background:#fafafa;
-    box-shadow: 0px 1px 2px 0px rgba(black,0.05);
+
     transition:all 220ms;
 
     &:hover{
-        box-shadow: 0px 2px 3px 1px rgba(black,0.1);
         transform : translateY(-5px);
         transition:all 220ms;
     }

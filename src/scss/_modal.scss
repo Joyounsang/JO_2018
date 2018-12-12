@@ -28,7 +28,7 @@
 
     &-header{
         position:relative;
-        padding:40px;
+        padding:40px 80px;
         img{
             width:120px;
         }
@@ -39,7 +39,7 @@
         right:20px;
     }
     &-body{
-        padding:40px;
+        padding:40px 80px;
         &-top{
             margin-bottom:40px;
         }
@@ -50,12 +50,24 @@
     &-footer{
         clear:both;
         overflow:hidden;
-        padding:40px;
+        padding:40px 80px;
+    }
+    &-article{
+        text-align:center;
+        border-top: 1px solid #e7e7e7;
+        padding-top:20px;
+        margin-top:20px;
+        .labelguide{
+            &:before{
+                display:none;
+            }
+        }
     }
 
 
     &.login{
-        width:400px;
+        max-width:640px;
+
         .ipt-column{
             width:100%;
             margin-left:0;

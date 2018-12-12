@@ -13,6 +13,14 @@
                 grid-row-gap: 60px;
 
                 li{
+                    a{
+                        &:focus{
+                            box-shadow:none;
+                            img{
+                                @include focus;
+                            }
+                        }
+                    }
 
                     margin-bottom:0;
                     h4{

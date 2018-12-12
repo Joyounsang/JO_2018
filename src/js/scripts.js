@@ -145,11 +145,15 @@ function loadingUi(){
 
 }
 function backgroundChangeUi(){
+    if($('.layout-table').length > 0){
+        $('.footer').addClass('absolute');
+    }
     if($('.black').length > 0){
-        $('html, header, footer, .gnb').addClass('black');
+        $('html, header, footer, .gnb, .footer').addClass('black');
     } else if($('main').length > 0){
         $('html').addClass('main');
         $('header, .gnb').addClass('black');
+        $('.footer').removeClass('absolute');
     }
 
     if($('html').hasClass('main')){

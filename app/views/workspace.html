@@ -26,7 +26,6 @@
         <meta property="og:description" content="younsang's workspace"/>
         <!-- TODO: import -->
         <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/responsive.css">
         <link rel="stylesheet" href="../assets/css/lib/scrollbar.css">
         <link rel="stylesheet" href="../assets/css/lib/datepicker.css">
         <script src="../assets/js/vendor/jquery-3.2.1.min.js"></script>
@@ -34,31 +33,31 @@
         <script src="../assets/js/scripts.js"></script>
         <script src="../assets/js/lib/scrollbar.js"></script>
         <script src="../assets/js/lib/datepicker.js"></script>
-        <!-- <script src="../assets/js/lib/plugin.js"></script> -->
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <div class="sns-messege">
-            <p>It is so sexy thing that
-            millions of people on the<br> Earth can see the designs and ideas which I made.</p>
-        </div>
+
 
         <div id="contents">
 
-            <header class="clearfix">
+            <header>
+                <div class="top-banner">
+                    banner
+                </div>
+                <!-- <button class="top-banner-control" type="button" name="button">banner</button> -->
+
+                <style media="screen">
+                    .modal-body.signup{display:none;}
+                </style>
+
                 <aside>
                     <div class="logo"><a href="index.html">Logo</a></div>
-
-
-                    <p class="mobile-nav">
-                        human
-                    </p>
                     <div class="snb">
                         <ul>
-                            <li><a href="login.html" class="btnico login"></a></li>
+                            <li><a href="#modalLogin" class="btnico login modalLoad"></a></li>
                         </ul>
                     </div>
                 </aside>
@@ -66,78 +65,126 @@
                 <nav class="gnb">
                     <ul>
                         <li class="human" aria-label=" — about younsang Jo."><a href="human.html">human</a></li>
-                        <li class="space" aria-label=" — view workspace."><a href="workspace.html">space</a></li>
-                        <!-- <li class="time" aria-label=" — developer scheduler."><a href="timeline.html">time</a></li> -->
-                        <li class="and"><a href="#">and</a></li>
+                        <li class="space" aria-label=" — view workspace."><a href="workachive.html">space</a></li>
                     </ul>
                 </nav>
 
-                <!-- <div class="scroll-progress-wrap">
-                    <div class="scroll-progress" id="progress"><p>0%</p></div>
-                </div> -->
-
-
-
-
-
-                <div class="content-page">
-
-
-
-
-                    <!-- <div class="navigation-box">
-                        <div class="navigation-box-inner">
-                            <nav id="gnb">
-                                <ul>
-                                    <li><a href="index.html" class="link">space</a></li>
-                                    <li><a href="timeline.html" class="link">time</a></li>
-                                    <li><a href="about.html" class="link">human</a></li>
-                                </ul>
-                            </nav>
-
-                            <div class="addres-info">
-                                <p>younsang.jo@gmail.com</p>
-                                <p>+82 10 4123 7236</p>
-                                <address>
-                                    yangcheongu sinjeonglo 14, 1 <br>Seoul, Korea
-                                </address>
-                            </div>
-
-                            <nav id="snb">
-                                <ul class="clearfix">
-                                    <li><a href="" id="globalSearch" class="ico search">Search</a></li>
-                                    <li><a href="" id="signIn" class="sign-in">Sign in</a></li>
-                                    <li><a href="" id="myPage" class="my-page">mypage</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div> -->
-                </div>
             </header>
-            <div id="modalLogin" class="modal login">
-    <div class="modal-header">
-        <!-- <p><b>Contact</b></p> -->
-    </div>
 
-    <div class="modal-body">
+            <!-- <div class="progress-position">
+                <div class="progress"></div>
+            </div> -->
 
-            <div class="modal-body-top">
-                <img class="login" src="../assets/images/logo.svg" alt="">
-                <p>Send a message by email if you have <br>any questions or want to know about me.</p>
-            </div>
+            <div class="loader">
+                <!-- <div class="load-ico">
 
-            <div class="modal-body-bottom">
-                <div class="ipt-box ico id">
-                    <label for="id">id</label>
-                     <input id="id" name="id" type="text" placeholder="write your name">
+                </div> -->
+                <div class="svg-human" aria-label="loading">
+                    <svg version="1.1" class="svg-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                         y="0px" viewBox="0 0 71.8 71.8" style="enable-background:new 0 0 71.8 71.8;" xml:space="preserve">
+                    <rect y="0" class="st0" width="71.8" height="71.8"/>
+                    <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -25.7774 31.1177)" class="st1" cx="24.7" cy="46.7" rx="17.5" ry="17.5"/>
+                    <line class="st2 dash" x1="28.3" y1="43.4" x2="64.1" y2="7.5"/>
+                    <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -25.7774 31.1177)" class="st3" cx="24.7" cy="46.7" rx="5" ry="5"/>
+                    </svg>
                 </div>
 
-                 <div class="ipt-box ico password">
-                     <label for="password">password</label>
-                     <input id="password" name="password" type="password">
-                 </div>
             </div>
 
+            <div class="notice">
+                This website uses cookies to ensure you get the best experience on our website.
+            </div>
+
+<div id="modalLogin" class="modal login">
+    <div class="modal-header">
+        <img src="../assets/images/logo.svg" alt="">
+    </div>
+
+    <div class="modal-body signin">
+
+
+            <span class="ipt-column gui inner">
+                 <input id="id" class="auto" name="id" type="text" placeholder="email and name">
+                 <label class="btnico mail"for=""></label>
+            </span>
+
+            <span class="ipt-column gui inner">
+                <input id="password" class="auto" name="password" type="password" placeholder="password">
+                <label class="btnico login"for=""></label>
+            </span>
+            <p class="labelguide">New to J/O? <a class="btn-signup" href="#">Create an account.</a></p>
+
+
+
+
+
+    </div>
+
+    <div class="modal-body signup">
+
+        <div class="row forms">
+            <div class="column">
+                <span class="ipt-column">
+                    <label class="reqed" for="name">name</label>
+                     <input id="name" class="auto" name="id" type="text" placeholder="email and name">
+                </span>
+            </div>
+            <div class="column">
+                <span class="ipt-column">
+                    <label class="reqed" for="name">last name</label>
+                     <input id="name" class="auto" name="id" type="text" placeholder="email and name">
+                </span>
+            </div>
+        </div>
+
+        <div class="row forms">
+            <div class="column">
+                <span class="ipt-column">
+                    <label class="reqed" for="name">Email address</label>
+                     <input id="name" class="auto" name="id" type="text" placeholder="email and name">
+                </span>
+                <p class="labelguide">Use your work email address if you're using HubSpot CRM for business.</p>
+            </div>
+        </div>
+
+        <div class="row forms">
+            <div class="column">
+                <span class="ipt-column">
+                    <label class="reqed" for="name">Password</label>
+                    <a href="#">Show Password</a>
+                     <input id="name" class="auto" name="id" type="text" placeholder="email and name">
+                </span>
+
+
+                <span class="ipt-column">
+                    <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
+                    <label for="radio1">By creating a HubSpot account</label>
+                </span>
+
+                <span class="ipt-column">
+                    <input class="rdo" id="radio2" type="radio" name="radio_set">
+                    <label for="radio2">By creating a HubSpot account</label>
+                </span>
+
+                <span class="ipt-column">
+                    <input class="rdo" id="radio3" type="radio" name="radio_set">
+                    <label for="radio3">By creating a HubSpot account</label>
+                </span>
+
+
+                <p class="labelguide">Already have an account?
+                    <a class="btn-signin" href="#">Sign in.</a>
+                </p>
+
+
+            </div>
+        </div>
+
+        <div class="modal-article">
+            <p class="labelguide">
+                We're committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our Privacy policy.
+            </p>
+        </div>
 
 
 
@@ -146,36 +193,28 @@
 
     </div>
 
-    <div class="modal-footer auto">
-        <button type="submit" class="btn point"><span>sign-in</span></button>
-        <button type="submit" class="btn not"><span>sign-up</span></button>
-    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn signin-btn"><span>sign-in</span></button>
 
-    <!-- <aside class="modal-aside">
-        <ul>
-            <li>ios : iosiosiosiosiosiosiosiosiosios</li>
-            <li>android : iosiosiosiosiosiosiosiosiosios</li>
-        </ul>
-    </aside> -->
+
+    </div>
 
     <div class="modal-controller">
         <a href="#" class="btnico close">close</a>
     </div>
 </div>
 
-            <div id="loader"></div>
 
 
 
 
-    <div class="container work layout-table noise">
+    <div class="container black layout-table work">
         <section class="contents layout-table-cell">
             <div class="content-page">
 
-                <div class="row col-2">
-                    <div class="workCover"></div>
-                    <div class="columm">
-
+                <div class="row">
+                    <div class="workCover noise"></div>
+                    <div class="column">
                         <div>
                             <span class="workSeq">10</span>
                             <span class="workCount"></span>
@@ -184,18 +223,13 @@
                             <p class="workInfo"></p>
                             <span class="workDate"></span>
                         </div>
-
                         <div class="btn-box">
-
-                            <a class="btnico big left" href="space-item.html">
+                            <a class="btnico big left ani" href="workView.html">
                                 view
                             </a>
                         </div>
-
-
-
                     </div>
-                    <div class="columm">
+                    <div class="column">
                         <div class="title-box">
                             <h2>Space — workspace</h2>
                             <p>
@@ -203,41 +237,18 @@
                                 and i have put up the deeply personal works of art
                             </p>
                         </div>
-                        <div class="">
-                            <div class="workspace">
-                                <ul class="workList"></ul>
-                            </div>
+
+                        <div class="workspace">
+                            <ul class="workList"></ul>
                         </div>
-                        <ul class="seets white">
+
+                        <ul class="seets">
                             <li>
-                                <a href="workachive.html">all projects Achive →</a>
+                                <a class="ani" href="workachive.html">all projects Achive →</a>
                             </li>
                         </ul>
 
-
-
                     </div>
-                    <!-- <div id="workArchive" class="modal workArchive noise">
-                        <a class="btnico close" href="#">close</a>
-
-                        <script>
-                        $('.workViewToggle').on('click',function(){
-                            $('.workArchive').toggleClass('simple');
-                        });
-                        </script>
-                        <script>
-
-                        </script>
-                        <div class="title-box">
-                            <h2>Space — all projects Achive <span class="workArchiveCount"></span></h2>
-                            <button class="workViewToggle" type="button">view list</button>
-
-                        </div>
-                        <div class="scroll-box mCustomScrollbar">
-                            <ul class="workArchiveList"></ul>
-                        </div>
-
-                    </div> -->
 
                 </div>
             </div>
@@ -267,7 +278,7 @@
                 <div class="form-row">
                     <textarea name="message" id="message" rows="3" placeholder="write message" required="" aria-required="true"></textarea>
                 </div>
-              
+
             </div>
 
         </div>
@@ -285,42 +296,28 @@
 <footer class="shadow-ui">
     <div class="fnb">
         <ul>
-            <!-- <li><a href="#" class="btnico mail">mail to</a></li> -->
             <li><a href="https://www.instagram.com/" target="_blank" title="younsang instagram ( new page )" class="btnico instagram">instagram</a></li>
             <li><a href="https://github.com/Joyounsang" target="_blank" title="younsang github ( new page )" class="btnico github">github</a></li>
-            <li><a href="adminMain.html" class="btnico setting">admin</a></li>
-
         </ul>
 
-        <div>
+        <!-- <div>
             <img class="circle-preview" src="../assets/images/helper.jpg" alt="">
-            <p><a href="license.html">license</a> and <a href="dashboard.html">lab</a> <a href="#modalContact" class="btn-modal"> younsang Jo send mail to: contact</a><br>&copy; 2018 younsang.</p>
-        </div>
+            <p><a class="ani" href="license.html">license</a> and send mail to: younsang.jo@gmail.com <br>&copy; 2018 younsang.</p>
+        </div> -->
+        <!-- <a href="#modalContact" class="btn-modal"> contact</a> -->
 
-
-
-        <!-- <ul>
-
-            <li><a href="license.html">license</a></li>
-            <li><a href="dashboard.html">lab</a></li>
-
-        </ul>
-        <ul>
-            <li><a href="#" title="korea" class="btnico language">language</a></li>
-            <li><small>&copy; 2018 younsang.</small></li>
-        </ul> -->
     </div>
 </footer>
 
 
+<div class="footer">
+    <small>© 2018 younsang.</small>
+    <a class="ani" href="license.html">J/O flow</a> and
+     <a href="mailto: younsang.jo@gmail.com">Contact</a>
 
+</div>
 
 </div> <!-- wrapper e -->
-
-
-
-
-
 
 
 
