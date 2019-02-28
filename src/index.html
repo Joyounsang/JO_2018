@@ -1,227 +1,154 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html>
     <!--=include cmm/head.html -->
+    <style type="text/css">
+        a {text-decoration: none;select-dummy:expression(this.hideFocus=true)}
+        .blue {color: #303f4f;}
+        .red {color: #da4d73}
+        .gray {color: #A6ACAF;}
+        .line{margin:0 10px;color:#d9d9d9;}
+    </style>
+
     <body>
         <div class="wrapper">
             <div id="contents">
-                <!--=include cmm/header.html -->
-
-                <main role="main" class="main-component">
-                    <section>
-                        <div class="main-article">
-                            <h1>
-                                <img class="main-img" src="../assets/images/logo_w.svg" alt="">
-                            </h1>
-
-
-                            <div class="main-text">
-                                “We'll find a way, we <em>always</em> have.”
-                            </div>
-
-                        </div>
-
-                        <a class="btnico bottom scrollDown" href="#">scroll down</a>
-
-                        <div class="main-video ">
-                            <video playsinline autoplay muted loop>
-                                <source src="../assets/video/main.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </section>
-                </main>
-
-
-                <section class="layout-table timeline-title">
-                    <div class="layout-table-cell">
-                        <p>
-                            <!-- discussion for hacking the user experience. -->
-                            J/O 2018 discussion
-
-                        </p>
-                    </div>
-                </section>
-
                 <section class="contents">
-                    <div class="content-page timeline-top">
-
-                        <div class="ipt-global-search">
-
-                            <select id="globalCat" name="">
-                                <option value="">all categories</option>
-                                <option value="">A categories</option>
-                            </select>
-
-                            <input id="globalSearch" class="ui-global-search" type="search" placeholder="search keyword">
-
-                            <label for="globalSearch" class="btnico search">Search</label>
-
+                    <div class="content-page">
+                        <div id="information">
+                        	<h1 class="text-level1 project-name"></h1>
+                        	<span>page : </span> <b id="total-page"></b>P <span class="line">|</span>
+                        	<span>progress </span> : <b id="persent" class="blue"></b>
+                        	<div style="float:right">
+                                <span style="margin-left:20px;color:#333;"><a class="btn" href="guide.html" target="_blank">Guide</a></span>
+                            </div>
                         </div>
-                        <ul class="schedule-side">
-                            <li><span class="scheduleAllCont">24</span>all </li>
-                            <li><span class="scheduleWorkCont">4</span>work</li>
-                            <li><span class="scheduleDiscussCont">20</span>discuss</li>
-
-                            <li class="schedule-control">
-                                <ul>
-                                    <!-- <li>
-                                        <a href="#" class="btnico calendarOpen calendar">calendar view</a>
-                                    </li> -->
-                                    <li>
-                                        <a href="#" class="btnico viewToggle preview">preview</a>
-                                    </li>
-                                    <li>
-                                        <a href="boardWrite.html" class="btnico add">write</a>
-                                    </li>
-                                </ul>
+                        <ul class="text-list">
+                            <li>
+                                인코딩방식 Encoding : UTF-8
+                            </li>
+                            <li>
+                                DTD(Document Type Definition) : HTML5
+                            </li>
+                            <li>
+                                Cross Browsing : IE9, Chrome, Firefox, Safari, Opera
+                            </li>
+                            <li>
+                                Screen Resolution : > 1920(PC)
+                            </li>
+                            <li>
+                                Web accessibility : false
                             </li>
                         </ul>
-                        <!-- <div class="calendar-box">
-                            calendar
-                        </div> -->
+                        <div class="tbl">
+                        	<table class="cdList">
+                        	<colgroup>
+                        		<col style="width:12%;" />
+                        		<col style="width:12%;" />
+                        		<col style="width:12%;" />
+                        		<col style="width:auto;" />
+                        		<col style="width:20%;" />
+                        		<col style="width:5%;" />
+                        		<col style="width:5%;" />
+                        	</colgroup>
+                        	<thead>
+                        	<tr>
+                        		<th scope="col">1depth</th>
+                        		<th scope="col">2depth</th>
+                        		<th scope="col">3depth</th>
+                        		<th scope="col">URL</th>
+                        		<th scope="col">etc</th>
+                                <th scope="col">status</th>
+                        	</tr>
+                        	</thead>
+                        	<tbody class="sum">
+                        		<tr>
+                        			<th scope="row">Main</th>
+                        			<td class="title">achive</td>
+                        			<td>&nbsp;</td>
+                        			<td><a href="#" target="_blank">A_00</a></td>
+                        			<td></td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                                    <th scope="row">&nbsp;</th>
+                        			<td class="title">login</td>
+                        			<td>&nbsp;</td>
+                        			<td>A_00_01</td>
+                        			<td>modal</td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                                    <th scope="row">&nbsp;</th>
+                        			<td class="title">signIn</td>
+                        			<td>&nbsp;</td>
+                        			<td>A_00_02</td>
+                        			<td>modal</td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                        			<th scope="row"></th>
+                        			<td class="title"></td>
+                        			<td>achive-view</td>
+                        			<td>A_00_03</td>
+                        			<td>modal</td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                                    <th scope="row">&nbsp;</th>
+                        			<td class="title">about</td>
+                        			<td>&nbsp;</td>
+                        			<td><a href="#" target="_blank">B_01</a></td>
+                        			<td></td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                                    <th scope="row">&nbsp;</th>
+                        			<td class="title">work</td>
+                        			<td>&nbsp;</td>
+                        			<td><a href="#" target="_blank">C_01_01</a></td>
+                        			<td></td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+
+                                <tr>
+                                    <th scope="row">&nbsp;</th>
+                        			<td class="title"></td>
+                        			<td>work-view</td>
+                        			<td>C_01_02</td>
+                        			<td>modal</td>
+                                    <td><span class="red">●</span></td>
+                        		</tr>
+                                <!-- 메인 -->
+                        	</tbody>
+                        	</table>
+                        </div>
                     </div>
-
-                    <div class="schedule-box tilmeline">
-                        <!-- <ul class="time-clone"></ul> -->
-
-
-                             <div class="row">
-                                <div class="column time">
-                                    <div class="time-date"><span>5 / </span>27</div>
-                                </div>
-                                <div class="column event">
-                                    <div class="event-item">
-                                        <div class="info">
-                                            <span class="circle-preview"></span>
-
-                                            <a class="schedule-title" href="boardView.html">Younsang Jo Key note</a>
-                                            <p class="schedule-desc">
-                                                Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                            </p>
-                                            <span class="sub-info">
-                                                <span>18:20</span>
-                                                <span class="hash-tag design">design</span>
-                                                <span class="hash-tag develop">develop</span>
-                                                <span class="hash-tag etc">etc</span>
-                                            </span>
-                                        </div>
-                                        <a href="#" class="btnico more" href="#">more</a>
-                                    </div>
-
-                                    <div class="event-item">
-                                        <div class="info">
-                                            <span class="circle-preview"></span>
-
-                                            <a class="schedule-title" href="boardView.html">Younsang Jo Key note</a>
-                                            <p class="schedule-desc">
-                                                Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                            </p>
-                                            <span class="sub-info">
-                                                <span class="schedule-time">18:20</span>
-                                                <span class="hash-tag design">design</span>
-                                                <span class="hash-tag develop">develop</span>
-                                                <span class="hash-tag etc">etc</span>
-                                            </span>
-                                        </div>
-                                        <a href="#" class="btnico more" href="#">more</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <div class="row">
-                                <div class="column time">
-                                    <span>5 / </span>27
-                                </div>
-                                <div class="column event">
-                                    <div class="event-item">
-                                        <div class="info">
-                                            <span class="circle-preview"></span>
-
-                                            <a class="schedule-title" href="boardView.html">Younsang Jo Key note</a>
-                                            <p class="schedule-desc">
-                                                Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                            </p>
-                                            <span class="sub-info">
-                                                <span>18:20</span>
-                                                <span class="hash-tag design">design</span>
-                                                <span class="hash-tag develop">develop</span>
-                                                <span class="hash-tag etc">etc</span>
-                                            </span>
-                                        </div>
-                                        <a href="#" class="btnico more" href="#">more</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <div class="row">
-                                <div class="column time">
-                                    <span>5 / </span>27
-                                </div>
-                                <div class="column event">
-                                    <div class="event-item">
-                                        <div class="info">
-                                            <span class="circle-preview"></span>
-
-                                            <a class="schedule-title" href="boardView.html">Younsang Jo Key note</a>
-                                            <p class="schedule-desc">
-                                                Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                            </p>
-                                            <span class="sub-info">
-                                                <span>18:20</span>
-                                                <span class="hash-tag design">design</span>
-                                                <span class="hash-tag develop">develop</span>
-                                                <span class="hash-tag etc">etc</span>
-                                            </span>
-                                        </div>
-                                        <a href="#" class="btnico more" href="#">more</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                             <div class="row">
-                                <div class="column time">
-                                    <span>5 / </span>27
-                                </div>
-                                <div class="column event">
-                                    <div class="event-item">
-                                        <div class="info">
-                                            <span class="circle-preview"></span>
-
-                                            <a class="schedule-title" href="boardView.html">Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your ow</a>
-                                            <p class="schedule-desc">
-                                                Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                            </p>
-                                            <span class="sub-info">
-                                                <span>18:20</span>
-                                                <span class="hash-tag design">design</span>
-                                                <span class="hash-tag develop">develop</span>
-                                                <span class="hash-tag etc">etc</span>
-                                            </span>
-                                        </div>
-                                        <a href="#" class="btnico more" href="#">more</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="data-load">
-                            <div class="svg-human" aria-label="Human">
-                                <svg version="1.1" class="svg-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                     y="0px" viewBox="0 0 71.8 71.8" style="enable-background:new 0 0 71.8 71.8;" xml:space="preserve">
-                                <rect y="0" class="st0" width="71.8" height="71.8"/>
-                                <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -25.7774 31.1177)" class="st1" cx="24.7" cy="46.7" rx="17.5" ry="17.5"/>
-                                <line class="st2 dash" x1="28.3" y1="43.4" x2="64.1" y2="7.5"/>
-                                <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -25.7774 31.1177)" class="st3" cx="24.7" cy="46.7" rx="5" ry="5"/>
-                                </svg>
-                            </div>
-                            <span>watting for you data loading...</span>
-                        </div>
                 </section>
             </div>
-            <!--=include cmm/footer.html -->
         </div>
+        <script>
+            $(document).ready(function(){
+                var titleText = $('title').text();
+                $('.project-name').text(titleText);
+                $('.cdList').find('tr').each(function(){
+                    var link = $(this).find('a').text();
+                    $(this).find('a').attr('href', link + '.html');
+                });
+
+                $(function(){
+            		var total =$('.sum tr').size();
+            		var ok = $('.sum td span.blue').size();
+            		var persent = parseInt((ok/total)*100);
+            		$('#total-page').text(total);
+            		$('#ok-page').text(ok);
+            		$('#persent').text(+persent+'%');
+            	});
+            });
+        </script>
     </body>
 </html>

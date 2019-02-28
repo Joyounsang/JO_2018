@@ -76,8 +76,6 @@ if (Project == undefined || Project == null) {
     })(); // Project Module END
   }
 
-
-
 $(document).ready(function(){
     loadingUi();
     backgroundChangeUi();
@@ -90,12 +88,23 @@ $(document).ready(function(){
     gridSystemStatic();
     accessiblity();
 
+    if ($('.datepicker').length){
+        libDatepicker();
+    }
+
     $('.scrollUp').on('click', function(){
         scrollUpUi();
     });
 
     $('.back').on('click', function(){
         window.history.back();
+    });
+
+    // var mainVideoCtl = $('.main-video').find('.togglePaly');
+    var mainVideoCtl = $('.main-article');
+    $('.main-video').find('.video-controls').insertAfter(mainVideoCtl);
+    $('main').find('.togglePaly').on('click',function(){
+        $(this).toggleClass('active');
     });
 
 
@@ -112,7 +121,37 @@ $(window).on('scroll', function(){
 }).scroll();
 
 
+function libDatepicker(){
+	$('.datepicker').datepicker({
+		dateFormat: 'yy-mm-dd',
+		prevText: '이전 달',
+		nextText: '다음 달',
+		dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+		dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+		dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+		monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		showMonthAfterYear: true,
+		changeMonth: false,
+		changeYear: false,
+		yearSuffix: '년',
+		altField: '.hide-input', // 노출잘자 클릭 텍스트 val 자동입력
+		//minDate:0, // today(0) 기준 이전 날짜 선택 불가
+        onSelect: function() {
+            if($('.step-select.lvtest1').length){
+                $(this).parents('li').next().find('select').removeAttr('disabled');
+                $(this).parents('li').next().find('.nice-select').removeClass('disabled');
+            }
+            if($('.step-select.lvtest2').length){
+                $(this).parents('li').next().find('.nice-select').removeClass('disabled');
+                $(this).parents('.select-box').next('.levelsteptime').fadeIn();
+            }
+        }
 
+	});
+
+
+}
 
 
 function loadingUi(){
@@ -155,6 +194,8 @@ function backgroundChangeUi(){
         $('html').addClass('main');
         $('header, .gnb').addClass('black');
         $('.footer').removeClass('absolute');
+    } else if($('.adm').length > 0){
+        $('html').addClass('adm');
     }
 
     if($('html').hasClass('main')){
@@ -333,16 +374,27 @@ function autoTypingUi(elementClass, typingSpeed){
   },30);
 }
 function scheduleUi(){
-    var newdate = new Date();
-    var scAllCont = $('.schedule-box .event-item').length;
-    console.log(newdate);
-    $('.scheduleAllCont').text(scAllCont);
 
 
-    $('.viewToggle').on('click',function(e){
+
+    // $('.viewList').on('click',function(e){
+    //     e.preventDefault();
+    //     $('.schedule-box').attr('class','schedule-box');
+    // });
+
+    $('.viewBlock').on('click',function(e){
         e.preventDefault();
         $(this).toggleClass('board');
-        $('.schedule-box').toggleClass('active');
+        $('.schedule-box').toggleClass('block');
+    });
+
+
+    $('.schedule-search').find('.setting').on('click',function(e){
+        $('.schedule-filter').slideToggle();
+    });
+
+    $('.like-select').on('click',function(){
+        $(this).toggleClass('on').siblings().removeClass('on');
     });
 }
 function topBannerUi(){

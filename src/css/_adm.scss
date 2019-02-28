@@ -1,0 +1,190 @@
+.header-adm{
+    background: #2f3f50;
+}
+.gnb-adm{
+    padding-left: 2%;
+    padding-top: 100px;
+    border-right: 1px solid #e7e7e7;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    ul{
+        li{
+            &+li{
+                margin-top: 20px;
+            }
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #333;
+                font-weight: 400;
+                font-size: 0.85rem;
+                border-radius: 50px 0 0 50px;
+                padding: 10px 20px;
+                background: #eaf0f6;
+            }
+        }
+    }
+
+}
+
+html{
+
+    &.adm{
+        h2{
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        .row{
+            &+.row{
+                margin-top: 30px;
+            }
+            .column{
+                padding-right: 15px;
+
+                // border-left: 15px solid #f4f7f9;
+                &:first-child{
+                    // border-left: 0 solid #f4f7f9;
+                    // border-right: 15px solid #f4f7f9;
+                }
+                &+.column{
+                    padding-left: 15px;
+                    border-left: 1px solid #e7e7e7;
+                }
+            }
+        }
+
+        overflow: auto;
+        padding-bottom: 40px;
+        // background-color: rgb(243, 244, 247);
+        background-color: #f4f7f9;
+        // background-image: linear-gradient(to bottom right, #e3e2f9, #cccbfc);
+        padding-top: 100px;
+        padding-left: 240px;
+        .content-page{
+            padding: 0 5%;
+            h1{
+                margin-bottom: 20px;
+            }
+            article{
+                background: #fff;
+                padding: 30px 40px;
+                border-radius: 20px;
+            }
+            .schedule-search{
+                margin-bottom: 30px;
+                input{
+                    // background: none;
+                    // border-color: #435287;
+                    border-radius: 5px;
+                }
+            }
+            .data-list{
+                li{
+                    transition: all .4s;
+                    &:hover{
+                        // margin-top: 0;
+                        // position: relative;
+                        // z-index: 2;
+                        &+li{
+                            margin-top: 0;
+                        }
+                    }
+                    &+li{
+                        margin-top: -20px;
+                    }
+                    background: #fff;
+                    border-radius: 5px;
+                    padding: 30px 40px;
+                    position: relative;
+                    box-shadow: 0 0 11px #eaf0f6;
+                    .title{
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+                    .time-hour{
+                        font-size: 0.825rem;
+                        color: #999;
+                        margin-right: 20px;
+                    }
+                    .data-list-item-ctl{
+                        position: absolute;
+                        top:10px;
+                        right:20px;
+                    }
+                }
+            }
+        }
+        .logo{
+            a{
+                background:url('../images/logo_w.svg') center no-repeat;
+                background-size:80%;
+            }
+        }
+        .btnico{
+            &.login{
+                &:before{
+                    background:url(../images/icon/lock_w.svg);
+                }
+            }
+        }
+    }
+}
+
+
+
+.tbl{
+    &.hub{
+        border-bottom: 1px solid #e7e7e7;
+        table{
+            thead{
+                tr{
+                    th{
+                        background-color: #f5f8fa;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    &:hover{
+                        background-color: #f5f8fa;
+                    }
+                    th{
+
+                    }
+                    td{
+
+                    }
+                }
+            }
+
+            th,
+            td{
+                border-left: 1px solid #e7e7e7;
+                border-right: 1px solid #e7e7e7;
+                background: #fff;
+                select{
+                    border-radius: 50px;
+                    min-width: 80px;
+                    text-align: center;
+                }
+                .profile{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 10px;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+            }
+            th{
+            }
+            td{
+
+            }
+        }
+    }
+}

@@ -1,3 +1,219 @@
+$(document).ready(function() {
+
+    var eventDataSourceURL = 'https://www.googleapis.com/calendar/v3/calendars/k5u784u0llh5fgmckeusemnhmo@group.calendar.google.com/events?key=AIzaSyB97NUokqE2aK5WJi6p1Wb0PXOSE-pd78Y';
+
+    var calendarupdateInterval = 5000;  // RE-FETCH INTERVAL FOR GOOGLE CALENDAR DATA
+    var calendarAddedtoPage = false;    // FLAG TO DETECT IF CALENDAR HAS PREVIOUSLY BEEN ADDED OR NEEDS TO BE ADDED
+    var eventsArray = [];               // EMPTY ARRAY WE'LL USE TO HOLD OUR EVENTS
+
+
+    // FUNCTION TO GET THE JSON DATA FROM GOOGLE CALENDAR API IN JSON FORMAT
+    function getData() {
+        eventsArray = [];   // EMPTY THE ARRAY EACH TIME WE START THIS OR WILL HAVE DUPLICATE EVENTS IN ARRAY
+        $.getJSON(
+            eventDataSourceURL,
+            function(result) {
+
+                // THE JSON DATA FROM GOOGLE IS NOT IN THE FORMAT THAT FULLCALENDAR NEEDS, SO WE'LL LOOP THROUGH AND BUILD OUR OWN ARRAY TO USE
+                $.each(result.items, function(i, val) {
+                    // IF THE STATUS IS CONFIRMED AND IT HAS A START DATE AND TIME... OTHERWISE WE MAY LACK DATA NEEDED TO ADD TO CALENDAR...
+                    if (result.items[i].status === "confirmed" && result.items[i].start.dateTime) {
+                        // WHEN WE ENCOUNTER AN EVENT WITH NO 'SUMMARY' TEXT (THE EVENT TITLE), WE NEED TO SET SOME TEXT SINCE THE CODE AND CALENDAR EXPECTS IT
+                        if (!result.items[i].summary){
+                                result.items[i].summary = 'No Summary found in google calendar'
+                        }
+                        // THEN WE ADD IT TO OUR EVENTS ARRAY...
+                        eventsArray.push({
+                            title: val.summary.replace(/['"]+/g, "") + '\n -- event #'+i,  // THE TITLE ELEMENT OF THE ARRAY, REMOVING ANY QUOTES THOUGH...
+                            start: val.start.dateTime   // THE DATE AND TIME FOR THE EVENT
+                        });
+                    } else {
+                        console.log("could not add due to lacking data ... event date/time or status not confirmed");
+                    }
+                });
+
+               //TEST REMOVE THE 15TH ARRAY ITEM
+               //if (calendarAddedtoPage == true){
+               //    eventsArray.splice(15,1);
+               //}
+
+
+                // RUN OUR DRAW CALENDAR FUNCTION TO EITHER ADD THE CALENDAR AND POPULATE WITH DATA OR UPDATE THE CALENDAR WITH NEWLY ACQUIRED DATA...
+                drawCalendar();
+
+
+            }
+        );
+    }
+
+
+
+    function drawCalendar() {
+        // IF THE CALENDAR HAS NOT BEEN ALREADY ADDED TO THE PAGE...
+        if (calendarAddedtoPage == false) {
+            calendarAddedtoPage = true;
+            // CALENDAR HAS NOT BEEN DRAWN ONCE SO WE ARE ADDING IT TO DOM
+            console.log('Create NEW Calendar for dom ' + new Date())
+            $("#calendar").fullCalendar({
+                defaultView: "month", //Possible Values: month, basicWeek, basicDay, agendaWeek, agendaDay
+                header: {
+                    left: "title",
+                    center: "",
+                    //right: "today,prevYear,prev,next,nextYear" //Possible Values: month, basicWeek, basicDay, agendaWeek, agendaDay, today prevYear,prev,next,nextYear
+                    right: 'agendaDay,agendaWeek,month,prev,next'
+                },
+                buttonIcons: {
+                    prev: "left-single-arrow",
+                    next: "right-single-arrow",
+                    prevYear: "left-double-arrow",
+                    nextYear: "right-double-arrow"
+                }
+
+            });
+            $("#calendar").fullCalendar("removeEventSources" );     // JUST TO MAKE SURE NOTHINGS IN CALENDAR... PROBABLY OVERKIILL, BUT WHAT THE HELL...
+            $("#calendar").fullCalendar("addEventSource", eventsArray); // ADD THE NEW ARRAY OF DATA TO THE CALENDAR
+
+            // START A x SECOND LOOP WHERE WE RE-RUN THE GET DATA FUNCTION AND START IT ALL OVER AGAIN...
+            setInterval(function(){
+                getData()
+            }, calendarupdateInterval)
+
+        } else if (calendarAddedtoPage == true) {
+            // CALENDAR HAS ALREADY BEEN DRAWN ONCE, SO JUST UPDATE THE DATA WITH NEW EVENTS ARRAY RETRIEVED...
+            console.log('Updating calendar data - ' + new Date())
+
+            $("#calendar").fullCalendar( 'removeEvents');  // JUST TO MAKE SURE NOTHINGS IN CALENDAR... PROBABLY OVERKIILL, BUT WHAT THE HELL...
+            $("#calendar").fullCalendar( 'addEventSource', eventsArray ) // ADD THE NEW ARRAY OF DATA TO THE CALENDAR
+
+        }
+
+
+    }
+
+    // START THINGS OFF AND GET THIS PARTY STARTED... BASICALLY CALLING THE FIRST FUNCTION THAT SETS IT INTO MOTION...
+    getData();
+});
+
+/*
+"https://www.googleapis.com/calendar/v3/calendars/k5u784u0llh5fgmckeusemnhmo@group.calendar.google.com/events?key=AIzaSyB97NUokqE2aK5WJi6p1Wb0PXOSE-pd78Y&singleEvents=true&orderBy=starttime&maxResults=10&timeMin="+new
+*/
+
+//string date to start the list range.
+//recommend using Date.now() to filter out past events
+var startDate = '1/1/2015';
+var items = [];
+$.getJSON(
+  "https://www.googleapis.com/calendar/v3/calendars/k5u784u0llh5fgmckeusemnhmo@group.calendar.google.com/events?key=AIzaSyB97NUokqE2aK5WJi6p1Wb0PXOSE-pd78Y&singleEvents=true&orderBy=starttime&maxResults=10&timeMin="+new Date(startDate).toISOString(),
+  function(data) {
+    $.each(data["items"], function(key, val) {
+      items.push(startDate(val["start"]));
+    });
+    items = items.slice().sort();
+    for (var i = 0; i < items.length - 1; i++) {
+      if (items[i + 1] == items[i]) {
+        items.splice(i, 1);
+      }
+    }
+
+    var events = {};
+    items.forEach(function(item) {
+      $.each(data["items"], function(key, val) {
+        if (item == startDate(val["start"])) {
+          //console.log(val);
+          if(events[item] === undefined){
+            events[item] = new Array();
+          }
+
+          events[item].push({
+            'eventTitle' : val["summary"],
+            'eventDescr' : val["description"]===undefined ? "<i>No Event Description</i>" : val["description"],
+            'startTime' : startTime(val["start"]),
+            'endDate' : moment(startDate(val["end"])).format('l'),
+            'endTime' : startTime(val["end"]),
+            'htmlLink' : val["htmlLink"]
+          });
+          //console.log(events);
+          //console.log(val);
+        }
+
+      });
+    });
+    var markup = "";
+    items.forEach(function(eventDate){
+      var monthName = moment(eventDate).format("MMMM").toUpperCase();
+      var monthDate = moment(eventDate).format("DD");
+      markup += "<div class='column time'><span>" + montDate + "/"+ monthName +"</span></div>";
+      markup += "<div class='column event'>";
+      markup += "<div class='event-item'>";
+      markup += "<div class='info'>";
+      events[eventDate].forEach(function(event){
+      markup += '<a class="schedule-title" href="boardView.html">'+ event["eventTitle"] +'</a>';
+      markup += '<p class="schedule-desc">'+event["eventDescr"]+'</p>';
+      markup += '<span class="sub-info">';
+      markup += '<span>'+event["startTime"]+'</span>';
+      markup += '</span>';
+      });
+      markup += '</div>';
+      markup += '</div>';
+      markup += '</div>';
+
+
+
+      // markup += "<span class='date-month'>"+monthName+"</span>";
+      // markup += "<span class='date-day'>"+monthDate+"</span>";
+      // markup += "</div><div class='events'>";
+      // events[eventDate].forEach(function(event){
+      //   console.log(event);
+      //   markup += "<li class='cal'>";
+      //   markup += "<h3 class='calendar-title'>"+event["eventTitle"]+"</h3>";
+      //   markup += "<div class='event-details'>";
+      //   markup += "<u>Start Time</u>: "+event["startTime"]+"<br/>";
+      //   markup += "<u>End Date</u>: "+event["endDate"]+"<br/>";
+      //   markup += "<u>End Time</u>: "+event["endTime"]+"<br/><br/>";
+      //   markup += event["eventDescr"] + "<br/><br/>";
+      //   markup += "<a href='"+event["htmlLink"]+"'>View this Event in Google Calendar</a><br/><br/>";
+      //   markup += "</div></li>"
+      // });
+      // markup +="</span></ol></div></div>";
+    });
+    $("#googleCalendarApi").append(markup);
+    //console.log(events);
+
+    function startDate(d) {
+      if (d["dateTime"] === undefined) return d["date"];
+      else {
+        var formatted = new Date(d["dateTime"]);
+        var day = formatted.getDate();
+        var month = formatted.getMonth() + 1;
+        var year = formatted.getFullYear();
+        return year + "-" + pad(month) + "-" + pad(day);
+      }
+    }
+
+    function startTime(d){
+      if (d["dateTime"] === undefined) return "All Day";
+      else {
+        var formatted = new Date(d["dateTime"]);
+        return moment(d["dateTime"]).format('LT');
+      }
+    }
+
+    function pad(n) {
+      return n < 10 ? "0" + n : n;
+    }
+
+    $(".events").click(function(e) {
+      $(e.target)
+        .next("div")
+        .siblings("div")
+        .slideUp();
+      $(e.target)
+        .next("div")
+        .slideToggle();
+    });
+  }
+);
+
 if (Project == undefined || Project == null) {
     var Project = (function () {
 
@@ -76,8 +292,6 @@ if (Project == undefined || Project == null) {
     })(); // Project Module END
   }
 
-
-
 $(document).ready(function(){
     loadingUi();
     backgroundChangeUi();
@@ -90,12 +304,23 @@ $(document).ready(function(){
     gridSystemStatic();
     accessiblity();
 
+    if ($('.datepicker').length){
+        libDatepicker();
+    }
+
     $('.scrollUp').on('click', function(){
         scrollUpUi();
     });
 
     $('.back').on('click', function(){
         window.history.back();
+    });
+
+    // var mainVideoCtl = $('.main-video').find('.togglePaly');
+    var mainVideoCtl = $('.main-article');
+    $('.main-video').find('.video-controls').insertAfter(mainVideoCtl);
+    $('main').find('.togglePaly').on('click',function(){
+        $(this).toggleClass('active');
     });
 
 
@@ -112,7 +337,37 @@ $(window).on('scroll', function(){
 }).scroll();
 
 
+function libDatepicker(){
+	$('.datepicker').datepicker({
+		dateFormat: 'yy-mm-dd',
+		prevText: '이전 달',
+		nextText: '다음 달',
+		dayNames : ['월', '화', '수', '목', '금', '토', '일' ],
+		dayNamesMin : ['월', '화', '수', '목', '금', '토', '일' ],
+		dayNamesShort : ['월', '화', '수', '목', '금', '토', '일' ],
+		monthNames : ['. 1', '. 2', '. 3', '. 4', '. 5', '. 6', '. 7', '. 8', '. 9', '. 10', '. 11', '. 12'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		showMonthAfterYear: true,
+		changeMonth: false,
+		changeYear: false,
+		yearSuffix: '년',
+		altField: '.hide-input', // 노출잘자 클릭 텍스트 val 자동입력
+		//minDate:0, // today(0) 기준 이전 날짜 선택 불가
+        onSelect: function() {
+            if($('.step-select.lvtest1').length){
+                $(this).parents('li').next().find('select').removeAttr('disabled');
+                $(this).parents('li').next().find('.nice-select').removeClass('disabled');
+            }
+            if($('.step-select.lvtest2').length){
+                $(this).parents('li').next().find('.nice-select').removeClass('disabled');
+                $(this).parents('.select-box').next('.levelsteptime').fadeIn();
+            }
+        }
 
+	});
+
+
+}
 
 
 function loadingUi(){
@@ -155,6 +410,8 @@ function backgroundChangeUi(){
         $('html').addClass('main');
         $('header, .gnb').addClass('black');
         $('.footer').removeClass('absolute');
+    } else if($('.adm').length > 0){
+        $('html').addClass('adm');
     }
 
     if($('html').hasClass('main')){
@@ -333,16 +590,27 @@ function autoTypingUi(elementClass, typingSpeed){
   },30);
 }
 function scheduleUi(){
-    var newdate = new Date();
-    var scAllCont = $('.schedule-box .event-item').length;
-    console.log(newdate);
-    $('.scheduleAllCont').text(scAllCont);
 
 
-    $('.viewToggle').on('click',function(e){
+
+    // $('.viewList').on('click',function(e){
+    //     e.preventDefault();
+    //     $('.schedule-box').attr('class','schedule-box');
+    // });
+
+    $('.viewBlock').on('click',function(e){
         e.preventDefault();
         $(this).toggleClass('board');
-        $('.schedule-box').toggleClass('active');
+        $('.schedule-box').toggleClass('block');
+    });
+
+
+    $('.schedule-search').find('.setting').on('click',function(e){
+        $('.schedule-filter').slideToggle();
+    });
+
+    $('.like-select').on('click',function(){
+        $(this).toggleClass('on').siblings().removeClass('on');
     });
 }
 function topBannerUi(){

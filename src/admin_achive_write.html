@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+    <!--=include cmm/head.html -->
+    <body>
+        <div class="wrapper adm">
+            <div id="contents">
+                <!--=include cmm/header-adm.html -->
+                <div class="container">
+                    <section class="contents">
+                        <div class="content-page">
+                            <div class="row">
+                                <article>
+                                    <div class="tbl-filter">
+                                        <div class="filter-box">
+                                            <input class="title auto" type="text">
+                                        </div>
+
+
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:5%">
+                                                <col style="width:25%">
+                                                <col style="width:5%">
+                                                <col style="width:25%">
+                                                <col style="width:5%">
+                                                <col style="width:25%">
+                                            </colgroup>
+
+                                            <tbody>
+
+                                                <tr>
+                                                    <th scope="row">
+                                                        <label class="required" for="">category</label>
+                                                    </th>
+                                                    <td>
+                                                         <select class="" name="category">
+                                                             <option value="discuss">discuss</option>
+                                                             <option value="schedule">schedule</option>
+                                                             <option value="etc">etc</option>
+                                                         </select>
+                                                    </td>
+                                                    <th scope="row">
+                                                        <label for="">date</label>
+                                                    </th>
+                                                    <td>
+                                                         <input type="text">
+                                                    </td>
+                                                    <th scope="row">
+                                                        <label for="">Lock</label>
+                                                    </th>
+                                                    <td>
+                                                        <span class="ipt-column">
+                                                            <input class="rdo" id="radio1" type="radio" name="radio_set" checked>
+                                                            <label for="radio1">public</label>
+
+                                                            <input class="rdo" id="radio2" type="radio" name="radio_set">
+                                                            <label for="radio2">lock</label>
+                                                        </span>
+
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        <div class="filter-box">
+                                            <textarea style="height:400px;" name="name" rows="8" cols="80"></textarea>
+                                        </div>
+
+                                        <input type="file">
+                                        <ul class="file-list">
+                                            <li>a.jpg</li>
+                                            <li>a.mp4</li>
+                                            <li>a.jpg</li>
+                                            <li>a.jpg</li>
+                                        </ul>
+                                    </div>
+
+
+
+                                    <div class="box-align right">
+                                        <a href="index.html" class="btn not">Cancel</a>
+                                        <button class="btn">Create</button>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        <!--=include cmm/footer.html -->
+        </div>
+    </body>
+</html>
