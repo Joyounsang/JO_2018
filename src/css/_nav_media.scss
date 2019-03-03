@@ -1,0 +1,204 @@
+@media (max-width: 924px) {
+    header{
+        background: #fff;
+        height: auto;
+        &.black{
+            background: #fff;
+        }
+        &.on{
+            .gnb{
+                left: 0%;
+            }
+            .snb{
+                ul{
+                    >li{
+                        >.btnico{
+                            &.login{
+                                &:before{
+                                    background:url(../images/icon/lock_w.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            .logo{
+                a{
+                    background:url('../images/logo.svg') center no-repeat!important;
+                    background-size:80%!important;
+                }
+            }
+            .mobile-gnb{
+
+            }
+            &:before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background:rgba(16,23,27,0.9);
+                filter:blur(0.4);
+                opacity:.95;
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+                filter:alpha(opacity=90);
+                -moz-opacity:0.95;
+                -khtml-opacity:0.95;
+                opacity:0.95;
+                position: fixed;
+                top:0;
+                left:0;
+            }
+        }
+        .logo{
+            position: relative;
+            z-index: 9999;
+        }
+
+        .gnb{
+            &:after{
+                content: 'younsang.jo@gmail.com';
+                font-size: 0.75rem;
+                position: absolute;
+                bottom: 20px;
+                left: 6%;
+
+            }
+            padding: 40% 6% 0;
+            position: fixed;
+            top:0;
+            left:-100%;
+
+            background: #fff;
+            height: 100vh;
+            width: 70%;
+            transition: all .4s;
+
+            li{
+                display: block;
+                position: static;
+                &+li{
+                    margin-top: 20px;
+                }
+
+                a{
+                    color: $rec-textPrimaryColor!important;
+                    font-size:1.25rem;
+                    &:before{
+                        display: block;
+                        font-size: 0.5rem;
+                    }
+                }
+
+                &:before{
+                    content: none;
+                }
+
+                &.human{
+                    transform: none;
+                    a{
+                        &:before{
+                            content: '01';
+                        }
+                    }
+
+
+                }
+                &.space{
+
+                    transform: none;
+                    a{
+                        &:before{
+                            content: '02';
+                        }
+                    }
+
+
+
+                }
+
+                &:hover,&:focus{
+                    &:before{
+                        content: none;
+                    }
+                }
+
+                &.on{
+                    display:block;
+                }
+            }
+        }
+        .snb{
+            float:right;
+            margin-right:20px;
+            margin-top:24px;
+            vertical-align: top;
+
+            li{
+                display:inline-block;
+            }
+        }
+        &.black{
+            .logo{
+                a{
+                    background:url('../images/logo_w.svg') center no-repeat;
+                    background-size:80%;
+                }
+            }
+            .gnb{
+                li{
+                    a{
+                        color:#d9d9d9;
+                    }
+                    &.time{
+                        background:transparent;
+                        a{
+                            color:#333;
+                            background:transparent;
+                        }
+                    }
+                }
+            }
+            .snb{
+                ul{
+                    >li{
+                        >.btnico{
+                            &.login{
+                                &:before{
+                                    background:url(../images/icon/lock_w.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+    footer{
+        @include clearfix;
+        background: #fff;
+        padding: 15px 6%;
+
+        .copyrighting{
+            float: left;
+            position:static;
+            line-height: 34px;
+        }
+
+        &.absolute{
+            position: static;
+        }
+        .fnb{
+            position:static;
+            float: right;
+            li{
+                float: left;
+            }
+        }
+    }
+    .mobile-gnb{
+        display: block;
+    }
+}

@@ -1,11 +1,11 @@
 
-$baseColor: #303f4f;
-$pointColor: #da4d73;
+$rec-primaryColor: #303f4f;
+$rec-secondaryColor: #da4d73;
 
-$fontColor: #33475b;
+$rec-textPrimaryColor: #33475b;
 
-$subColor: #fafafa;
-$lineColor: #e7e7e7;
+$rec-whiteColor: #fafafa;
+$rec-lineColor: #e7e7e7;
 
 @mixin clearfix {
   content:'';
@@ -20,7 +20,7 @@ $lineColor: #e7e7e7;
   text-indent: -9999px;
 }
 
-@mixin inputhide{
+@mixin inputHide{
     position: absolute !important;
    width: 1px !important;
    height: 1px !important;
@@ -33,7 +33,7 @@ $lineColor: #e7e7e7;
 
 @mixin focus{
     border-color: rgba(48,63,79,.4);
-    box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $lineColor;
+    box-shadow: 0 0 4px 1px rgba(48,63,79,.2), 0 0 0 1px $rec-lineColor;
     outline: 0;
 
 }

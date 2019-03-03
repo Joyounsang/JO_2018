@@ -10,7 +10,7 @@
 }
 .btn{
     display:inline-block;
-    background:$baseColor;
+    background:$rec-primaryColor;
     font-size:0.75rem;
     height:40px;
     line-height:40px;
@@ -54,7 +54,7 @@
     }
 
     &:hover{
-        background:$pointColor;
+        background:$rec-secondaryColor;
         position: relative;
         top:-4px;
     }
@@ -62,9 +62,9 @@
         display: inline-block;
         padding: 7px 20px;
         border-radius: 5px;
-        color: $subColor;
+        color: $rec-whiteColor;
         font-size: 0.75rem;
-        background: $baseColor;
+        background: $rec-primaryColor;
         font-weight: 600;
         &.pdf{
 
@@ -93,7 +93,7 @@
         color:#666;
         border:none;
         &:hover{
-            color:$lineColor;
+            color:$rec-lineColor;
             transform: scale(1.08);
         }
 
@@ -101,13 +101,13 @@
 
     &.text{
         background:none;
-        // border-bottom:2px solid $pointColor;
+        // border-bottom:2px solid $rec-secondaryColor;
         text-decoration:underline;
         border-radius:0;
           font-weight:600;
         padding:0 4px;
         font-size:1rem;
-        color:$pointColor;
+        color:$rec-secondaryColor;
         &:hover{
             color:#1c272b;
             // border-bottom:2px solid #1c272b;
@@ -157,7 +157,7 @@
         margin:auto;
     }
     &.crud{
-        border:1px solid $lineColor;
+        border:1px solid $rec-lineColor;
         background-image: linear-gradient(#fafbfc 0%, #eff3f6 90%);
         border-radius:50%;
     }
@@ -315,7 +315,7 @@
     display:inline-block;
       font-weight:600;
     // padding:8px 20px;
-    // border:1px solid $lineColor;
+    // border:1px solid $rec-lineColor;
     border-radius:50px;
     font-size:0.825rem;
     line-height:12px;
@@ -332,12 +332,12 @@
         margin-bottom:2px;
     }
     &.design:before{
-        background:$pointColor;
+        background:$rec-secondaryColor;
     }
     &.develop:before{
         background:#3dc2dc;
     }
     &.etc:before{
-        background:$baseColor;
+        background:$rec-primaryColor;
     }
 }

@@ -82,11 +82,25 @@ $(document).ready(function(){
     scheduleUi();
     modalUi();
     signInUpUi();
-    topBannerUi();
+    // topBannerUi();
     videoBoxUi();
     inputsDesignPattern();
     gridSystemStatic();
     accessiblity();
+    carouselSlideUi();
+    smoothScroll('.smoothScroll');
+
+
+    //work
+    var workTopstickH =$('.work .scroll-fixed-item').outerHeight();
+    $('.container.work').css('padding-top', workTopstickH);
+    $('.workarchive-list').find('li').on('mousemove', function(){
+        $(this).siblings().addClass('hide');
+    });
+    $('.workarchive-list').find('li').on('mouseout', function(){
+        $(this).siblings().removeClass('hide');
+    });
+
 
     if ($('.datepicker').length){
         libDatepicker();
@@ -108,17 +122,35 @@ $(document).ready(function(){
     });
 
 
+    $('.mobile-gnb').on('click',function(e){
+        e.preventDefault();
+        $('header').toggleClass('on');
+    });
+
 
 });
 
 $(window).on('resize',function() {
+    var windowSize = $('window').width();
     gridSystemStatic();
     modalUi();
+    mainUi();
+    if(windowSize >= 924){
+        mobileScrollNone();
+    }
 }).resize();
+
+function mobileScrollNone(){
+    $('*').removeClass('mCustomScrollbar');
+};
 
 $(window).on('scroll', function(){
     scrollNav();
 }).scroll();
+
+
+
+
 
 
 function libDatepicker(){
@@ -218,19 +250,27 @@ function scrollNav(){
     }
 }
 function mainUi(){
-    var changeOffsetTop = $('.timeline-top').offset().top;
-    var topstickH =$('.timeline-top').height();
+    var changeOffsetTop = $('.scroll-fixed-item').offset().top;
+    var topstickH =$('.scroll-fixed-item').outerHeight();
     var navHeight = $( window ).height() - topstickH;
+    $('main').outerHeight($( window ).height() - topstickH);
       $(window).on('scroll', function() {
           if ($(window).scrollTop() > navHeight) {
-              // $('.timeline-top').addClass('fixed');
+              // $('.schedule-filter').addClass('fixed');
               $('header, .gnb').removeClass('black');
+              $('.scroll-fixed-item').addClass('on');
+              $('.scroll-fixed-item + .contents').css('padding-top', topstickH);
           }
           else {
-              // $('.timeline-top').removeClass('fixed');
+              // $('.schedule-filter').removeClass('fixed');
               $('header, .gnb').addClass('black');
+               $('.scroll-fixed-item').removeClass('on');
+                $('.scroll-fixed-item + .contents').css('padding-top', 0);
           }
       });
+
+
+
 
       $('.scrollDown').on('click', function() {
           $('html,body').animate({
@@ -252,7 +292,7 @@ function modalUi(){
         createDim();
         $('.dim').addClass($targetId);
 
-        $target.insertAfter($self);
+        // $target.insertAfter($self);
         $target.fadeIn(250).find('.modal-header a').focus();
 
         $target.find('.modal-header a').on('focusout', function(){
@@ -333,6 +373,7 @@ function createDim(){
         $('body').append('<div class="dim"></div>');
     }
     $('.dim').fadeIn(250);
+    $('header').addClass('black');
     // $('body').addClass('scrollFix');
     //$('.dim').on('touchmove scroll mousewheel', function(e) {
     //    e.preventDefault();
@@ -340,9 +381,9 @@ function createDim(){
     //    return false;
     //});
 }
-
 function removeDim(){
     $('.dim').fadeOut(250);
+    $('header').removeClass('black');
     // $('body').removeClass('scrollFix');
     //$('body').removeClass('scrollFix').off('touchmove scroll mousewheel');
 }
@@ -376,12 +417,6 @@ function autoTypingUi(elementClass, typingSpeed){
 function scheduleUi(){
 
 
-
-    // $('.viewList').on('click',function(e){
-    //     e.preventDefault();
-    //     $('.schedule-box').attr('class','schedule-box');
-    // });
-
     $('.viewBlock').on('click',function(e){
         e.preventDefault();
         $(this).toggleClass('board');
@@ -389,8 +424,8 @@ function scheduleUi(){
     });
 
 
-    $('.schedule-search').find('.setting').on('click',function(e){
-        $('.schedule-filter').slideToggle();
+    $('.schedule-filter-search').find('.setting').on('click',function(e){
+        $('.schedule-filter-option').slideToggle();
     });
 
     $('.like-select').on('click',function(){
@@ -398,6 +433,13 @@ function scheduleUi(){
     });
 }
 function topBannerUi(){
+    setTimeout(function() {
+        $('.top-banner').addClass('on');
+    },500);
+
+    setTimeout(function() {
+        $('.top-banner').removeClass('on');
+    },5000);
     $('.top-banner-control').on('click',function(){
         $('.top-banner').toggleClass('on');
     });

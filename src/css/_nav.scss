@@ -1,52 +1,3 @@
-
-.footer{
-    background:#fff;
-    font-size:0.5rem;
-    font-weight:400;
-    color:#516f90;
-    bottom:0;
-    .copyrighting{
-        position:fixed;
-        bottom:20px;
-        left:20px;
-        z-index:9999;
-    }
-    a{
-        color:#0091ae;
-    }
-
-    &.absolute{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
-    &.black{
-        background:none;
-        color:#fff;
-        a{
-            color:#7fd1de;
-        }
-
-    }
-}
-
-.top-banner{
-    display:none;
-    background:url(../images/banner.jpg) center;
-    background-size:cover;
-    height:0;
-    transition:all .4s;
-    overflow:hidden;
-    color:#fff;
-    text-align:center;
-    line-height:200px;
-    font-size:24px;
-    &.on{
-        height:200px;
-    }
-}
-
 header{
     position:fixed;
     top:0;
@@ -54,6 +5,25 @@ header{
     height:74px;
     width:100%;
     z-index:10000;
+    .top-banner{
+        max-height:0;
+        transition:max-height .4s;
+        overflow:hidden;
+        background: #fff;
+        color:$rec-secondaryColor;
+        text-align:center;
+        font-size:1rem;
+        border-bottom: 1px solid #e7e7e7;
+        p{
+            padding: 30px;
+        }
+
+        &.on{
+            max-height:200px;
+
+        }
+    }
+
     .logo{
         float:left;
         margin-left:20px;
@@ -76,6 +46,7 @@ header{
                 }
             }
        }
+
     .gnb{
         li{
             display: inline-table;
@@ -98,7 +69,7 @@ header{
                 width:6px;
                 height:6px;
                 border-radius:50%;
-                background:$pointColor;
+                background:$rec-secondaryColor;
                 position: absolute;
                 left:20px;
                 top:38px;
@@ -127,7 +98,7 @@ header{
                     top:28px;
                 }
                 a{
-                    color:$pointColor!important;
+                    color:$rec-secondaryColor!important;
                     box-shadow:none;
 
                 }
@@ -150,10 +121,7 @@ header{
         margin-right:20px;
         margin-top:24px;
         vertical-align: top;
-        span,a{
-            color:#fff;
-            font-size:0.75rem;
-        }
+
         li{
             display:inline-block;
         }
@@ -179,19 +147,52 @@ header{
                 }
             }
         }
-        .btnico{
-            &.login{
-                &:before{
-                    background:url(../images/icon/lock_w.svg);
+        .snb{
+            ul{
+                >li{
+                    >.btnico{
+                        &.login{
+                            &:before{
+                                background:url(../images/icon/lock_w.svg);
+                            }
+                        }
+                    }
                 }
             }
+
         }
+
     }
 }
 footer{
     font-size:0.5rem;
     letter-spacing:2px;
     font-weight:400;
+
+    .copyrighting{
+        position:fixed;
+        bottom:20px;
+        left:20px;
+        z-index:9999;
+    }
+    a{
+        color:#0091ae;
+    }
+
+    &.absolute{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    &.black{
+        background:none;
+        color:#fff;
+        a{
+            color:#7fd1de;
+        }
+
+    }
     .fnb{
         div{
             float:left;
@@ -266,4 +267,39 @@ footer{
             }
         }
     }
+}
+.mobile-gnb{
+    display: none;
+    float:left;
+    margin-top:36px;
+    margin-left: 0;
+    vertical-align: top;
+    width:24px;
+    height:18px;
+    position: relative;
+    z-index: 9999;
+    transition: all .4s;
+        a{
+            display:block;
+            width:100%;
+            height:100%;
+            text-indent:-999em;
+            position: relative;
+            &:before,&:after{
+                content: '';
+                display: block;
+                position: absolute;
+                height: 2px;
+                background-color: $rec-secondaryColor;
+                left: 0;
+            }
+            &:before{
+                width: 100%;
+                top:0;
+            }
+            &:after{
+                width: 70%;
+                bottom:0;
+            }
+        }
 }

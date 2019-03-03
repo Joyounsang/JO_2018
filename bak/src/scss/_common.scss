@@ -1,13 +1,13 @@
-::selection {color:$pointColor}
-:-ms-selection {color: $pointColor;}
-::-moz-selection {color: $pointColor;}
+::selection {color:$rec-secondaryColor}
+:-ms-selection {color: $rec-secondaryColor;}
+::-moz-selection {color: $rec-secondaryColor;}
 
 ::-webkit-input-placeholder {color: #b6b6b6; }
 :-ms-input-placeholder {color: #b6b6b6; }
 ::-moz-placeholder {color: #b6b6b6; }
 
 html {
-    color: $fontColor;
+    color: $rec-textPrimaryColor;
     font-family:'geomanistregular', sans-serif;
     font-size: 16px;
     font-weight:300;

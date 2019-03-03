@@ -176,16 +176,16 @@ function scrollNav(){
     }
 }
 function mainUi(){
-    var changeOffsetTop = $('.timeline-top').offset().top;
-    var topstickH =$('.timeline-top').height();
+    var changeOffsetTop = $('.schedule-filter').offset().top;
+    var topstickH =$('.schedule-filter').height();
     var navHeight = $( window ).height() - topstickH;
       $(window).on('scroll', function() {
           if ($(window).scrollTop() > navHeight) {
-              // $('.timeline-top').addClass('fixed');
+              // $('.schedule-filter').addClass('fixed');
               $('header, .gnb').removeClass('black');
           }
           else {
-              // $('.timeline-top').removeClass('fixed');
+              // $('.schedule-filter').removeClass('fixed');
               $('header, .gnb').addClass('black');
           }
       });

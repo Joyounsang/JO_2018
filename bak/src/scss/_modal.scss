@@ -20,7 +20,7 @@
         border: none;
         background-attachment: local;
         border:0;
-        background-image: linear-gradient(to right, white 0, transparent 0), linear-gradient(to left, white 0, transparent 0), repeating-linear-gradient(white, white 27px, $lineColor 27px, $lineColor 27px, white 28px);
+        background-image: linear-gradient(to right, white 0, transparent 0), linear-gradient(to left, white 0, transparent 0), repeating-linear-gradient(white, white 27px, $rec-lineColor 27px, $rec-lineColor 27px, white 28px);
         &.error{
             background-image: linear-gradient(to right, white 0, transparent 0), linear-gradient(to left, white 0, transparent 0), repeating-linear-gradient(white, white 27px, #e15757 27px, #e15757 27px, white 28px) !important;
         }

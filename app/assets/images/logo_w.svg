@@ -4,16 +4,13 @@
 	 y="0px" viewBox="0 0 65.4 40.3" style="enable-background:new 0 0 65.4 40.3;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#DA4D73;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
 <title>logo</title>
 <title>date</title>
-<circle class="st0" cx="47.2" cy="20.5" r="3.1"/>
-<line class="st1" x1="21.4" y1="38.6" x2="34.5" y2="2.4"/>
+<circle class="st0" cx="40.1" cy="10.3" r="3.1"/>
 <g>
-	<path class="st2" d="M7.4,25.5c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2"/>
-	<line class="st2" x1="17.8" y1="25.5" x2="17.8" y2="10.3"/>
+	<path class="st1" d="M20.6,25.5c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2"/>
+	<line class="st1" x1="31" y1="25.5" x2="31" y2="10.3"/>
 </g>
-<circle class="st1" cx="47.2" cy="20.5" r="12.7"/>
 </svg>

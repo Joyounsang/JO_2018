@@ -99,7 +99,7 @@
             content: '';
         }
         a{
-            color:$pointColor;
+            color:$rec-secondaryColor;
         }
     }
     &reqed{
@@ -220,7 +220,7 @@ button[disabled]{
     }
     &:checked{
         &+label{
-            border-color:$pointColor;
+            border-color:$rec-secondaryColor;
             &:before{
                 content: '';
                 display:block;
@@ -238,7 +238,7 @@ button[disabled]{
     }
     &:disabled{
         &+label{
-            border-color:$lineColor;
+            border-color:$rec-lineColor;
         }
     }
 }
@@ -254,7 +254,7 @@ button[disabled]{
     }
     &:checked{
         &+label{
-            border-color:$pointColor;
+            border-color:$rec-secondaryColor;
             &:before{
                 content: '';
                 display:block;
@@ -267,13 +267,13 @@ button[disabled]{
                 bottom:0;
                 margin:auto;
                 border-radius:50px;
-                background:$pointColor;
+                background:$rec-secondaryColor;
             }
         }
     }
     &:disabled{
         &+label{
-            border-color:$lineColor;
+            border-color:$rec-lineColor;
         }
     }
 }
@@ -312,7 +312,7 @@ label.file {
 	font-size: 80%;
 	text-align: center;
 	text-transform: uppercase;
-	border: 1px dashed $lineColor;
+	border: 1px dashed $rec-lineColor;
 	margin: 20px 0;
 	padding: 3rem;
     &:hover {
@@ -330,7 +330,7 @@ label.file {
     li{
         position:relative;
         padding:10px 20px;
-        border-bottom:1px solid $lineColor;
+        border-bottom:1px solid $rec-lineColor;
         &:last-child{
             border-bottom:0;
         }

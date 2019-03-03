@@ -6,7 +6,11 @@
 }
 // inputs align & margin
 .likelabel{
-    @include labelFont;
+    font-size: 11px;
+    font-weight:600;
+    vertical-align:middle;
+    color:#33475b;
+    line-height:30px;
     margin: 0 6px;
 }
 .ipt-column{
@@ -14,7 +18,11 @@
     margin-bottom:10px;
 
     label,.likelabel{
-        @include labelFont;
+        font-size: 11px;
+        font-weight:600;
+        vertical-align:middle;
+        color:#33475b;
+        line-height:30px;
         margin-right:10px;
         &.btnico{
             margin-right:0;
@@ -95,7 +103,7 @@
             content: '';
         }
         a{
-            color:$pointColor;
+            color:$rec-secondaryColor;
         }
     }
     &reqed{
@@ -129,7 +137,7 @@ select{
     height:36px;
     min-height:36px;
     line-height:36px;
-    background:#fafafa;
+    background:$rec-whiteColor;
     border:1px solid #e7e7e7;
     border-radius:3px;
     -webkit-appearance: none;
@@ -168,8 +176,8 @@ select[disabled],
 option[disabled],
 textarea[disabled],
 button[disabled]{
-    background: #fafafa;
-    border-color: #fafafa;
+    background: $rec-whiteColor;
+    border-color: $rec-whiteColor;
     color: #b0c1d4;
     pointer-events:none;
 }
@@ -214,7 +222,7 @@ button[disabled]{
     }
     &:checked{
         &+label{
-            border-color:$pointColor;
+            border-color:$rec-secondaryColor;
             &:before{
                 content: '';
                 display:block;
@@ -232,7 +240,7 @@ button[disabled]{
     }
     &:disabled{
         &+label{
-            border-color:$lineColor;
+            border-color:$rec-lineColor;
         }
     }
 }
@@ -248,7 +256,7 @@ button[disabled]{
     }
     &:checked{
         &+label{
-            border-color:$pointColor;
+            border-color:$rec-secondaryColor;
             &:before{
                 content: '';
                 display:block;
@@ -261,19 +269,19 @@ button[disabled]{
                 bottom:0;
                 margin:auto;
                 border-radius:50px;
-                background:$pointColor;
+                background:$rec-secondaryColor;
             }
         }
     }
     &:disabled{
         &+label{
-            border-color:$lineColor;
+            border-color:$rec-lineColor;
         }
     }
 }
 textarea{
     width:100%;
-    background:#fafafa;
+    background:$rec-whiteColor;
     border:1px solid #e7e7e7;
     font-size:0.825rem;
     padding:10px;
@@ -301,7 +309,7 @@ textarea{
 // 	font-size: 80%;
 // 	text-align: center;
 // 	text-transform: uppercase;
-// 	border: 1px dashed $lineColor;
+// 	border: 1px dashed $rec-lineColor;
 // 	margin: 20px 0;
 // 	padding: 3rem;
 //     &:hover {
@@ -317,7 +325,7 @@ textarea{
     li{
         position:relative;
         padding:10px 20px;
-        border-bottom:1px solid $lineColor;
+        border-bottom:1px solid $rec-lineColor;
         &:last-child{
             border-bottom:0;
         }
@@ -350,12 +358,14 @@ textarea{
     }
     &-header{
         margin:10px 0;
-        &:after{
-            @include clearfix;
-        }
+        @include clearfix;
 
         .dataTables_info, .dataTables_filter label{
-            @include labelFont;
+            font-size: 11px;
+            font-weight:600;
+            vertical-align:middle;
+            color:#33475b;
+            line-height:30px;
             margin-left:10px;
         }
         .dataTables_filter{
