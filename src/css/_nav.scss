@@ -75,6 +75,9 @@ header{
                 top:38px;
                 transition: all .5s;
             }
+            &.achive{
+                display: none;
+            }
 
             &.human{
                 top:0;

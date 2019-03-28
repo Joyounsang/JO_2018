@@ -3,6 +3,15 @@ html,body,#contents,.wrapper{
     height:100%;
 
 }
+#contents{
+    position: relative;
+    left: 0;
+    transition: left .2s;
+    &.on{
+        transition: left .6s;
+        left: 70%;
+    }
+}
 .container{
     padding-top: 200px;
     &.normal{
@@ -599,6 +608,12 @@ main{
 // gui
 .scroll-fixed-item{
     border-bottom: 1px solid $rec-lineColor;
+    &.only-on{
+        width: 100%!important;
+        position: fixed!important;
+        top:0!important;
+        z-index: 2!important;
+    }
     &.on{
         width: 100%;
         position: fixed;
@@ -1215,7 +1230,7 @@ main{
         }
 
         &.login{
-
+            max-width:640px;
             textarea{
                 padding:0 10px;
                 resize:none;
@@ -1233,9 +1248,6 @@ main{
             img{
                 width:120px;
             }
-
-            max-width:640px;
-
             .ipt-column{
                 width:100%;
                 margin-left:0;
@@ -1261,11 +1273,9 @@ main{
                     }
                 }
             }
-
-
         }
     }
-.dim{
+    .dim{
         display:none;
         position:fixed;
         z-index:10;
@@ -1281,7 +1291,6 @@ main{
         -moz-opacity:0.95;
         -khtml-opacity:0.95;
         opacity:0.95;
-
     }
 
 
@@ -1303,6 +1312,46 @@ main{
         }
     }
     .workarchive-list{
+
+        &.block{
+            @include clearfix;
+            li{
+                width: 33.33%;
+                float: left;
+                padding: 2%;
+                &.hide{
+                    z-index: 0;
+                }
+                &:hover{
+                    >a{
+
+                    }
+                }
+                a{
+                    span{
+                        display: block;
+                        margin-top: 20px;
+                        font-size: 1.25rem;
+
+                    }
+                    .noise{
+                        opacity: 1;
+                        position: relative;
+                        width: 100%;
+                        right: auto;
+                        left: auto;
+                        top: auto;
+                        bottom: auto;
+                        height: auto;
+                    }
+                }
+                &+li{
+                    border-top: none;
+
+
+                }
+            }
+        }
         li{
             padding: 60px 0;
             position: relative;

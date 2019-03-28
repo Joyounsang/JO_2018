@@ -94,11 +94,22 @@
                     content: none;
                 }
 
+                &.achive{
+                    display: block;
+                    a{
+                        &:before{
+                            content: '01';
+                        }
+                    }
+
+
+                }
+
                 &.human{
                     transform: none;
                     a{
                         &:before{
-                            content: '01';
+                            content: '02';
                         }
                     }
 
@@ -109,7 +120,7 @@
                     transform: none;
                     a{
                         &:before{
-                            content: '02';
+                            content: '03';
                         }
                     }
 
