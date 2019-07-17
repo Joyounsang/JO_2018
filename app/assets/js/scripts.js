@@ -76,7 +76,10 @@ $(document).ready(function(){
     accessiblity();
     // carouselSlideUi();
     workUi();
+    googleCalendarAPI();
+    demoGlobalSearch();
     // smoothScroll('.smoothScroll');
+
 
     $('.mobile-gnb a').on('click',function(e){
         e.preventDefault();
@@ -586,4 +589,162 @@ function scrollNav(){
         $barProgress.css('display','block');
         $barProgress.height(parseInt(scrollPercent, 10) + "%");
     }
+}
+
+
+function googleCalendarAPI(){
+    /*
+    "https://www.googleapis.com/calendar/v3/calendars/k5u784u0llh5fgmckeusemnhmo@group.calendar.google.com/events?key=AIzaSyB97NUokqE2aK5WJi6p1Wb0PXOSE-pd78Y&singleEvents=true&orderBy=starttime&maxResults=10&timeMin="+new
+    */
+
+    //string date to start the list range.
+    //recommend using Date.now() to filter out past events
+    var startDate = '1/1/2015';
+    var items = [];
+    $.getJSON(
+      "https://www.googleapis.com/calendar/v3/calendars/k5u784u0llh5fgmckeusemnhmo@group.calendar.google.com/events?key=AIzaSyB97NUokqE2aK5WJi6p1Wb0PXOSE-pd78Y&singleEvents=true&orderBy=starttime&maxResults=10&timeMin="+new Date(startDate).toISOString(),
+      function(data) {
+        $.each(data["items"], function(key, val) {
+          items.push(startDate(val["start"]));
+        });
+        items = items.slice().sort();
+        for (var i = 0; i < items.length - 1; i++) {
+          if (items[i + 1] == items[i]) {
+            items.splice(i, 1);
+          }
+        }
+
+        var events = {};
+        items.forEach(function(item) {
+          $.each(data["items"], function(key, val) {
+            if (item == startDate(val["start"])) {
+              //console.log(val);
+              if(events[item] === undefined){
+                events[item] = new Array();
+              }
+
+              events[item].push({
+                'eventTitle' : val["summary"],
+                'eventDescr' : val["description"]===undefined ? "No Event Description" : val["description"],
+                'startTime' : startTime(val["start"]),
+                'endDate' : moment(startDate(val["end"])).format('l'),
+                'endTime' : startTime(val["end"]),
+                'htmlLink' : val["htmlLink"],
+                'location' : val["location"]===undefined ? " " : val["location"]
+                // 'attachments' : val["attachments"]
+
+              });
+              console.log(val);
+            }
+
+          });
+        });
+        var markup = "";
+        items.forEach(function(eventDate){
+
+          var monthName = moment(eventDate).format("MMMM").toUpperCase();
+          var monthDate = moment(eventDate).format("DD");
+          var year = moment(eventDate).format("YY");
+          var month = moment(eventDate).format("MM");
+
+
+          markup += "<div class='row-group'>";
+          markup += "<div class='row'>";
+
+          markup += "<div class='column time'>";
+          markup += "<div class='time-date'><span>"+year+"'"+month+"/</span>"+monthDate+"</div>";
+          markup += "</div>";
+
+          markup += "<div class='column event'>";
+          events[eventDate].forEach(function(event){
+              markup += "<div class='event-item'>";
+              markup += "<div class='info'>";
+              markup += "<span class='schedule-title'>"+event["eventTitle"]+" : "+event["eventDescr"]+" ━ "+event["endDate"]+"</span>";
+
+              markup += "<span class='sub-info'>";
+              markup += "<span class='time-hour'>"+event["startTime"]+" / "+event["location"]+'</span>';
+              markup += "</span>";
+              markup += "</div></div>";
+          });
+          markup += "</div></div></div>";
+        });
+        $("#calendar-list").append(markup);
+        var calendarCount = $('.event-item').length;
+        $('.allCont').text(calendarCount);
+        //console.log(events);
+
+        function startDate(d) {
+          if (d["dateTime"] === undefined) return d["date"];
+          else {
+            var formatted = new Date(d["dateTime"]);
+            var day = formatted.getDate();
+            var month = formatted.getMonth() + 1;
+            var year = formatted.getFullYear();
+            return year + "-" + pad(month) + "-" + pad(day);
+          }
+        }
+
+        function startTime(d){
+          if (d["dateTime"] === undefined) return "All Day";
+          else {
+            var formatted = new Date(d["dateTime"]);
+            return moment(d["dateTime"]).format('LT');
+          }
+        }
+
+        function pad(n) {
+          return n < 10 ? "0" + n : n;
+        }
+
+        $(".events").click(function(e) {
+          $(e.target)
+            .next("div")
+            .siblings("div")
+            .slideUp();
+          $(e.target)
+            .next("div")
+            .slideToggle();
+        });
+      }
+    );
+
+}
+
+function demoGlobalSearch(){
+    // demo search Ui
+    function removeHighlighting(highlightedElements) {
+       highlightedElements.each(function() {
+          var element = $(this);
+          element.replaceWith(element.html());
+       })
+    }
+    function addHighlighting(element, textToHighlight) {
+       var text = element.text();
+       var highlightedText = '<em style="color:#da4d73">' + textToHighlight + '</em>';
+       var newText = text.replace(textToHighlight, highlightedText);
+
+       element.html(newText);
+    }
+    $("#scheduleSearch").keyup(function() {
+       var value = this.value.toLowerCase().trim();
+
+       removeHighlighting($(".schedule-title em"));
+
+       $(".event-item").each(function(index) {
+          if (!index) return;
+          $(this).find(".schedule-title").each(function() {
+             var id = $(this).text().trim();
+             var matchedIndex = id.indexOf(value);
+             if (matchedIndex === 0) {
+                addHighlighting($(this), value);
+             }
+             var not_found = (matchedIndex == -1);
+             $(this).parents('.row-group').toggle(!not_found);
+
+
+             return not_found;
+          });
+       });
+    });
+
 }

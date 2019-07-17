@@ -28,13 +28,12 @@
                 <div class="scroll-fixed-item">
                     <div class="layout-table timeline-title">
                         <article class="layout-table-cell content-page">
-                            <h2>Discussion
-                            I/O Extended events help developers from around the world take part in the I/O experience.</h2>
+                            <h2>We are building J/O schedules with discussions and various experiences.</h2>
                             <div class="schedule-filter">
                                 <div class="schedule-filter-search">
                                     <input id="scheduleSearch" type="search" placeholder="achive search...">
-                                    <a herf="#" class="btnico search">Search</a>
-                                    <a herf="#" class="btnico setting">filter</a>
+                                    <span class="btnico search">Search</span>
+                                    <!-- <a herf="#" class="btnico setting">filter</a> -->
                                 </div>
                                 <div class="schedule-filter-option">
                                     <ul>
@@ -67,20 +66,20 @@
                     <div class="content-page timeline-nav">
                         <ul class="schedule-info">
                             <!-- 전체 글 갯수 -->
-                            <li class="schedule-control-item"><span class="AllCont">24</span>all </li>
+                            <li class="schedule-control-item"><span class="allCont">24</span>all </li>
                             <!-- 오늘의 글 갯수 -->
-                            <li class="schedule-control-item"><span class="scheduleCont">4</span>schedule</li>
+                            <!-- <li class="schedule-control-item"><span class="scheduleCont">4</span>schedule</li>
                             <li class="schedule-control-item"><span class="scheduleDiscuss">4</span>discuss</li>
-                            <li class="schedule-control-item"><span class="scheduleEtc">4</span>etc</li>
+                            <li class="schedule-control-item"><span class="scheduleEtc">4</span>etc</li> -->
 
                             <li class="schedule-info-nav">
                                 <ul>
                                     <li>
                                         <a href="#" class="viewBlock btnico preview">timeline</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="boardWrite.html" class="btnico add">calendar</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                         </ul>
@@ -89,127 +88,67 @@
 
                 <section class="contents">
 
-                        <div class="schedule-box">
-                                <!-- Schedule board
-                                    작성 년,월,일,시간,
-                                    카테고리 3가지 분류 discuss, schedule, etc
-                                    제목, 본문내용, 본문사진(동영상) 정보를 포함한다.
-                                    .event-item 마크업을 통해 하루 여러개의 노출이 가능.
-                                    보여지는 방식에대한 UI는 front.
-                                    클릭시 상세페이지는 modal 로 보여진다.
-                                -->
-
-
-                                 <div class="row">
-                                    <div class="column time">
-                                        <div class="time-date">
-                                            <!-- 관리자 작성시 선택했던 날자노출 YY'MM / DD -->
-                                            <span>19'1 / </span>2
+                        <div class="schedule-box" id="calendar-list">
+                                <!-- backup hard coding -->
+                                <!-- <div class="row-group">
+                                     <div class="row">
+                                        <div class="column time">
+                                            <div class="time-date">
+                                                <span>19'1 / </span>2
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="column event">
-                                        <div class="event-item">
-                                            <div class="info">
+                                        <div class="column event">
+                                            <div class="event-item">
+                                                <div class="info">
+                                                    <a class="schedule-title modalLoad" href="#boardView">Younsang Jo Key note</a>
 
-                                                <!-- 관리자 작성시 작성했던 제목 노출 -->
-                                                <a class="schedule-title modalLoad" href="#boardView">Younsang Jo Key note</a>
+                                                    <p class="schedule-desc">
+                                                        Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
+                                                    </p>
 
-                                                <!-- 관리자 작성시 작성했던 본문 일부 노출 -->
-                                                <p class="schedule-desc">
-                                                    Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                                </p>
+                                                    <ul class="img-preview">
+                                                        <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
+                                                        <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
+                                                        <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
+                                                        <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
+                                                    </ul>
 
-                                                <!-- 관리자 작성시 작성했던 본문에 포함된 이미지 최대 노출 갯수 4-->
-                                                <ul class="img-preview">
-                                                    <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
-                                                    <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
-                                                    <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
-                                                    <li><img src="assets/images/saksham-gangwar.jpg" alt=""></li>
-                                                </ul>
+                                                    <span class="sub-info">
+                                                        <span class="time-hour">18:20</span>
+                                                        <span class="hash-tag discuss">discuss</span>
+                                                    </span>
 
-                                                <!-- 관리자 작성시 선택했던 카테고리 노출 -->
-                                                <span class="sub-info">
-                                                    <span class="time-hour">18:20</span>
-                                                    <span class="hash-tag discuss">discuss</span>
-                                                </span>
 
+                                                </div>
 
                                             </div>
 
-                                        </div>
-
-                                        <div class="event-item">
-                                            <div class="info">
+                                            <div class="event-item">
+                                                <div class="info">
 
 
-                                                <a class="schedule-title modalLoad" href="#boardView">Younsang Jo Key note</a>
-                                                <p class="schedule-desc">
-                                                    Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                                </p>
-                                                <span class="sub-info">
-                                                    <span class="time-hour">18:20</span>
-                                                    <span class="hash-tag schedule">schedule</span>
-                                                </span>
+                                                    <a class="schedule-title modalLoad" href="#boardView">Younsang Jo Key note</a>
+                                                    <p class="schedule-desc">
+                                                        Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
+                                                    </p>
+                                                    <span class="sub-info">
+                                                        <span class="time-hour">18:20</span>
+                                                        <span class="hash-tag schedule">schedule</span>
+                                                    </span>
+                                                </div>
+
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
-
-                                 <div class="row">
-                                    <div class="column time">
-                                        <span>19'1 / </span>1
-                                    </div>
-                                    <div class="column event">
-                                        <div class="event-item">
-                                            <div class="info">
-
-
-                                                <a class="schedule-title modalLoad" href="#boardView">Younsang Jo Key note</a>
-                                                <p class="schedule-desc">
-                                                    Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                                </p>
-                                                <span class="sub-info">
-                                                    <span class="time-hour">18:20</span>
-                                                    <span class="hash-tag discuss">discuss</span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                 <div class="row">
-                                    <div class="column time">
-                                        <span>19'12 / </span>30
-                                    </div>
-                                    <div class="column event">
-                                        <div class="event-item">
-                                            <div class="info">
-
-
-                                                <a class="schedule-title modalLoad" href="#boardView">Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your ow</a>
-                                                <p class="schedule-desc">
-                                                    Exact times, locations, speakers, and a livestream filter will be added closer to I/O,as well as the ability to customize your own schedule by saving events / reserving seats for sessions (attendees only)
-                                                </p>
-                                                <span class="sub-info">
-                                                    <span class="time-hour">18:20</span>
-                                                    <span class="hash-tag etc">etc</span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
+                                </div> -->
+                        </div>
 
                             <!--
                                 paginateion 은 facebook과 같은형태로 스크롤시 로딩
                                 로딩 GUI는 아래 svg 와같이 구현
                             -->
 
-                            <div class="data-load">
+                            <!-- <div class="data-load">
                                 <div class="svg-human" aria-label="Human">
                                     <svg version="1.1" class="svg-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                          y="0px" viewBox="0 0 71.8 71.8" style="enable-background:new 0 0 71.8 71.8;" xml:space="preserve">
@@ -220,14 +159,13 @@
                                     </svg>
                                 </div>
                                 <span>watting for you data loading...</span>
-                            </div>
-
-                            <!-- <div id="calendar"></div> -->
-                    </section>
+                            </div> -->
+                </section>
 
             </div>
             <!--=include cmm/view.html -->
             <!--=include cmm/footer.html -->
         </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js'></script>
     </body>
 </html>

@@ -350,7 +350,9 @@ main{
             font-size:1rem;
             background-color: #fff;
         }
-        a{
+        .btnico{
+            cursor: default;
+            pointer-events: none;
             position:absolute;
 
             top:0;
@@ -532,6 +534,7 @@ main{
                 padding: 17px 30px 17px 0;
                 font-size:3.5rem;
                 span{
+                    display: block;
                     color:#999;
                     font-size:1rem;
                     padding-left:6px;
@@ -800,7 +803,7 @@ main{
     &.profile{
         max-width:auto;
         height:600px;
-        background:url('../images/1.jpeg') no-repeat right;
+        background:url('../images/dsf1.jpeg') no-repeat right;
         background-size:cover;
     }
     &.timeline{
@@ -1111,11 +1114,11 @@ main{
 
         }
 
-        &:focus{
-            @include focus;
-            border-radius:50%;
-            opacity:0.5;
-        }
+        // &:focus{
+        //     @include focus;
+        //     border-radius:50%;
+        //     opacity:0.5;
+        // }
     }
 .hash-tag{
         margin-right:20px;
